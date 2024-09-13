@@ -1,0 +1,97 @@
+.out-door-faves-main{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    width: 100%;
+    padding: 50px 60px;
+}
+
+.out-door-and-fav{
+    display: flex;
+    width: 100%;
+}
+
+.out-door-fav-details{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    gap: 15px;
+    padding: 16px;
+    background-color: #f7f7f7;
+}
+
+.out-door-fav-details h3{
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: 700;
+    color: var(--text-color);
+}
+
+.out-door-fav-details p{
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    color: var(--text-color);
+}
+
+.out-door-fav-details span{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.out-door-fav-details span a{
+    color:  var(--active-nav-item-color);
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+}
+
+.out-door-fav-banner{
+    display: flex;
+    width: 50%;
+    height: auto;
+}
+
+.out-door-fav-banner img{
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.related-category-div{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.related-category-div h3{
+    font-size: 25px;
+    line-height: 37px;
+    font-weight: 700;
+    color: var(--text-color);
+}
+
+.related-category-tags{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 20px;
+}
+
+.related-category{
+    padding: 5px 15px;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    border: 1px solid var(--border-color);
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.related-category:hover{
+    border: 1px solid var(--active-nav-item-color);
+    color: var(--active-nav-item-color);
+}

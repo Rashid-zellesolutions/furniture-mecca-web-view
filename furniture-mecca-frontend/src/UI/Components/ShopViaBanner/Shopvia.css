@@ -1,0 +1,39 @@
+.shop-via-banner{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    background-color: var(--banner-bg-color);
+    padding: 10px 10px;
+}
+
+.close{
+    display: none;
+}
+
+.text-div{
+    display: flex;
+    width: 100%;  
+    align-items: center;
+    justify-content: center; 
+}
+
+.shop-via-banner span{
+    font-size: 13px;
+    font-weight: 500;
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-color);
+}
+
+.shop-via-banner span a{
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+.shop-via-banner img{
+    width: 15px; 
+    height: 15px;
+}

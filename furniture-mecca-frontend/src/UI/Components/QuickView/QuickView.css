@@ -1,0 +1,348 @@
+.quick-view-main{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.quick-view-main::-webkit-scrollbar{
+    display: none;
+}
+
+.quick-view-heading-and-rating{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+
+.quick-view-heading-and-rating h3{
+    font-size: 18px;
+    line-height: 27px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.quick-view-rating{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: start;
+    gap: 10px;
+}
+
+.quick-view-start{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 5px;
+
+}
+
+.quick-view-rating p{
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: #fff;
+}
+.quick-view-rating p span{
+    color: #FFC750;
+    text-decoration: underline;
+    margin-left: 5px;
+}
+
+.quick-view-image-and-variations{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+    gap: 25px;
+}
+
+.quick-view-slider {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.quick-view-slider-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.quick-view-slider-wrapper {
+    display: flex;
+    height: 200px;
+    transition: transform 0.5s ease;
+}
+
+.quick-view-slider-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.quick-view-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    /* background: rgba(0, 0, 0, 0.5); */
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.quick-view-arrow.disabled{
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.quick-view-arrow img{
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+}
+
+.quick-view-arrow.quick-view-left {
+    left: 10px;
+}
+
+.quick-view-arrow.quick-view-right {
+    right: 10px;
+}
+
+/* 
+.quick-view-image{
+    display: flex;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    position: relative;
+    overflow: hidden;
+}
+
+.slider-main-section{
+    display: flex;
+    width: 100%;
+    height: auto;
+
+}
+
+.quick-view-active{
+    display: flex;
+    width: 100%;
+}
+
+.quick-view-inactive{
+    display: none;
+}
+
+.quick-view-slides{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.quick-view-slides img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.quick-view-arrow{
+    position: absolute;
+    top: 50%;
+    width: auto;
+    height: 25px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    z-index: 333;
+}
+
+.quick-view-arrow-disable{
+    pointer-events: none;
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.quick-view-arrow-left{
+    left: 10px;
+}
+
+.quick-view-arrow-right{
+    right: 10px;
+} */
+
+/* .quick-view-image img{
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+} */
+
+.quick-view-variations{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: start;
+    gap: 10px;
+}
+
+/* .quick-view-vars{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.quick-view-vars img{
+    height: 56px;
+    width: auto;
+    object-fit: contain;
+} */
+
+.quick-view-vars p{
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+.quick-view-price{
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 45px;
+    color: #fff !important;
+    margin: 25px 0;
+}
+
+.quick-view-add-item-or-cart-btn{
+    display: flex;
+    width: 100%;
+    gap: 10px;
+}
+
+.quick-view-add-or-minus-item{
+    display: flex;
+    height: 50px;
+    width: 130px;
+    border: 1px solid #d7d7d7;
+    background-color: #fff;
+    border-radius: 8px;
+}
+
+.quick-view-add-or-minus-item button{
+    background-color: transparent;
+    border: none;
+    outline: none;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.quick-view-add-item-or-cart-btn p{
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-left: 1px solid #d7d7d7;
+    border-right: 1px solid #d7d7d7;
+    padding: 0 20px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.quickview-heart-icon{
+    cursor: pointer;
+}
+
+.quick-view-add-to-cart{
+    display: flex;
+    width: 190px;
+    align-items: center;
+    justify-content: center;
+    background-color: #C61B1A;
+    border: 1px solid #C61B1A;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 23px;
+    cursor: pointer;
+}
+
+.quick-view-details-section{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.quick-view-detail-single-section{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+    border-bottom: 2px solid #d7d7d7;
+}
+
+.quick-view-details-heading{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.quick-view-details-heading p{
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 24px;
+}
+
+.quick-view-details-heading button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.quick-view-rotate-up{
+    transform: rotate(180deg);
+    transition: transform 0.3s ease;
+}
+
+.quick-view-rotate-down{
+    transform: rotate(360deg);
+    transition: transform 0.3s ease;
+}
+
+.quick-view-details{
+    display: flex;
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    background-color: orange;
+    margin-top: 10px;
+    transition: height 0.3s ease;
+}
+
+.quick-view-details.show-details{
+    height: 80px;
+}

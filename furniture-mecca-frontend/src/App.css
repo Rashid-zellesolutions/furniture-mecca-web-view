@@ -1,0 +1,41 @@
+.App{
+    display: flex;
+    flex-direction: column;
+}
+
+/* App.css */
+.scroll-to-top-button {
+    position: fixed;
+    bottom: 25px;
+    right: 40px;
+    /* width: 30px; */
+    /* height: 30px; */
+    background-color: transparent;
+    color: var(--active-nav-item-color);
+    border: none;
+    cursor: pointer;
+    z-index: 1000;
+    transition: background-color 0.3s;
+    max-height: max-content;
+    animation: float 3s ease-in-out infinite;
+}
+
+.lead-to-top-btn{
+  transition: all 0.3S ease-in-out;
+  /* width: 100%; */
+  height: 30px;
+  object-fit: cover;
+}
+
+.lead-to-top-btn:hover{
+  transform: scale(1.5);
+}
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px); /* Adjust the height of the floating effect */
+    }
+  }

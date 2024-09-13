@@ -1,0 +1,108 @@
+.best-seller-main-container{
+    display: flex;
+    width: 100%;
+    gap: 15px;
+    padding: 25px 60px;
+    /* height: 60vh; */
+}
+
+.best-seller-cards-container{
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    gap: 15px;
+    align-items: stretch;
+}
+
+/* .best-seller-cards-container, .best-seller-banners-container{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.best-seller-cards-container{
+    width: 75%;
+    align-items: stretch;
+}
+
+.best-seller-banners-container {
+    width: 25%;
+    height: auto; 
+} */
+
+/* Optional styling for the cards and banners */
+.best-seller-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    width: 100%;
+    height: auto;
+}
+
+/* Best Saller menu */
+.best-seller-menu{
+    display: flex;
+    width: 100%;
+    height: 48px;
+    box-shadow: 1px 1px 8px 0px #00000026;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px; 
+}
+
+.best-seller-menu h3{
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 37px;
+    color: var(--text-color);
+}
+
+
+
+.best-seller-nav-items{
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.best-seller-nav-items p{
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 22px;
+    color: var(--text-color);
+    cursor: pointer;
+    /* border-bottom: 3px solid #ffff; */
+}
+
+.best-seller-nav-items p.active{
+    border-bottom: 3px solid var(--active-nav-item-color);
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 27px;
+}
+
+
+/* Best Seller Product Cards */
+.best-seller-cards{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    width: 100%;
+    height: auto;
+}
+
+/* Best Seller Banner */
+.best-seller-banners-container{
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    height: auto;
+    gap: 10px;
+}
+
+.best-seller-banners-container img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* max-height: 347px; */
+}
