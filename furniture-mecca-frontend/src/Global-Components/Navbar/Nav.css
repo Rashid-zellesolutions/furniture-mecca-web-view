@@ -1,8 +1,8 @@
 .navbar{
     display: flex;
     width: 100%;
-    height: 57px;
-    padding: 21px 30px 0px 30px;
+    height: 63px;
+    padding: 0px 100px;
     border-top: 1px solid var(--border-color);
     border-bottom: 1px solid var(--border-color);
 }
@@ -11,22 +11,26 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
+    height: 61px;
     padding-left: 0px;
     margin: 0px;
 }
 
 .nav-item{
+    align-items: center;
+    margin: auto;
     font-size: 15px;
-    font-weight: 500;
-    line-height: 18px;
+    font-weight: 600;
+    line-height: 24px;
     letter-spacing: 1.6px;
-    padding: 0 10px;
+    padding: 18px 10px;
 }
 
 .nav-link{
     text-decoration: none;
     color: #484F59;
     position: relative;
+    height: auto;
 }
 
 .nav-item:nth-child(8) .nav-link {
@@ -56,7 +60,7 @@
 
 .dropdown{
     position: absolute;
-    margin-top: 15px;
+    margin-top: 19px;
     left: 0;
     width: 100%;
     background-color: var(--bg-color);
@@ -79,32 +83,32 @@
 
 
 /* Desktop Responsiveness */
-@media only screen and (max-width: 1300px){
+/* @media only screen and (max-width: 1300px){
     .navbar{
         padding: 21px 20px 0px 20px;
     }
     .nav-link{
         font-size: 13px;
     }
-}
+} */
 
-@media only screen and (max-width: 1000px){
+/* @media only screen and (max-width: 1000px){
     .nav-link{
         font-size: 11px;
     }
-}
+} */
 
-@media only screen and (max-width: 1050px){
+/* @media only screen and (max-width: 1050px){
     .nav-link{
         font-size: 10px;
         font-weight: 700;
     }
-}
+} */
 
 
 /* Tab Size Media Query 1100 Pixuls */
 
-@media only screen and (max-width: 1000px){
+/* @media only screen and (max-width: 1000px){
     .navbar{
         display: none;
     }
@@ -112,9 +116,9 @@
         display: flex;
         
     }
-}
+} */
 
-@media only screen and (max-width: 700px){
+/* @media only screen and (max-width: 700px){
     .nav-item{
         display: none;
     }
@@ -156,10 +160,20 @@
         text-decoration: none;
     }
     
-}
+} */
 
 @media only screen and (max-width: 400px){
     .mobile-navbar{
         display: none;
+    }
+}
+
+@media only screen and (max-width: 1320px){
+    .navbar{
+        padding: 0 40px;
+    }
+    .nav-item{
+        padding: 18px 0;
+        font-size: 13px;
     }
 }

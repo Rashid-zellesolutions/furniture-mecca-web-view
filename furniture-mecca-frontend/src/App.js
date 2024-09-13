@@ -12,7 +12,7 @@ import aarrowTop from './Assets/icons/arrow-up.png'
 
 import livingRoomMainImage from './Assets/pages-main-images/Living-Room-Desk-1-1024x341.jpg';
 import bedroomMainImage from './Assets/pages-main-images/Bedroom-Desk-1.jpg';
-import diningRoomMainImage from './Assets/pages-main-images/Dining-Room-Desk-1 1.png';
+import diningRoomMainImage from './Assets/pages-main-images/Dining-Room-Desk-1 1.399203c025f09981256a.jpg';
 import mattressesMainImage from './Assets/pages-main-images/Mattresses-Desk-1-1024x341.jpg';
 import kidsMainImage from './Assets/pages-main-images/Kids-Room-Desk-1-1024x341.jpg';
 import accentFurnitureMainImage from './Assets/pages-main-images/Accent-Furniture-Desk-1-1024x341.jpg';
@@ -85,39 +85,39 @@ function App() {
           <Route path='/dining-room-sets' element={<ProductArchive />} />
           <Route 
             path='/living-room' 
-            element={<Categories categoriesMainImage={livingRoomMainImage} showPromotionsBaneers={false} categoryCardData={categoryCardData} />} 
+            element={<Categories categoriesMainImage={diningRoomMainImage} categoryCartTitle={'Living Room'} showPromotionsBaneers={false} categoryCardData={categoryCardData} />} 
           />
           <Route 
             path='/bedroom' 
-            element={<Categories categoriesMainImage={bedroomMainImage} showPromotionsBaneers={false} categoryCardData={categoryCardData} />} 
+            element={<Categories categoriesMainImage={bedroomMainImage} categoryCartTitle={'Bedroom Set'} showPromotionsBaneers={false} categoryCardData={categoryCardData} />} 
           />
           <Route 
             path='/dining-room' 
-            element={<Categories categoriesMainImage={diningRoomMainImage} showPromotionsBaneers={false} categoryCardData={categoryCardData} />} 
+            element={<Categories categoriesMainImage={diningRoomMainImage} categoryCartTitle={'Dining Room'} showPromotionsBaneers={false} categoryCardData={categoryCardData} />} 
           />
           <Route 
             path='/mattresses' 
-            element={<Categories categoriesMainImage={mattressesMainImage} showPromotionsBaneers={false} categoryCardData={categoryCardData} />} 
+            element={<Categories categoriesMainImage={mattressesMainImage} categoryCartTitle={'Mattresses'} showPromotionsBaneers={false} categoryCardData={categoryCardData} />} 
           />
           <Route 
             path='/kids' 
-            element={<Categories categoriesMainImage={kidsMainImage} showPromotionsBaneers={false} categoryCardData={categoryCardData} />} 
+            element={<Categories categoriesMainImage={kidsMainImage} showPromotionsBaneers={false} categoryCartTitle={'Kids Room'} categoryCardData={categoryCardData} />} 
           />
           <Route 
             path='/accent-furniture-and-rugs' 
-            element={<Categories categoriesMainImage={accentFurnitureMainImage} showPromotionsBaneers={false} categoryCardData={categoryCardData} newArrival={true} />} 
+            element={<Categories categoriesMainImage={accentFurnitureMainImage} showPromotionsBaneers={false} categoryCartTitle={'Accent Furniture And Rugs'} categoryCardData={categoryCardData} newArrival={true} />} 
           />
           <Route 
             path='/small-spaces' 
-            element={<Categories categoriesMainImage={smallSpaceMainImage} showPromotionsBaneers={false} categoryCardData={categoryCardData} newArrival={true} />} 
+            element={<Categories categoriesMainImage={smallSpaceMainImage} categoryCartTitle={'Small Spaces'} showPromotionsBaneers={false} categoryCardData={categoryCardData} newArrival={true} />} 
           />
           <Route 
             path='/outlets' 
-            element={<Categories categoriesMainImage={outletMainImage} showPromotionsBaneers={false} categoryCardData={categoryCardData} newArrival={true} />} 
+            element={<Categories categoriesMainImage={outletMainImage} showPromotionsBaneers={false} categoryCartTitle={'Outlets'} categoryCardData={categoryCardData} newArrival={true} />} 
           />
           <Route 
             path='/tent-sale' 
-            element={<Categories categoriesMainImage={tentSaleMainImage} showBanners={false} categoryCardData={categoryCardData} newArrival={true} />} 
+            element={<Categories categoriesMainImage={tentSaleMainImage} showBanners={false} categoryCartTitle={'Labor Day Sale'} categoryCardData={categoryCardData} newArrival={true} />} 
           />
 
           <Route path='/single-product/:id' element={<SingleProduct  />} />

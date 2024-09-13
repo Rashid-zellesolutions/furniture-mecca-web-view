@@ -61,7 +61,7 @@
 }
 
 .footer-nav-items a:hover{
-    color: var(--hover-font-color)
+    color: #dfdfdf;
 }
 
 .footer-contact-section{

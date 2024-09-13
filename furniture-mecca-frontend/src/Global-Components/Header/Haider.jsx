@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import './Haider.css';
 import logo from '../../Assets/Logo/m_logo_360 2.png'
-import searchIcon from '../../Assets/icons/search.png';
+import searchIcon from '../../Assets/icons/search-icon-charcol.png';
 import NearStoreIcon from '../../Assets/icons/home.png';
 import HeartIcon from '../../Assets/icons/like.png';
 import cartIcon from '../../Assets/icons/cart2.png';
@@ -15,6 +15,13 @@ import TabMenu from '../Navbar/TabMenu/TabMenu';
 import NearStorePopUp from '../../UI/Components/NearStorePopUp/NearStorePopUp';
 import { MdOutlineStars } from "react-icons/md";
 import { Link } from 'react-router-dom';
+
+// language mdal assets
+import closeBtn from '../../Assets/icons/close-btn-black.png';
+import protgalFlage from '../../Assets/icons/portugal-flage.png';
+import franceFlage from '../../Assets/icons/france-flage.png';
+import usaFlag from '../../Assets/icons/usa-flage.png'
+import arrowUpThin from '../../Assets/icons/arrow-up-thin-charcol.png';
 
 const Haider = () => {
   const [isTabMenuOpen, setIsTabMenuOpen] = useState(false);
@@ -79,8 +86,32 @@ const Haider = () => {
   }
 ]
 
+  const [changeLanguage, setChangeLanguage] = useState(false)
+  const [currentLenIndex, setCurrentLenIndex] = useState(null)
+  const [lanDrop, setLanDrop] = useState(false);
+  const languagesData = [
+    {lan: 'English', icon: usaFlag},
+    {lan: 'French', icon: franceFlage},
+    {lan: 'Portuguese', icon: protgalFlage}
+  ]
+  const handleLanguageModal = () => {
+    setChangeLanguage(true)
+  }
+  const handleCLoseLanguageModal = () => {
+    setChangeLanguage(false);
+  }
+
+  const handleActiveIndex = (index) => {
+    setCurrentLenIndex(index)
+  }
+
+  const handleLanguageDropDown = () => {
+    setLanDrop(!lanDrop);
+  }
+
   return (
     <div className='haider-main-container'>
+          
       {/* Banner Responsive */}
       <div className='furniture-mecca-promotional-banner'>
         <div className='rotating-message'>
@@ -93,6 +124,12 @@ const Haider = () => {
           <Link>Orders</Link>
           <Link>Financing</Link>
           <Link>Help</Link>
+        </div>
+        <div className='header-main-banner-language-div'>
+          <button onClick={handleLanguageModal}>
+            <img src={usaFlag} alt='flag' />
+            English
+          </button>
         </div>
         <div className='on-tab-deliver-to'>
             <img src={deliverTo} alt="delivery" />
@@ -109,8 +146,8 @@ const Haider = () => {
         </div>
         <div className='search-bar-container'>
           <div className='search-bar-div'>
-            <input type='search' placeholder='Search every thing' />
             <img src={searchIcon} alt="search icon" />
+            <input type='search' placeholder='Search every thing' />
           </div>
         </div>
         <div className='nearby-address-container'>
@@ -133,7 +170,7 @@ const Haider = () => {
         </div>
         <div className='header-icons-container'>
           <Link>
-          <img src={profileIcon} alt="profile" />
+          <img src={profileIcon} alt="profile" /> 
           </Link>
           <Link>
           <img src={HeartIcon} alt="heart" />
@@ -189,6 +226,39 @@ const Haider = () => {
         </div>
       </div>
             {isTabMenuOpen ? <TabMenu isNavbarVisible={isTabMenuOpen} setIsNavbarVisible={setIsTabMenuOpen} navLinks={navLinks} /> : <Nav navLinks={navLinks} />}
+            {/* Language Modal */}
+            <div className={`show-language-modal ${changeLanguage ? 'increase-width-language-modal' : ''} `}>
+            <div className='language-modal-containt-div'>
+            <button className={`close-language-modal ${changeLanguage ? '' : 'hide-close-btn' }`} onClick={handleCLoseLanguageModal}>
+              <img src={closeBtn} alt='close btn' />
+            </button>
+              <div className='select-language-container'>
+                <div className='modal-headin-div'>
+                  <h3>Language</h3>
+                </div>
+                <div className='select-language-dropdown'>
+                  <h3>Select Language:</h3>
+                  <div className={`languages-drop-down ${lanDrop ? 'open-language-dropdown' : ''}`}>
+                    <div className='selected-language'>
+                      <span>
+                        <img src={usaFlag} alt='usa' onClick={handleLanguageDropDown} />
+                        <h3>English</h3>
+                      </span>
+                        <img src={arrowUpThin} alt='arrow' />
+                    </div>
+                    <div className='defrent-languages'>
+                      {languagesData.map((item, index) => (
+                          <div className={currentLenIndex === index ? 'single-selected-language' : 'single-language' } onClick={() => handleActiveIndex(index)} >
+                            <img src={item.icon} alt='icon' />
+                            <h3>{item.lan}</h3>
+                          </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>    
+            </div>
+          </div>
     </div>
     
   )

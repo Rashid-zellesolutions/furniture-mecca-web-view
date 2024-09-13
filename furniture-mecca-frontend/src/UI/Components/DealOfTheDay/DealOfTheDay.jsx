@@ -157,7 +157,7 @@ const DealOfTheDay = () => {
     setCurrentIndex((prevIndex) => Math.min(prevIndex + itemsToShow, products.length - itemsToShow));
   };
 
-  const centerStyle = { transform: `translateX(-${currentIndex * (210 / itemsToShow)}px)` };
+  const centerStyle = { transform: `translateX(-${currentIndex * (310 / itemsToShow)}px)` };
 
   return (
     <div className='deal-of-the-day-main-container'> 

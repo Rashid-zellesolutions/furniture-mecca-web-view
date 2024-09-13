@@ -39,7 +39,7 @@ import KidsRoom from '../../../Assets/to-be-change/kids-room.png';
 import AreaRugs from '../../../Assets/to-be-change/area-rugs.png';
 import HomeDecor from '../../../Assets/to-be-change/home-decor.png';
 import Outlet from '../../../Assets/to-be-change/outlet.png';
-import shipBanner from '../../../Assets/Home-Page/At Furniture Mecca Slider 1.png'
+import shipBanner from '../../../Assets/Furniture Mecca/Landing Page/sale banner/AT FM.jpg'
 import HottestDealsBanners from '../../Components/HottestDealsBanners/HottestDealsBanners';
 import BestSellerSlider from '../../Components/BestSellerSlider/BestSellerSlider';
 // import DealDayCountDown from '../../Components/DealDayCountDown/DealDayCountDown';
@@ -100,7 +100,7 @@ const categoryCardData = [
       {/* <HottestDealsBanners /> */}
       <TrendingNow />
       <FinanceBannerSlider />
-      {/* <BestSellerSlider /> */}
+      <BestSellerSlider />
       {/* <FurnitureProduct /> */}
       <ImageHeading img={HeroImage} mobileViewImage={mobileViewHeroImage} alt={'bed image'} />
       <ProductSlider cardData={productCardData} />

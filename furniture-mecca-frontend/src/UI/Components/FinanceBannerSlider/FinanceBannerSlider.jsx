@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import './FinanceBannerSlider.css';
 import installmentBanner from '../../../Assets/Furniture Mecca/Landing Page/Pay option banner/New Main Financing.jpg';
-import paypalBanner from '../../../Assets/Furniture Mecca/Landing Page/sale banner/AFF-Banner-pt2.jpg';
-import moveForword from '../../../Assets/Furniture Mecca/Landing Page/sale banner/AFF-Banner-2.jpg';
+import paypalBanner from '../../../Assets/Furniture Mecca/Landing Page/sale banner/New-Financing-WF-1.jpg';
+import moveForword from '../../../Assets/Furniture Mecca/Landing Page/sale banner/New-Financing-AAF-1.jpg';
 import arrowLeft from '../../../Assets/icons/arrow-left.png';
 import arrowRight from '../../../Assets/icons/arrow-right.png';
 

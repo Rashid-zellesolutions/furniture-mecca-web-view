@@ -196,7 +196,7 @@ const CustomSlider = ({ cards, visibleCards, showArrows = true, showDots = true,
         {showArrows && currentIndex < totalSlides - 1 && <button className="costume-arrow costume-right" onClick={handleNext}>
             <img src={arrowRight} alt='left' />
         </button>}
-      
+      {/* changed % to px from 100% to 430px */}
       <div
         className="costume-slider-wrapper"
         style={{

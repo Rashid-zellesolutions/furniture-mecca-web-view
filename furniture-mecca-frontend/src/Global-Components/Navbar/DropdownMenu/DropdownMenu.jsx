@@ -32,8 +32,8 @@ const DropdownMenu = ({navHeading, dropDownNavData}) => {
                         </div>
                     </div>
                     
-                    })) 
-                    : <div style={{display: 'flex'}}>
+                    }))  
+                    : <div style={{display: 'flex', width: '25%'}}>
                         <div className='menu-links'>
                         <h3 className='living-room-heading'>{navHeading}</h3>
                         <div className='mattresses-links-div'>

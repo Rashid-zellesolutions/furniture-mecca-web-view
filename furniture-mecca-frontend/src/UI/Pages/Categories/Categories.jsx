@@ -11,13 +11,13 @@ import BestSeller from '../../Components/BestSeller/BestSeller';
 import DealOfDay from '../../Components/DealOfDay/DealOfDay';
 import FinanceBannerSlider from '../../Components/FinanceBannerSlider/FinanceBannerSlider';
 
-const Categories = ({categoriesMainImage, categoryCardData, newArrival , showPromotionsBaneers}) => {
+const Categories = ({categoriesMainImage, categoryCartTitle, categoryCardData, newArrival , showPromotionsBaneers}) => {
 
   return (
     <div>
       {/* <Shopvia /> */}
       <LatestModulerBanner customWidth={false} showBanners={showPromotionsBaneers} mainImgShow={true} mainImage={categoriesMainImage} />
-      <Category title={'Dining Room Furniture'} categoryData={categoryCardData} />
+      <Category title={categoryCartTitle} categoryData={categoryCardData} />
       <BestSeller />
       <DealOfDay />
       <NewArrival /> 
