@@ -37,7 +37,7 @@
 .icon.animate{
     animation: scaleAndReset 1.5s ease-in-out;
     
-}
+} 
 
 @keyframes scaleAndReset {
     0% {

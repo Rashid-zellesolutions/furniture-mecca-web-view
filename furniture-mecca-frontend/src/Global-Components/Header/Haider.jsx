@@ -7,6 +7,7 @@ import HeartIcon from '../../Assets/icons/like.png';
 import cartIcon from '../../Assets/icons/cart2.png';
 import profileIcon from '../../Assets/icons/profile.png'
 import deliverTo from '../../Assets/icons/delivery.png'
+import locationModalIcon from '../../Assets/icons/location-charcol-icon.png'
 import locationIcon from '../../Assets/icons/location-red.png';
 import navToggler from '../../Assets/icons/Union.png'
 import searchRed from '../../Assets/icons/search-red.png'
@@ -47,7 +48,7 @@ const Haider = () => {
       {name: "Accent Furniture / Rugs", link: '/accent-furniture-and-rugs', hasDropdown: true},
       {name: "Small Spaces", link: '/small-spaces', hasDropdown: true},
       {name: "Outlets", link: '/outlets', hasDropdown: true},
-      {name: "Tent Sale", link: '/tent-sale', hasDropdown: true},
+      {name: "Labor Day Sale", link: '/tent-sale', hasDropdown: true},
       
   ]
   const [nearStorePopUp, setNearStorePopUp] = useState(false)
@@ -87,8 +88,10 @@ const Haider = () => {
 ]
 
   const [changeLanguage, setChangeLanguage] = useState(false)
-  const [currentLenIndex, setCurrentLenIndex] = useState(null)
+  const [currentLenIndex, setCurrentLenIndex] = useState(0)
   const [lanDrop, setLanDrop] = useState(false);
+  const [currentSelectedCountry, setCurrentSelectedCountry] = useState('');
+  const [currentSelectedCountryFlag, setCurrentSelectedCountryFlag] = useState();
   const languagesData = [
     {lan: 'English', icon: usaFlag},
     {lan: 'French', icon: franceFlage},
@@ -103,10 +106,23 @@ const Haider = () => {
 
   const handleActiveIndex = (index) => {
     setCurrentLenIndex(index)
+    const selectedLanguage = languagesData[index];
+    setCurrentSelectedCountry(selectedLanguage.lan);
+    setCurrentSelectedCountryFlag(selectedLanguage.icon);
+    setLanDrop(false);
   }
 
   const handleLanguageDropDown = () => {
     setLanDrop(!lanDrop);
+  }
+
+  // Location Modat script
+  const [searchLocation, setSearchLocation] = useState(false);
+  const handleSearchModal = () => {
+    setSearchLocation(true)
+  }
+  const handleCloseSearch = () => {
+    setSearchLocation(false)
   }
 
   return (
@@ -119,17 +135,19 @@ const Haider = () => {
           : currentIndex === 2 ? <span>Learn about my <Link className='toll-free-ancor' href='#'>Financing Options</Link> </span> 
           : <span>Shop Furniture Mecca's everyday low prices!</span>}
         </div>
-        <div className='banner-link-container'>
-          <Link>Stores</Link>
-          <Link>Orders</Link>
-          <Link>Financing</Link>
-          <Link>Help</Link>
-        </div>
-        <div className='header-main-banner-language-div'>
-          <button onClick={handleLanguageModal}>
-            <img src={usaFlag} alt='flag' />
-            English
-          </button>
+        <div className='header-links-and-select-language'>
+          <div className='banner-link-container'>
+            <Link>Stores</Link>
+            <Link>Orders</Link>
+            <Link>Financing</Link>
+            <Link>Help</Link>
+          </div>
+          <div className='header-main-banner-language-div'>
+            <button onClick={handleLanguageModal}>
+              <img src={currentSelectedCountryFlag || usaFlag} alt='flag' />
+              {currentSelectedCountry || 'English'}
+            </button>
+          </div>
         </div>
         <div className='on-tab-deliver-to'>
             <img src={deliverTo} alt="delivery" />
@@ -155,13 +173,13 @@ const Haider = () => {
               <div className='icon-and-nearby-city'>
                 <img src={NearStoreIcon} alt='near by' onClick={handleNearStorePopUp} />
                 <NearStorePopUp isOpen={nearStorePopUp} setIsOpen={setNearStorePopUp} />
-                <div className='near-by-city-time'>
+                <div className='near-by-city-time' onClick={handleNearStorePopUp}>
                   <p>Nearest Store</p>
                   <span>
                     <Link>E Venango - ST </Link><p> (Opens at 09:30 AM)</p>
                   </span>
                 </div>
-                <span className='deliver-to'>
+                <span className='deliver-to' onClick={handleSearchModal}>
                   <p>Deliver to</p>
                   <span>PA 19134</span>
                 </span>
@@ -226,39 +244,81 @@ const Haider = () => {
         </div>
       </div>
             {isTabMenuOpen ? <TabMenu isNavbarVisible={isTabMenuOpen} setIsNavbarVisible={setIsTabMenuOpen} navLinks={navLinks} /> : <Nav navLinks={navLinks} />}
+            
             {/* Language Modal */}
             <div className={`show-language-modal ${changeLanguage ? 'increase-width-language-modal' : ''} `}>
-            <div className='language-modal-containt-div'>
-            <button className={`close-language-modal ${changeLanguage ? '' : 'hide-close-btn' }`} onClick={handleCLoseLanguageModal}>
-              <img src={closeBtn} alt='close btn' />
-            </button>
-              <div className='select-language-container'>
-                <div className='modal-headin-div'>
-                  <h3>Language</h3>
-                </div>
-                <div className='select-language-dropdown'>
-                  <h3>Select Language:</h3>
-                  <div className={`languages-drop-down ${lanDrop ? 'open-language-dropdown' : ''}`}>
-                    <div className='selected-language'>
-                      <span>
-                        <img src={usaFlag} alt='usa' onClick={handleLanguageDropDown} />
-                        <h3>English</h3>
-                      </span>
-                        <img src={arrowUpThin} alt='arrow' />
+              <div className='language-modal-containt-div'>
+                <button className={`close-language-modal ${changeLanguage ? '' : 'hide-close-btn' }`} onClick={handleCLoseLanguageModal}>
+                  <img src={closeBtn} alt='close btn' />
+                </button>
+                <div className='select-language-container'>
+                  <div className='modal-headin-div'>
+                    <h3>Language</h3>
+                  </div>
+                  <div className='select-language-dropdown'>
+                    <h3>Select Language:</h3>
+                    <div className={`languages-drop-down ${lanDrop ? 'open-language-dropdown' : ''}`}>
+                      <div className='selected-language' onClick={handleLanguageDropDown}>
+                        <span>
+                          <img src={currentSelectedCountryFlag || usaFlag} alt='usa' />
+                          <h3>{currentSelectedCountry || 'English'}</h3>
+                        </span>
+                          <img src={arrowUpThin} alt='arrow' className={lanDrop ? 'select-lan-arrow-up' : 'select-lan-arrow-down'} />
+                      </div>
+                      <div className='defrent-languages'>
+                        {languagesData.map((item, index) => (
+                            <div className={currentLenIndex === index ? 'single-selected-language' : 'single-language' } onClick={() => handleActiveIndex(index)} >
+                              <img src={item.icon} alt='icon' />
+                              <h3>{item.lan}</h3>
+                            </div>
+                        ))}
+                      </div>
                     </div>
-                    <div className='defrent-languages'>
-                      {languagesData.map((item, index) => (
-                          <div className={currentLenIndex === index ? 'single-selected-language' : 'single-language' } onClick={() => handleActiveIndex(index)} >
-                            <img src={item.icon} alt='icon' />
-                            <h3>{item.lan}</h3>
-                          </div>
-                      ))}
+                  </div>
+                </div>    
+                <div className='select-language-modal-detail-section'>
+                    <h3>Text Sample</h3>
+                    <p>
+                      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's 
+                      standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make 
+                      a type specimen book.
+                    </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Location Modal */}
+            <div className={`show-location-modal ${searchLocation ? 'increase-width-location-modal' : ''} `}>
+              <div className='location-modal-containt-div'>
+                <button className={`close-language-modal ${searchLocation ? '' : 'hide-close-btn' }`} onClick={handleCloseSearch}>
+                  <img src={closeBtn} alt='close btn' />
+                </button>
+                <div className='location-heading-and-search-bar-section'>
+                  <div className='location-modal-heading-container'>
+                    <span>
+                      <img src={deliverTo} alt='delivery' />
+                    </span>
+                    <h3>Delivery Location</h3>
+                  </div>
+                  <div className='location-search-and-icon'>
+                    <div className='location-searchand-button'>
+                      <input type='text' className='location-search-input'/>
+                      <button className='update-zip-btn'>Update Zip Code</button>
+                    </div>
+                    <div className='use-current-location'>
+                      <img src={locationModalIcon} alt='location' />
+                      <h3>Use Current Location</h3>
                     </div>
                   </div>
                 </div>
-              </div>    
+                <div className='location-modal-detail-section'>
+                  <h3>Why your zip code is important</h3>
+                  <p>
+                    You'll see only the products that deliver to your area, so you can shop for (and get) what you want!?
+                  </p>
+                </div>
+              </div>
             </div>
-          </div>
     </div>
     
   )

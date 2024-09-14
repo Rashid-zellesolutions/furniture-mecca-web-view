@@ -1,0 +1,86 @@
+.furniture-for-budget-main-secton{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: var(--global-padding);
+    gap: 25px;
+}
+
+.furniture-for-budget-heading-section{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.furniture-for-budget-heading-section h3{
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 38px;
+    color: var(--text-color);
+}
+
+.furniture-for-budget-heading-section p{
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 23px;
+    color: #000;
+}
+
+.furniture-for-budget-card{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.budget-furniturre-card{
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    background-color: #F6F5FF;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.budget-furniture-card-img{
+    width: 100%;
+    height: 390px;
+
+}
+
+.budget-furniture-card-img img{
+    height: auto;
+    width: auto;
+    object-fit: cover;
+}
+
+.budget-furniture-card-details{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+    gap: 10px;
+}
+
+.budget-furniture-card-details p{
+    font-size: 25px;
+    line-height: 38px;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.budget-furniture-card-details button{
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #000;
+    font-size: 15px;
+    line-height: 23px;
+    font-weight: 500;
+    cursor: pointer;
+}

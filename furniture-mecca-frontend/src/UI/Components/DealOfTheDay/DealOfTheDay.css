@@ -3,28 +3,29 @@
     width: 100%;
     height: auto;
     position: relative;
-    padding: 15px 10px;
+    padding: var(--global-padding);
     overflow: hidden;
 }
 
 .deal-of-the-day-border-heading{
     display: flex;
+    align-items: center;
     position: absolute;
     top: 0px;
-    left: 30px;
+    left: 90px;
     background-color: #fff;
     z-index: 9999;
-    padding: 5px 5px;
-    gap: 10px;
+    padding: 5px 10px;
+    gap: 20px;
     border: none;
     overflow: hidden;
     outline: none;
 }
 
 .deal-of-the-day-end-time{
-    display: none;
+    display: flex;
     background-color: #C61B1A;
-    height: 30px;
+    height: 43px;
     width: 235px;
     align-items: center;
     justify-content: center;
@@ -40,17 +41,18 @@
 }
 
 .deal-of-the-day-border-heading p{
-    font-size: 15px;
+    font-size: 25px;
     font-weight: 700;
-    line-height: 23px;
-    color: #C61B1A;
+    line-height: 38px;
+    color: #000;
 }
 
 .deal-of-the-day-outer-container{
     width: 100%;
     border: 2px solid #C61B1A;
     border-radius: 8px;
-    padding:25px 10px 10px 10px;
+    /* padding:25px 57px 10px 57px; */
+    padding: 60px 40px 10px 40px;
     position: relative;
     overflow: hidden;
 }
@@ -106,7 +108,7 @@
 }
 
 
-@media only screen and (min-width: 781px) and (max-width: 1024px){
+/* @media only screen and (min-width: 781px) and (max-width: 1024px){
     .deal-of-the-day-main-containe{
         padding: var(--global-padding);
     }
@@ -117,9 +119,9 @@
     .deal-of-the-day-border-heading{left: 50px;}
     .deal-of-the-day-end-time{display: flex;}
 
-}
+} */
 
-@media only screen and (min-width: 1025px){
+/* @media only screen and (min-width: 1025px){
     .deal-of-the-day-main-container{
         padding: var(--global-padding) !important;
     }
@@ -134,9 +136,8 @@
         width: 100%;
         border: 2px solid #C61B1A;
         border-radius: 8px;
-        /* padding: 40px 40px 20px 40px; */
         padding: 40px 55px 20px 55px;
         position: relative;
         overflow: hidden;
     }
-}
+} */

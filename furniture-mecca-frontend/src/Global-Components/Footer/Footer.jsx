@@ -1,15 +1,18 @@
 import React from 'react'
 import './Footer.css';
 import { Link } from 'react-router-dom';
+import ownerTag from '../../Assets/Logo/owner-tag.png';
 import FooterNav from './FooterNav/FooterNav';
 import footerRedFurnitureMecca from '../../Assets/global-images/furniture-mecca-red.jpeg'
-import facebook from '../../Assets/icons/facebook.png'
-import tiktok from '../../Assets/icons/tiktok.png'
-import insta from '../../Assets/icons/instagram.png'
-import youtube from '../../Assets/icons/youtube.png'
+import facebook from '../../Assets/icons/facebook-white.png'
+import tiktok from '../../Assets/icons/tiktok-white.png'
+import insta from '../../Assets/icons/insta-white.png'
+import youtube from '../../Assets/icons/youtube-white.png'
 import location from '../../Assets/icons/location.png'
 import call from '../../Assets/icons/call.png'
 import mail from '../../Assets/icons/mail.png'
+import clock from '../../Assets/icons/white-clock.png'
+import calander from '../../Assets/icons/white-calander.png'
 import TabFooter from '../TabAndMobileFooter/TabFooter';
 import filledStart from '../../Assets/icons/Star 3.png';
 import unfilledStart from '../../Assets/icons/Star 5.png';
@@ -192,6 +195,13 @@ const Footer = ({notLandingPage}) => {
         {icon: unfilledStart},
     ]
 
+    const nearStoreDetails = [
+        {icon: location, details: 'E Venango St, Philadelphia, PA 19134 Philadelphia, Pennsylvania, 101'},
+        {icon: call, details: '267 639 6801'},
+        {icon: clock, details: '9:30 AM - 6:30 PM'},
+        {icon: calander, details: 'Monday - Sunday'},
+    ]
+
   return (
     <>
         <div className='footer-main-container'>
@@ -205,7 +215,92 @@ const Footer = ({notLandingPage}) => {
                 </div>
                 })}
             </div>
-            <div className='footer-contact-section'>
+            <div className='footer-second-contant-section'>
+                <div className='footer-left-section'>
+                    <div className='left-section-contact'>
+                        <div className='left-section-social-icons-div'>
+                            {socialIcons.map((items, index) => (
+                                <a href={items.link}>
+                                    <img src={items.icon} alt='icon' />
+                                </a>
+                            ))}
+                        </div>
+                        <div className='footer-owner-tag'>
+                            <img src={ownerTag} alt='owner tag' />
+                            <div className='owner-tag-info'>
+                                <p className='owner-tag-name'>FURNITURE MECCA</p>
+                                <div className='tag-rating-stars'>
+                                    {stars.map((item, index) => (
+                                        <img key={index} src={item.icon} alt='star' />
+                                    ))}
+                                </div>
+                                <p className='owner-tag-review'>847 Google Review</p>
+                            </div>
+                        </div>
+                        <div className='footer-left-contact-section'>
+                            {locationPhoneMail.map((item, index) => (
+                                <span key={index}>
+                                    <img src={item.icon} alt='icon' />
+                                    <p>{item.name}</p>
+                                </span>
+                            ))}
+                        </div>
+                    </div>
+                    <div className='left-section-location-section'>
+                        <h3 className='footer-location-section'>Nearest Store</h3>
+                        <div className='near-store-containt-section'>
+                            <div className='near-store-image-div'>
+                                <img src={nearStore} alt='near store image' />
+                            </div>
+                            <div className='near-store-details-section'>
+                                {nearStoreDetails.map((item, index) => (
+                                    <span>
+                                        <img src={item.icon} alt='icon' />
+                                        <p>{item.details}</p>
+                                    </span>
+                                ))}
+                            </div>
+                            <div className='appointment-and-outlet-div'>
+                                <a href='#'>
+                                    <p>Outlet</p>
+                                </a>
+                                <a href='#'>
+                                    <p>Directions</p>
+                                </a>
+                                <a href='#'>
+                                    <p>Book an Appointment</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className='footer-right-section'>
+                    <div className={`footer-right-get-scoop ${notLandingPage ? 'show-footer-get-the-scoop' : ''}`}>
+                        <h3>Get The Scoop</h3>
+                        <div className='footer-get-scoop-and-conditions'>
+                            <div className='footer-get-scoop-input-search'>
+                                <input type='text' placeholder='Email' />
+                                <button>Sign Me Up!</button>
+                            </div>
+                            <p>By signing up, you agree to our  Privacy Policy  and  Terms of Use.</p>
+                        </div>
+                    </div>
+                    <div className='right-section-care-and-about'>
+                        {footerCustomerCareAndAbout.map((item, index) => (
+                            <div key={index} className='footer-costumer-care-and-about'>
+                                <h3>{item.heading}</h3>
+                                {item.navLinks.map((navItem, inn) => (
+                                    <a key={inn} href={navItem.link} className='about-and-care-link'>
+                                        {navItem.name}
+                                    </a>
+                                ))}
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </div>
+
+            {/* <div className='footer-contact-section'>
                 <div className='footer-social-icon-and-near-store-details'>
                 <div className='footer-social-and-address-container'>
                     <div className='social-icons'>
@@ -234,8 +329,6 @@ const Footer = ({notLandingPage}) => {
                         })}
                     </div>
                 </div>
-                {/* <div className='empty-space-div'></div> */}
-                {/* <div className='footer-customer-care-and-about-furniture-mecca'> */}
                     <div className='footer-nearby-store'>
                         <h3>Nearest Store</h3>
                         <div className='nearby-store-details'>
@@ -267,8 +360,6 @@ const Footer = ({notLandingPage}) => {
                     </div>
 
                     </div>
-                    {/* <div className='footer-get-scoop-and-about'>
-                        <div className='footer-about-links-section'> */}
                         <div className='footer-get-scoop-and-about'>
                             <div className={`footer-get-the-scoop-main-section ${notLandingPage ? 'show-footer-scoop' : ''}`}>
                                 <h3>Get the Scoop</h3>
@@ -292,21 +383,7 @@ const Footer = ({notLandingPage}) => {
                                 })}
                             </div>
                         </div>
-                            
-                        {/* </div>
-                    
-                    </div> */}
-                    {/* {footerCustomerCareAndAbout.map((items, index) => {
-                        return <div key={index} className='footer-care-and-about'>
-                            <h3>{items.heading}</h3>
-                            {items.navLinks.map((innerItem, innerIndex) => {
-                                return <Link className='footer-care-and-about-links' key={innerIndex} to={innerItem}>{innerItem.name}</Link>
-                            })}
-                        </div>
-                    })} */}
-                    
-                {/* </div> */}
-            </div>
+            </div> */}
             <div className='footer-rights-reserved-container'>
                 <p>2020 - 2024 Furniture Mecca. All Rights Reserved</p>
                 <p>

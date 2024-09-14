@@ -6,10 +6,8 @@
 /* App.css */
 .scroll-to-top-button {
     position: fixed;
-    bottom: 25px;
+    bottom: 60px;
     right: 40px;
-    /* width: 30px; */
-    /* height: 30px; */
     background-color: transparent;
     color: var(--active-nav-item-color);
     border: none;

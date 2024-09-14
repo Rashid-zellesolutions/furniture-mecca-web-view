@@ -48,6 +48,8 @@ import FinanceBannerSlider from '../../Components/FinanceBannerSlider/FinanceBan
 import Comparision from '../../Components/Comparision/Comparision';
 import DealOfTheDay from '../../Components/DealOfTheDay/DealOfTheDay';
 import TrendingNow from '../../Components/TrendingNow/TrendingNow';
+import InstaTwoImageGallery from '../../Components/InstaTwoImageGallery/InstaTwoImageGallery';
+import FurnitureForBudget from '../../Components/FurnitureForBudget/FurnitureForBudget';
 
 
 const Home = () => {
@@ -64,6 +66,16 @@ const Home = () => {
         productImagePrice: '$999', productImageAbout: "Furniture Mecca everyday low price", img : vikingImage, 
         para: `On-trend and feature-packed with storage, charging ports, 
         and a reading light? There’s no better place to relax than Viking!`
+    },
+    {  heading: 'Journey', btnText: 'Shop Journey', productImageHeading: 'Journey Power Reclining Sofa', 
+      productImagePrice: '$999', productImageAbout: "Furniture Mecca everyday low price", img : tuxedoChair, 
+        para: `Customize your journey to comfort town with this collection’s adjustable 
+        headrest, zero-gravity recline, and charging ports!`
+    },
+    {  heading: 'Journey', btnText: 'Shop Journey', productImageHeading: 'Journey Power Reclining Sofa', 
+      productImagePrice: '$999', productImageAbout: "Furniture Mecca everyday low price", img : tuxedoChair, 
+        para: `Customize your journey to comfort town with this collection’s adjustable 
+        headrest, zero-gravity recline, and charging ports!`
     },
     {  heading: 'Journey', btnText: 'Shop Journey', productImageHeading: 'Journey Power Reclining Sofa', 
       productImagePrice: '$999', productImageAbout: "Furniture Mecca everyday low price", img : tuxedoChair, 
@@ -102,15 +114,17 @@ const categoryCardData = [
       <FinanceBannerSlider />
       <BestSellerSlider />
       {/* <FurnitureProduct /> */}
-      <ImageHeading img={HeroImage} mobileViewImage={mobileViewHeroImage} alt={'bed image'} />
-      <ProductSlider cardData={productCardData} />
+      {/* <ImageHeading img={HeroImage} mobileViewImage={mobileViewHeroImage} alt={'bed image'} /> */}
       <Comparision />
+      <ProductSlider cardData={productCardData} />
       {/* <DealDayCountDown /> */}
       <DealOfTheDay />
+      <FurnitureForBudget />
       <GetTheScop />
       <BlogSlider />
       <InstaGallery />
       {/* <CustomerServicePanel /> */}
+      {/* <InstaTwoImageGallery /> */}
     </div>
   )
 }

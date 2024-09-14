@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import './BestSellerSlider.css';
-import BestSellerSliderMainBanner from '../../../Assets/Furniture Mecca/Landing Page/best seller products/Bedroom Side Banners 2 (2).png';
-import bestSellerMainSecondImage from '../../../Assets/Furniture Mecca/Landing Page/best seller products/Bedroom Side Banners 1.png';
+import BestSellerSliderMainBanner from '../../../Assets/Furniture Mecca/Landing Page/best seller products/Home Page Banner 396x595.jpg';
+import bestSellerMainSecondImage from '../../../Assets/Furniture Mecca/Landing Page/best seller products/Bedroom Side Banners 2 (2).png';
 import heartIcon from '../../../Assets/icons/like.png'
 import { Link, useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
@@ -57,7 +57,7 @@ const BestSellerSlider = () => {
         setCurrentIndex(index);
         setLoading(true); // Show loader
         setTimeout(() => {
-            setActiveItem(index);
+            // setActiveItem(index);
             setLoading(false); // Hide loader after 2 seconds
         }, 1000);
     }

@@ -2,9 +2,9 @@ import React, {useRef, useEffect, useState} from 'react';
 import './DealOfTheDayCard.css';
 import testImage from '../../../../Assets/Furniture Mecca/product page/frequently bought/MN600__04-300x200 1.png'
 import star from '../../../../Assets/icons/Star 19.png'
-import cartIcon from '../../../../Assets/icons/big-black-cart.png';
-import heartIcon from '../../../../Assets/icons/red-heart-without-circle.png';
-import combinedArrows from '../../../../Assets/icons/combined-arrow-icon.png'
+import cartIcon from '../../../../Assets/icons/cart-vector.png';
+import heartIcon from '../../../../Assets/icons/heart-vector.png';
+import combinedArrows from '../../../../Assets/icons/multi-arrow-vector.png'
 import leftArrow from '../../../../Assets/icons/arrow-left-white.png';
 import rightArrow from '../../../../Assets/icons/right-arrow-white.png';
 

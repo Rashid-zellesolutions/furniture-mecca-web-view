@@ -5,6 +5,8 @@ import livingRoomBlogImage from '../../../Assets/Furniture Mecca/Landing Page/bl
 import mattressBlogImage from '../../../Assets/Furniture Mecca/Landing Page/blogs/Perks-Of-Using-High-Quality-Mattresses-For-Sleeping 1.png';
 import CustomSlider from '../CostumSlider/CostumSlider';
 import BlogCard from './BlogCard';
+import leftArrow from '../../../Assets/icons/arrow-left-white.png';
+import rightArrow from '../../../Assets/icons/right-arrow-white.png';
 
 const BlogSlider = () => {
 
@@ -21,10 +23,21 @@ const BlogSlider = () => {
         {img: diningRoomBlogImage, category: 'Dining Room 10', title: 'Benifits Of Accent Furniture', createdBy: 'Furniture Mecca', comments: '4 comments'},
     ]
 
-    const slides = blogsData.map((item, index) => (
-        <BlogCard key={index} img={item.img} category={item.category} title={item.title} createdBy={item.createdBy} comments={item.comments} />
-      ));
+    // const slides = blogsData.map((item, index) => (
+    //     <BlogCard key={index} img={item.img} category={item.category} title={item.title} createdBy={item.createdBy} comments={item.comments} />
+    //   ));
+      // products slider script
+    const [currentIndex, setCurrentIndex] = useState(0)
+    const itemsToShow = 1; // Number of items to show at a time
+    const handlePrev = () => {
+        setCurrentIndex((prevIndex) => Math.max(prevIndex - itemsToShow, 0));
+    };
 
+    const handleNext = () => {
+        setCurrentIndex((prevIndex) => Math.min(prevIndex + itemsToShow, blogsData.length - itemsToShow));
+    };
+
+    const centerStyle = { transform: `translateX(-${currentIndex * (440 / itemsToShow)}px)` };
     
 
     return (
@@ -35,14 +48,32 @@ const BlogSlider = () => {
                 comfort, and functionality. Discover the enchanting stories behind every furnishing at The Furniture Depots,
                 turning your home into a haven filled with both charm and character.
             </p>
-            <div className='blog-cards-container'>
+
+            <div className='blog-main-outer-container'>
+                <button className='blog-slider-arrow deal-of-the-day-arrow-left' onClick={handlePrev} disabled={currentIndex === 0}>
+                    <img src={leftArrow} alt='arrow' />
+                </button>
+                <div className='deal-of-the-day-inner-container'>
+                    <div className='deal-of-the-day-products' style={centerStyle}>
+                    {blogsData.map((item, index) => (
+                        <div className='blog-product-slider'>
+                        <BlogCard key={index} img={item.img} category={item.category} title={item.title} createdBy={item.createdBy} comments={item.comments} />
+                        </div>
+                    ))}
+                    </div>
+                </div>
+                <button className='blog-slider-arrow deal-of-the-day-arrow-rigth' onClick={handleNext} disabled={currentIndex >= blogsData.length - itemsToShow}>
+                    <img src={rightArrow} alt='arrow' />
+                </button>
+            </div>
+            {/* <div className='blog-cards-container'>
                  <CustomSlider
                     cards={slides}
                     visibleCards={3}
                     showArrows={true}
                     showDots={true}
                 />
-            </div>
+            </div> */}
         </div>
     );
 }
