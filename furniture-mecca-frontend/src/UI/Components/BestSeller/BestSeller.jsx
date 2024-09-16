@@ -90,9 +90,9 @@ const BestSeller = () => {
             </div> */}
             <div className='products-slider-container'>
                 {loading && <Loader />} {/* Show loader when loading */}
-                <button className='product-slider-arrow left' onClick={handlePrevClick}>
+                {/* <button className='product-slider-arrow left' onClick={handlePrevClick}>
                     <img src={arrowLeft} alt="left" />
-                </button>
+                </button> */}
                 <div className='best-seller-slider' style={{ transform: `translateX(${offset}%)` }} >
                     {productCardData.slice(currentIndex * itemsPerPage, (currentIndex + 1) * itemsPerPage).map((item, index) => (
                         <div key={index} className='best-seller-product-card-div' onClick={() => handleProductClick(item)}>
@@ -114,9 +114,9 @@ const BestSeller = () => {
                         </div>
                     ))}
                 </div>
-                <button className='product-slider-arrow right' onClick={handleNextClick}>
+                {/* <button className='product-slider-arrow right' onClick={handleNextClick}>
                     <img src={arrowRight} alt="right" />
-                </button>
+                </button> */}
             </div> 
         </div>
         <div className='best-seller-banners-container'>

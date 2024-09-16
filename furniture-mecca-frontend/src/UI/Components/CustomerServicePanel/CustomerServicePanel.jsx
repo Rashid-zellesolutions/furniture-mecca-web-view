@@ -8,7 +8,7 @@ import finance from '../../../Assets/icons/finance.png';
 import tools from '../../../Assets/icons/tools.png';
 import help from '../../../Assets/icons/help.png';
 
-const CustomerServicePanel = () => {
+const CustomerServicePanel = ({currentPath}) => {
 
     const [expendedCard, setExpendedCard] = useState(null)
     const featuresData = [
@@ -21,7 +21,7 @@ const CustomerServicePanel = () => {
     
 
   return (
-    <div className='customer-services-panel-main-container'>
+    <div className={`customer-services-panel-main-container`}> 
       <div className='customer-services-container'>
         <h3>My Team is Here to Help </h3>
         <p>Reach out by chat  or phone (215 352 1600)</p>

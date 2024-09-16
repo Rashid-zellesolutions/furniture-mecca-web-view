@@ -11,6 +11,7 @@ import sofaAndLoveSeat from '../../../Assets/Furniture Mecca/product archive pag
 import sectionalSets from '../../../Assets/Furniture Mecca/product archive page/breadcrums/sectional-set.png'
 import InstaGallery from '../../Components/InstaGallery/InstaGallery';
 import RelatedCategories from '../../Components/Related-categories-Tags/RelatedCategories';
+import InstaTwoImageGallery from '../../Components/InstaTwoImageGallery/InstaTwoImageGallery';
 
 const ProductArchive = () => {
   // Breadcrup component data
@@ -34,7 +35,8 @@ const ProductArchive = () => {
         <RelatedCategories />
         <FAQ />
         {/* <CategoriesGetScop isTrue={false} /> */}
-        <InstaGallery />
+        {/* <InstaGallery /> */}
+        <InstaTwoImageGallery />
         {/* <CustomerServicePanel /> */}
     </div>
   )

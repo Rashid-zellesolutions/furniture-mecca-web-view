@@ -122,7 +122,7 @@ function App() {
 
           <Route path='/single-product/:id' element={<SingleProduct  />} />
           <Route path='/add-to-cart' element={<AddToCart />} />
-          <Route path='/check-page' element={<ContinueCart />} />
+          {/* <Route path='/check-page' element={<ContinueCart />} /> */}
           <Route path='/summery-page' element={<Summery />} />
           <Route path='*' element={<PageNotFound />} />
         </Routes>

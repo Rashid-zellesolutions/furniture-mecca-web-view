@@ -26,6 +26,7 @@ const FurnitureForBudget = () => {
                         <p>{items.sale}</p>
                         <button>
                             {items.shopNow}
+                            <div className='shop-now-btn-under-line'></div>
                         </button>
                     </div>
                 </div>

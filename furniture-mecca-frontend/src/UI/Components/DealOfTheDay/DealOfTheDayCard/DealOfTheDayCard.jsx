@@ -127,7 +127,7 @@ const DealOfTheDayCard = ({productName}) => {
           ))}
         </div> 
       </div>
-      <div className='deal-of-the-day-product-under-line'></div>
+      {/* <div className='deal-of-the-day-product-under-line'></div> */}
     </div>
   );
 };

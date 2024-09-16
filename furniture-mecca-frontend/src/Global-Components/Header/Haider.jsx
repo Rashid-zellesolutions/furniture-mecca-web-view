@@ -7,7 +7,7 @@ import HeartIcon from '../../Assets/icons/like.png';
 import cartIcon from '../../Assets/icons/cart2.png';
 import profileIcon from '../../Assets/icons/profile.png'
 import deliverTo from '../../Assets/icons/delivery.png'
-import locationModalIcon from '../../Assets/icons/location-charcol-icon.png'
+import locationModalIcon from '../../Assets/icons/location.png'
 import locationIcon from '../../Assets/icons/location-red.png';
 import navToggler from '../../Assets/icons/Union.png'
 import searchRed from '../../Assets/icons/search-red.png'

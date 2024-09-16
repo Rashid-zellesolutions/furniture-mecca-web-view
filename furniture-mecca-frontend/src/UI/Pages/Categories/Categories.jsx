@@ -19,7 +19,7 @@ const Categories = ({categoriesMainImage, categoryCartTitle, categoryCardData, n
       <LatestModulerBanner customWidth={false} showBanners={showPromotionsBaneers} mainImgShow={true} mainImage={categoriesMainImage} />
       <Category title={categoryCartTitle} categoryData={categoryCardData} />
       <BestSeller />
-      <DealOfDay />
+      {/* <DealOfDay /> */}
       <NewArrival /> 
       <CategoriesGetScop isTrue={true} />
       {/* <LatestModulerBanner customWidth={false} showBanners={true} paddingTop={true} mainImgShow={false} /> */}

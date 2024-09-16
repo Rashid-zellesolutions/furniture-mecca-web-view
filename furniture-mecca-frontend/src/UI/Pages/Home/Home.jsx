@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css';
 import Category from '../../Components/Category/Category';
@@ -50,9 +50,15 @@ import DealOfTheDay from '../../Components/DealOfTheDay/DealOfTheDay';
 import TrendingNow from '../../Components/TrendingNow/TrendingNow';
 import InstaTwoImageGallery from '../../Components/InstaTwoImageGallery/InstaTwoImageGallery';
 import FurnitureForBudget from '../../Components/FurnitureForBudget/FurnitureForBudget';
+import { useLocation } from 'react-router-dom';
 
 
 const Home = () => {
+  const [currentUrl, setCurrentUrl] = useState('/');
+  const location = useLocation();
+  useEffect(() => {
+    setCurrentUrl(location.pathname);
+  }, [location]);
   
   
   const productCardData = [
@@ -123,7 +129,7 @@ const categoryCardData = [
       <GetTheScop />
       <BlogSlider />
       <InstaGallery />
-      {/* <CustomerServicePanel /> */}
+      {/* <CustomerServicePanel />  */}
       {/* <InstaTwoImageGallery /> */}
     </div>
   )

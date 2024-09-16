@@ -34,14 +34,15 @@
     width: 100%;
     align-items: center;
     justify-content: space-between;
+    gap: 30px;
 
 }
 
 .budget-furniturre-card{
     display: flex;
     flex-direction: column;
-    width: 400px;
-    background-color: #F6F5FF;
+    width: 420px;
+    background-color: #f5fff8;
     align-items: center;
     justify-content: center;
     cursor: pointer;
@@ -50,13 +51,23 @@
 .budget-furniture-card-img{
     width: 100%;
     height: 390px;
-
+    object-fit: cover;
+    overflow: hidden;
+    /* transition: transform 0.5s ease;
+    position: relative; */
 }
+
+
 
 .budget-furniture-card-img img{
     height: auto;
-    width: auto;
+    width: 100%;
     object-fit: cover;
+    transition: transform 1.2s ease;
+}
+
+.budget-furniture-card-img:hover img{
+    transform: scale(1.1);
 }
 
 .budget-furniture-card-details{
@@ -66,6 +77,7 @@
     justify-content: center;
     padding: 25px;
     gap: 10px;
+    position: relative;
 }
 
 .budget-furniture-card-details p{
@@ -78,9 +90,43 @@
 .budget-furniture-card-details button{
     background-color: transparent;
     border: none;
-    border-bottom: 1px solid #000;
+    /* border-bottom: 1px solid #000; */
     font-size: 15px;
     line-height: 23px;
     font-weight: 500;
     cursor: pointer;
+    position: relative;
 }
+
+.budget-furniture-card-details button::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 2px;
+    background-color: #000;
+    transition: left 0.5s ease, background-color 0.5s ease, width 0.5s;
+}
+
+/* .shop-now-btn-under-line{
+    width: 100%;
+    height: 2px;
+    background-color: #000;
+} */
+
+.budget-furniture-card-details button:hover{
+    color: #C61B1A;
+}
+
+.budget-furniture-card-details button:hover::after{
+    background-color: #C61B1A;
+    width: 50%;
+    left: 25%;
+}
+
+/* .budget-furniture-card-details button:hover .shop-now-btn-under-line{
+    background-color: #C61B1A;
+    width: 50%;
+} */
+

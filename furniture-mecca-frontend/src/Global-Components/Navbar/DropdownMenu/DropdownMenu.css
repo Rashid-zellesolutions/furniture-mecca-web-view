@@ -80,6 +80,7 @@
     width: 80%;
     padding: 10px 0px;
     gap: 15px;
+    justify-content: space-between;
     position: relative;
 }
 
@@ -113,6 +114,7 @@
     font-size: 14px;
     line-height: 16px;
     font-weight: 500;
+    letter-spacing: normal;
 }
 
 /* @media only screen and (max-width: 1300px){

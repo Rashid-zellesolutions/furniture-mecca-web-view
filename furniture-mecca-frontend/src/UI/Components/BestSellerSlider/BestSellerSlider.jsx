@@ -18,7 +18,6 @@ const BestSellerSlider = () => {
         return () => window.removeEventListener("resize", handleResizer)
     } )
 
-    // console.log("browser width", width);
 
     const bestSellerNav = ['Living Room', 'Bedroom', 'Dining Room']
     
@@ -43,35 +42,30 @@ const BestSellerSlider = () => {
     
     // product slice to show 6 product maxx
 
-    let itemPerPage = productCardData.length;
-    if((width > 480) && (width < 995 )){
-        itemPerPage = 4;
-    }else if(width > 994){
-        itemPerPage = 6
-    }
-    const [currentIndex, setCurrentIndex] = useState(0);
+    
 
-    const totalPages = Math.ceil(productCardData.length / itemPerPage);
 
-    const handleDotsClick = (index) => {
+    const cardsPerPage = 6; // Number of cards per page
+    const totalPages = Math.ceil(productCardData.length / cardsPerPage); // Total number of pages
+    const [currentIndex, setCurrentIndex] = useState(0); // Current page index
+
+    // Helper function to get the cards for the current page
+    const getCurrentCards = () => {
+        const start = currentIndex * cardsPerPage;
+        return productCardData.slice(start, start + cardsPerPage);
+    };
+
+    // Handle page change
+    const handlePageChange = (index) => {
         setCurrentIndex(index);
-        setLoading(true); // Show loader
-        setTimeout(() => {
-            // setActiveItem(index);
-            setLoading(false); // Hide loader after 2 seconds
-        }, 1000);
-    }
-    console.log("products length before", productCardData.length)
-
-    const displayProducts = productCardData.slice(currentIndex * itemPerPage, (currentIndex + 1) * itemPerPage);
-
+    };
 
 
     
 
 
   return (
-    <div className="best-seller-slider-container">
+    <div className="best-seller-slider-container"> 
         <div className='best-seller-imaage-and-cards'>
         <div className='best-seller-slider-main-banner'>
             <img src={activeItem === 0 ?  BestSellerSliderMainBanner : bestSellerMainSecondImage} alt='main banner' />
@@ -95,12 +89,22 @@ const BestSellerSlider = () => {
                 <img src={activeItem === 0 ?  BestSellerSliderMainBanner : bestSellerMainSecondImage} alt='main banner' />
             </div>
             <div className='products-slider-container'>
-                {loading && <Loader />} {/* Show loader when loading */}
-                <div className='best-seller-slider'>
-                    {/* {productCardData.slice(currentIndex * itemsPerPage, (currentIndex + 1) * itemsPerPage).map((item, index) => ( */}
-                    {displayProducts.map((item, index) => (
+                <div className='best-seller-slider' 
+               style={{
+                transform: `translateX(-${currentIndex * 100}%)`, // Move slider to show current page
+                // width: `${totalPages * 30}%`, // Width should cover all pages
+                display: 'flex',
+                transition: 'transform 0.5s ease',
+            }}
+                >
+                    {getCurrentCards().map((item, index) => (
                         <div key={index} className='best-seller-product-card-div' /* onClick={() => handleProductClick(item)} */ >
-                            <div className='best-seller-product-main-image-div'>
+                            <div className='best-seller-product-main-image-div'
+                            // style={{
+                            //     flex: `0 0 ${30 / cardsPerPage}%`, // Each card takes up 1/6th of the width
+                            //     boxSizing: 'border-box',
+                            // }}
+                            >
                                 <img src={item.mainImage} alt='img' className='best-seller-product-main-image' />
                             </div>
                             <span className='product-rating-span'>
@@ -120,7 +124,6 @@ const BestSellerSlider = () => {
                         </div>
                     ))}
                 </div>
-                
             </div>
         </div>
         </div>
@@ -129,7 +132,7 @@ const BestSellerSlider = () => {
                 <span 
                     key={index} 
                     className={`dot ${currentIndex === index ? 'active' : ''}`} 
-                    onClick={() => handleDotsClick(index)}
+                    onClick={() => handlePageChange(index)}
                 ></span>
             ))}
         </div>

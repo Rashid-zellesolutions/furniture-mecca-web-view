@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    padding: 50px 60px;
+    padding: 15px 60px;
     gap: 5px;
 }
 
@@ -644,9 +644,10 @@ label {
     width: 100%;
     flex-wrap: wrap;
     /* background-color: orange; */
-    overflow-y: auto;
+    /* overflow-y: auto; */
     overflow-x: hidden;
-    height: 100vh;
+    /* height: 100vh; */
+    height: auto;
 }
 
 .product-main::-webkit-scrollbar{display: none;}

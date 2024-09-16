@@ -10,42 +10,40 @@ const BlogCard = ({img, category, title, createdBy, comments}) => {
 
   return (
     <>
-                        <div className='blog-card'>
-                            <div className='blog-card-image'>
-                                <div className='blog-date-tag'>
-                                    <p>30</p>
-                                    <p>May</p>
-                                </div>
-                                <img src={img} alt='img' />
-                            </div>
-                            <div className='blog-arther-details'>
-                                <p>{category}</p>
-                                <h3>{title}</h3>
-                                <div className='blog-created-by-and-comments'>
-                                    <p className='blog-star-rating'>
-                                        {stars.map((item) => (
-                                            <img src={item} alt='star' />
-                                        ))}
-                                        (200)
-                                    </p>
-                                    <hr />
-                                    <p>{comments}</p>
-                                </div>
-                            </div>
-                            <div className='blog-para-and-see-more'>
-                                <p>
-                                    In mattis scelerisque magna, ut tincidunt ex. Quisque nibh urna, pretium in tristique in, 
-                                    bibendum sed libero. Pellentesque mauris nunc, pretium non erat non,...
-                                </p>
-                                <button>
-                                    Read more
-                                    <img src={rightArrowWithooutOutline} alt='right arrow' />
-                                </button>
-                            </div>
-                        </div>
-                    {/* ))} */}
-                {/* // </div> */}
-                </>
+        <div className='blog-card'>
+            <div className='blog-card-image'>
+                <div className='blog-date-tag'>
+                    <p>30</p>
+                    <p>May</p>
+                </div>
+                <img src={img} alt='img' />
+            </div>
+            <div className='blog-arther-details'>
+                <p>{category}</p>
+                <h3>{title}</h3>
+                <div className='blog-created-by-and-comments'>
+                    <p className='blog-star-rating'>
+                        {stars.map((item) => (
+                            <img src={item} alt='star' />
+                        ))}
+                        (200)
+                    </p>
+                    <hr />
+                    <p>{comments}</p>
+                </div>
+            </div>
+            <div className='blog-para-and-see-more'>
+                <p>
+                    In mattis scelerisque magna, ut tincidunt ex. Quisque nibh urna, pretium in tristique in, 
+                    bibendum sed libero. Pellentesque mauris nunc, pretium non erat non,...
+                </p>
+                <button>
+                    Read more
+                    <img src={rightArrowWithooutOutline} alt='right arrow' />
+                </button>
+            </div>
+        </div> 
+    </>
   )
 }
 

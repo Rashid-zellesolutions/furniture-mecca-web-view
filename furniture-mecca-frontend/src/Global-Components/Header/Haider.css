@@ -982,7 +982,7 @@
 }
 
 .update-zip-btn{
-    background-color: #C61B1A;
+    background-color: var(--text-color);
     width: 32%;
     height: 48px;
     display: flex;
@@ -1002,19 +1002,27 @@
     display: flex;
     gap: 5px;
     align-items: center;
-    justify-content: center;
-    width: 105px;
+    width: max-content;
     height: 40px;
     background-color: #fff;
     border-radius: 4px;
     cursor: pointer;
+    padding: 0 10px;
+    color: #fff;
+    background-color: #C61B1A;
+}
+
+.use-current-location img{
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
 }
 
 .use-current-location h3{
-    font-size: 10px;
-    font-weight: 500;
+    font-size: 12px;
+    font-weight: 600;
     line-height: 15px;
-    color: var(--text-color);
+    color: #fff;
 }
 
 .location-modal-detail-section{

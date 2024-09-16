@@ -17,6 +17,7 @@ import { useLocation, useParams } from 'react-router-dom'
 import InstaGallery from '../../Components/InstaGallery/InstaGallery'
 import Shopvia from '../../Components/ShopViaBanner/Shopvia'
 import { useDispatch } from 'react-redux'
+import InstaTwoImageGallery from '../../Components/InstaTwoImageGallery/InstaTwoImageGallery'
 
 const SingleProduct = () => {
   const location = useLocation();
@@ -59,6 +60,7 @@ const SingleProduct = () => {
         <OutdoorFaves />
         <ShipBanner bannerImg={attentionBanner} paddindTrue={true} />
         <InstaGallery />
+        <InstaTwoImageGallery />
         {/* <CategoriesGetScop /> */}
         {/* <CustomerServicePanel /> */}
     </div>

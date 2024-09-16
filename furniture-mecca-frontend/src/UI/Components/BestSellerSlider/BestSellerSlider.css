@@ -76,16 +76,18 @@
 
 .products-slider-container{
     position: relative;
-    overflow: hidden; /* Hide overflow to only show visible cards */
-    width: 100%; /* Adjust as needed */
+    overflow: hidden;
+    width: 100%; 
     padding: 2px;
 }
 
 
 .best-seller-slider{
     display: flex;
+    transition: transform 0.5s ease-in-out;
     flex-wrap: wrap;
     gap: 10px;
+    width: 100%;
 }
 
 .product-slider-arrow{
@@ -113,9 +115,10 @@
 
 .best-seller-product-card-div{
     padding: 15px;
-    box-shadow: 2px 2px 4px 0px #00000026;
+    /* box-shadow: 2px 2px 4px 0px #00000026; */
     box-sizing: border-box;
-    flex: 1 1 30%;
+    flex: 1 0 30%; 
+    width: calc(100% / 3);
     cursor: pointer;
     border: 1px solid #ddd;
 }
@@ -164,6 +167,7 @@
     display: flex;
     width: 100%;
     align-items: center;
+    /* margin-bottom: 20px; */
     justify-content: space-between;
 }
 
