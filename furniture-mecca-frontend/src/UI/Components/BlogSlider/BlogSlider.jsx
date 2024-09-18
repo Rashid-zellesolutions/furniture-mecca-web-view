@@ -45,7 +45,7 @@ const BlogSlider = () => {
             breakpoint: 1024,
             settings: {
               slidesToShow: 2,
-              slidesToScroll: 2,
+              slidesToScroll: 1,
               infinite: false,
               dots: false
             }
@@ -54,7 +54,7 @@ const BlogSlider = () => {
             breakpoint: 600,
             settings: {
               slidesToShow: 2,
-              slidesToScroll: 2,
+              slidesToScroll: 1,
               initialSlide: 2
             }
           },
@@ -113,40 +113,12 @@ const BlogSlider = () => {
             <div className='blogs-slider-main-container'>
             <   Slider {...settings}>
                     {blogsData.map((item, index) => (
-                        <div key={index} className='blog-cards-container'>
-                            <BlogCard key={index} img={item.img} category={item.category} title={truncateTitle(item.title, maxLength)} createdBy={item.createdBy} comments={item.comments} />
-                        </div>
+                      <div key={index} className='blog-cards-container'>
+                        <BlogCard key={index} img={item.img} category={item.category} title={truncateTitle(item.title, maxLength)} createdBy={item.createdBy} comments={item.comments} />
+                      </div>
                     ))}
                 </Slider>
             </div>
-
-            {/* <div className='blog-main-outer-container'> */}
-                {/* <Slider {...settings}>
-                    {blogsData.map((item, index) => (
-                        <div key={index} className='pp-card'>
-                            <BlogCard key={index} img={item.img} category={item.category} title={truncateTitle(item.title, maxLength)} createdBy={item.createdBy} comments={item.comments} />
-                        </div>
-                    ))}
-                </Slider> */}
-                {/* <button className='blog-slider-arrow blog-arrow-left' onClick={handlePrev} disabled={currentIndex === 0}>
-                    <img src={leftArrow} alt='arrow' />
-                </button> */}
-                {/* <div className='blog-inner-container'>
-                    <div className='blog-cards-container' style={centerStyle}>
-                    {blogsData.map((item, index) => (
-                        <div className='blog-product-slider'>
-                        <BlogCard key={index} img={item.img} category={item.category} title={truncateTitle(item.title, maxLength)} createdBy={item.createdBy} comments={item.comments} />
-                        </div>
-                    ))}
-                    </div>
-                </div> */}
-                {/* <div className='blog-slider-main-container'> */}
-                    
-                {/* </div> */}
-                {/* <button className='blog-slider-arrow blog-arrow-right' onClick={handleNext} disabled={currentIndex >= blogsData.length - itemsToShow}>
-                    <img src={rightArrow} alt='arrow' />
-                </button> */}
-            {/* </div> */}
         </div>
     );
 }

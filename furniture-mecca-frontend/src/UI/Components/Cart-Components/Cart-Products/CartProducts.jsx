@@ -104,6 +104,7 @@ const CartProducts = () => {
                 <button>
                     Continue
                 </button>
+                {/* <a href='#'>Continue</a> */}
             </div>
         </div>
 
@@ -118,9 +119,10 @@ const CartProducts = () => {
                 })}
             </div>
             <div className={`desktop-continue-btn-div ${isOpen ? 'hide-continue-btn' : ''}`}>
-                <button onClick={handleToggle}>
+                {/* <button onClick={handleToggle}>
                     Continue
-                </button>
+                </button> */}
+                <a href='#'>Continue</a>
             </div>
         </div>
         <CartPaymnetMethoud 

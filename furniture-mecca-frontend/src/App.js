@@ -8,6 +8,7 @@ import Home from './UI/Pages/Home/Home';
 import { IoIosArrowDropup } from "react-icons/io";
 import { useLocation } from 'react-router-dom';
 import aarrowTop from './Assets/icons/arrow-up.png'
+import { IoIosArrowUp } from "react-icons/io";
 
 
 import livingRoomMainImage from './Assets/pages-main-images/Living-Room-Desk-1-1024x341.jpg';
@@ -43,6 +44,7 @@ import ContinueCart from './UI/Components/Cart-Components/Continue-cart/Continue
 import { useEffect, useState } from 'react';
 import Summery from './UI/Pages/Summery/Summery';
 import PageNotFound from './UI/Pages/404Page/404Page';
+import Cart from "./UI/Pages/Cart/Cart";
 
 
 function App() {
@@ -121,15 +123,15 @@ function App() {
           />
 
           <Route path='/single-product/:id' element={<SingleProduct  />} />
-          <Route path='/add-to-cart' element={<AddToCart />} />
+          <Route path='/add-to-cart' element={<Cart />} />
           {/* <Route path='/check-page' element={<ContinueCart />} /> */}
           <Route path='/summery-page' element={<Summery />} />
           <Route path='*' element={<PageNotFound />} />
         </Routes>
         <Footer notLandingPage={currentUrl === '/' ? false : true} />
         <button onClick={handleClickTop} className='scroll-to-top-button'>
-          {/* <IoIosArrowDropup size={30} className='lead-to-top-btn' /> */}
-          <img src={aarrowTop} alt='arrow up' className='lead-to-top-btn' />
+          <IoIosArrowUp size={30} className='lead-to-top-btn' />
+          {/* <img src={aarrowTop} alt='arrow up' className='lead-to-top-btn' /> */}
         </button>
       </div>
   );

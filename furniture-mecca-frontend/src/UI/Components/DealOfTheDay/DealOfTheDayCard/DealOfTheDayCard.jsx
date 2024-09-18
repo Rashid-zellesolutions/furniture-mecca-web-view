@@ -2,9 +2,12 @@ import React, {useRef, useEffect, useState} from 'react';
 import './DealOfTheDayCard.css';
 import testImage from '../../../../Assets/Furniture Mecca/product page/frequently bought/MN600__04-300x200 1.png'
 import star from '../../../../Assets/icons/Star 19.png'
-import cartIcon from '../../../../Assets/icons/cart-vector.png';
-import heartIcon from '../../../../Assets/icons/heart-vector.png';
-import combinedArrows from '../../../../Assets/icons/multi-arrow-vector.png'
+import cartIcon from '../../../../Assets/icons/cart-bag-charcol.png';
+import cartWhite from '../../../../Assets/icons/cart-bag-white.png'
+import heartIcon from '../../../../Assets/icons/heart-charcol.png';
+import heartWhite from '../../../../Assets/icons/heart-white.png'
+import combinedArrows from '../../../../Assets/icons/multi-arrow-charcol.png'
+import multiArrowWhite from '../../../../Assets/icons/multi-arrow-white.png'
 import leftArrow from '../../../../Assets/icons/arrow-left-white.png';
 import rightArrow from '../../../../Assets/icons/right-arrow-white.png';
 
@@ -97,32 +100,36 @@ const products = [
   // Add more products here
 ];
 
-const DealOfTheDayCard = ({productName}) => {
+const DealOfTheDayCard = ({name, star, review, price, newPrice, imgIcons, descount,  handleHoverEnter, handleHoveLeave}) => {
   const cardIcons = [cartIcon, heartIcon, combinedArrows];
+  const [isHovered, setIsHovered] = useState(null);
+
+  const handleIconMouseEnter = (index) => {setIsHovered(index)}
+  const handleIconMouseLeave = () => {setIsHovered(null)}
     
   return (
     <div className='deal-of-the-day-product-card'>
       <div className='deal-of-the-day-product-rating-and-name'>
         <div className='deal-of-the-day-rating-and-reviews'>
-          {[0,1,2,3,4,5].map((items, innIndex) => (
-            <img src={star} alt='star' />
+          {star.map((items, innIndex) => (
+            <img src={items.icon} alt='star' />
           ))}
-          <p>(200 reviews)</p>
+          <p>({review})</p>
         </div>
-        <h3 className='deal-of-the-day-product-name'>{productName}</h3>
+        <h3 className='deal-of-the-day-product-name'>{name}</h3>
         <div className='deal-of-the-day-price'>
-          <del>$ 199.00</del>
-          <p>$ 1,599.00</p>
+          <del>{price}</del>
+          <p>{newPrice}</p>
         </div>
       </div>
       <div className='deal-of-the-day-product-image'>
-        <img src={heartIcon} alt='heart' className='deal-of-the-day-product-image-heart-icon' />
-        <div className='deal-of-the-day-product-discount'><p>-12%</p></div>
+        {/* <img src={heartIcon} alt='heart' className='deal-of-the-day-product-image-heart-icon' /> */}
+        <div className='deal-of-the-day-product-discount'><p>{descount}</p></div>
         <img src={testImage} alt='img' />
         <div className='deal-of-the-day-card-icons-div'>
-          {cardIcons.map((items, index) => (
-            <button key={index} className='deal-of-the-day-icon'>
-              <img src={items} alt='icon' />
+          {imgIcons.map((items, index) => (
+            <button key={index} className={`deal-of-the-day-icon ${isHovered === index ? 'change-bg' : ''}`} onMouseEnter={() => handleIconMouseEnter(index)} onMouseLeave={handleIconMouseLeave}>
+              <img src={isHovered === index ? items.hoveredIcon : items.defIcon} alt='icon'  />
             </button>
           ))}
         </div> 

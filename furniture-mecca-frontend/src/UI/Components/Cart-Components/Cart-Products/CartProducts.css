@@ -76,6 +76,7 @@
     width: 100%;
     align-items: center;
     justify-content: space-between;
+    /* gap: 15px; */
     border-bottom: 1px solid var(--border-color);
     padding: 5px 0;
 
@@ -122,8 +123,9 @@
     width: 100%;
     /* align-items: center; */
     justify-content: space-between;
-    padding: 10px 90px 50px 90px;
+    /* padding: 10px 90px 50px 90px; */
     gap: 10px;
+    margin-top: 20px;
 }
 
 
@@ -135,10 +137,11 @@
 .desktop-price-details-div{
     display: flex;
     /* background-color: orange; */
-    width: 70%;
+    width: 80%;
     align-items: center;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: start;
+    gap: 15px;
     transition: width 0.5s ease, gap 0.5s ease;
 }
 
@@ -147,10 +150,10 @@
 .dektop-price-details{
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 10px;
     border: 1px solid #2F7A97;
     height: 50px;
-    padding: 0 10px;
+    padding: 0 5px;
     border-radius: 5px;
     margin-bottom: 10px;
 }
@@ -170,7 +173,7 @@
 .desktop-continue-btn-div{
     display: flex;
     align-items: center;
-    width: 30%;
+    width: 20%;
     justify-content: end;
 }
 
@@ -189,6 +192,23 @@
 
 .desktop-continue-btn-div.hide-continue-btn{
     display: none;
+}
+
+.desktop-continue-btn-div a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    width: 190px;
+    height: 50px;
+    background-color: #2F7A97;
+    border: 1px solid #2F7A97;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 10px;
 }
 
 .overlay {
@@ -241,7 +261,7 @@
         height: 450px;
         border-top: none;
         border-bottom: none;
-        padding: 10px 20px;
+        padding: 10px 5px;
         gap: 10px;
         transition: width 0.5s ease;
     }
@@ -257,11 +277,11 @@
     .cart-products-heading {
         display: flex;
         align-items: center;
-        padding: 0 105px 15px 105px;
+        /* padding: 0 105px 15px 105px; */
     }
-    .cart-items{
+    /* .cart-items{
         padding: 10px 105px;
-    }
+    } */
 
     .desktop-continue-btn-div{
         position: relative;

@@ -18,7 +18,7 @@
 .furniture-for-budget-heading-section h3{
     font-size: 25px;
     font-weight: 700;
-    line-height: 38px;
+    line-height: 29px;
     color: var(--text-color);
 }
 
@@ -41,7 +41,7 @@
 .budget-furniturre-card{
     display: flex;
     flex-direction: column;
-    width: 420px;
+    width: 33%;
     background-color: #f5fff8;
     align-items: center;
     justify-content: center;

@@ -1,11 +1,13 @@
 import React, { useState, useRef, useEffect } from 'react';
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import './BestSellerSlider.css';
 import BestSellerSliderMainBanner from '../../../Assets/Furniture Mecca/Landing Page/best seller products/Home Page Banner 396x595.jpg';
 import bestSellerMainSecondImage from '../../../Assets/Furniture Mecca/Landing Page/best seller products/Bedroom Side Banners 2 (2).png';
 import heartIcon from '../../../Assets/icons/like.png'
 import { Link, useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import Loader from '../Loader/Loader';
 
 
 
@@ -61,6 +63,7 @@ const BestSellerSlider = () => {
     };
 
 
+
     
 
 
@@ -89,22 +92,10 @@ const BestSellerSlider = () => {
                 <img src={activeItem === 0 ?  BestSellerSliderMainBanner : bestSellerMainSecondImage} alt='main banner' />
             </div>
             <div className='products-slider-container'>
-                <div className='best-seller-slider' 
-               style={{
-                transform: `translateX(-${currentIndex * 100}%)`, // Move slider to show current page
-                // width: `${totalPages * 30}%`, // Width should cover all pages
-                display: 'flex',
-                transition: 'transform 0.5s ease',
-            }}
-                >
-                    {getCurrentCards().map((item, index) => (
+                <div className='best-seller-slider' style={{ transform: `translateX(-${(currentIndex / totalPages) * 100}%)` }}>
+                    {productCardData.slice(currentIndex, currentIndex + cardsPerPage).map((item, index) => (
                         <div key={index} className='best-seller-product-card-div' /* onClick={() => handleProductClick(item)} */ >
-                            <div className='best-seller-product-main-image-div'
-                            // style={{
-                            //     flex: `0 0 ${30 / cardsPerPage}%`, // Each card takes up 1/6th of the width
-                            //     boxSizing: 'border-box',
-                            // }}
-                            >
+                            <div className='best-seller-product-main-image-div'>
                                 <img src={item.mainImage} alt='img' className='best-seller-product-main-image' />
                             </div>
                             <span className='product-rating-span'>

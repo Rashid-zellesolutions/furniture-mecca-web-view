@@ -11,14 +11,14 @@
     width: 100%;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 0;
+    padding: 25px 0 15px 0;
 }
 
 .new-arrival-heading-div a{
     color: var(--text-color);
     font-size: 25px;
     font-weight: 700;
-    line-height: 37px;
+    line-height: 29px;
     text-decoration: none;
 }
 

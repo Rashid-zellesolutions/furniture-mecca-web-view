@@ -17,20 +17,21 @@
 .footer-nav-link-heading {
     color: #fafafa;
     font-family: poppins, Sans-serif;
-    font-size: 1.15rem;
+    font-size: 20px;
     font-weight: 600;
     text-transform: none;
     font-style: normal;
     text-decoration: none;
-    line-height: 1.2em;
+    line-height: 30px;
     letter-spacing: 0;
     word-spacing: 0;
-    margin-bottom: 20px;
+    margin-bottom: 12px;
 }
 
 .footer-nav-items{
-    font-weight: 300;
-    font-size: 0.81rem;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
     padding: 8px 10px 8px 0px;
 }
 
@@ -579,10 +580,14 @@
 }
 
 .appointment-and-outlet-div a{
-    font-size: 14px;
-    line-height: 21px;
-    font-weight: 600;
     color: #fff;
+}
+
+.appointment-and-outlet-div a p{
+    font-size: 14px !important;
+    line-height: 21px !important;
+    font-weight: 600 !important;
+    color: #fff !important;
 }
 
 /* Right Section Styling */

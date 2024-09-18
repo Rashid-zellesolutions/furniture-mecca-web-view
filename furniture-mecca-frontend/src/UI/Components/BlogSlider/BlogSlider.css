@@ -7,13 +7,13 @@
     height: auto;
     padding: var(--global-padding);
     text-align: center;
-    gap: 15px;
+    gap: 5px;
 }
 
 .blogs-main-container h3{
     font-size: 25px;
     font-weight: 700;
-    line-height: 38px;
+    line-height: 29px;
     color: #595959;
 }
 
@@ -23,22 +23,63 @@
     line-height: 23px;
 }
 
+
 .blogs-slider-main-container{
     width: 100%;
     height: auto;
-
 }
+
+
+
+/* Optional: Override default slick width for slides */
+/* .slick-list {
+    overflow: hidden !important; 
+}
+
+.slick-track {
+    display: flex !important; 
+} */
 
 .blog-cards-container{
     display: flex;
-    width: 100%;
+    width: 25%;
     padding: 0;
     height: auto;
+    margin-top: 20px;
 }
 
 .slick-slider{
     margin-bottom: 25px;
+    display: flex !important;
+    width: 100%;
 }
+/*
+.slick-list{
+    display: flex !important;
+    width: 100%; overflow: hidden;
+
+} */
+
+/* .slick-track{
+    display: flex;
+    width: 100% !important;
+    overflow: hidden !important;
+    gap: 10px;
+} */
+
+/* .slick-slide {
+    width: 25% !important;
+    height: auto !important; 
+} */
+
+/* .slick-slide .slick-active .slick-current{
+    width: 25% !important;
+} */
+
+/* .slick-slide>div {
+    display: flex !important;
+    width: 100% !important;
+} */
 
 .slick-dots li button:before {
     font-family: 'slick';
@@ -46,12 +87,7 @@
     line-height: 30px;
 }
 
-.slick-track{
-    align-items: center;
-    gap: 10px !important;
-    justify-content: space-between;
 
-}
 .slick-arrow.slick-next,
 .slick-arrow.slick-prev{
     display: none !important;
@@ -66,7 +102,7 @@
     margin: 0;
     list-style: none;
     text-align: center;
-}
+} 
 
 /* @media only screen and (min-width: 481px){
     .blogs-main-container{

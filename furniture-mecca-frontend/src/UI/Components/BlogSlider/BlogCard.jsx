@@ -10,6 +10,14 @@ const BlogCard = ({img, category, title, createdBy, comments}) => {
 
   return (
     <>
+        {/* <div className='blog-card'>
+            <div className='blog-card-image'>
+                <img src={img} alt='img' />
+            </div>
+            <div>
+                <p>{category}</p>
+            </div>
+        </div> */}
         <div className='blog-card'>
             <div className='blog-card-image'>
                 <div className='blog-date-tag'>

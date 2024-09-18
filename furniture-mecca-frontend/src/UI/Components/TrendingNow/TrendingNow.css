@@ -11,10 +11,11 @@
 }
 
 .trending-now-main-container h3{
-    font-size: 20px;
-    line-height: 23px;
+    font-size: 25px;
+    line-height: 29px;
     font-weight: 700;
     color: #595959;
+    margin-bottom: 14px;
 }
 
 .tranding-slider-and-categories{

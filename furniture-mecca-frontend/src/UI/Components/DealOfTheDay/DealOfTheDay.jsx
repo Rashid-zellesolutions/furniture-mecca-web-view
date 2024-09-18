@@ -14,9 +14,12 @@ import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai';
 
 import testImage from '../../../Assets/Furniture Mecca/product page/frequently bought/MN600__04-300x200 1.png'
 import star from '../../../Assets/icons/Star 19.png'
-import cartIcon from '../../../Assets/icons/big-black-cart.png';
-import heartIcon from '../../../Assets/icons/red-heart-without-circle.png';
-import combinedArrows from '../../../Assets/icons/combined-arrow-icon.png'
+import cartIcon from '../../../Assets/icons/cart-bag-charcol.png';
+import cartWhite from '../../../Assets/icons/cart-bag-white.png'
+import heartIcon from '../../../Assets/icons/heart-charcol.png';
+import heartWhite from '../../../Assets/icons/heart-white.png'
+import combinedArrows from '../../../Assets/icons/multi-arrow-charcol.png'
+import multiArrowWhite from '../../../Assets/icons/multi-arrow-white.png'
 
 const SamplePrevArrow = (props) => {
   const { className, style, onClick } = props;
@@ -37,90 +40,150 @@ const SamplePrevArrow = (props) => {
   }
 
 const products = [
-  { id: 1, name: "Stevie Charcoal 87'' Sofa & Chair", price: '$20', newPrice: '$ 1,599.00', imageUrl: testImage, rating: ' reviews',  stock: 11, sold: 50, stars: [
+  { id: 1, name: "Stevie Charcoal 87'' Sofa & Chair", price: '$199.00', newPrice: '$ 1,599.00', imageUrl: testImage, rating: '200 reviews', stars: [
     {icon: star},
     {icon: star},
     {icon: star},
     {icon: star},
     {icon: star},
-  ] },
-  { id: 2, name: "Stevie Charcoal 87'' Sofa & Chair", price: '$30', newPrice: '$ 1,599.00', imageUrl: testImage, rating: ' reviews', stock: 8, sold: 30, stars: [
+  ], imgIcons: [
+    {defIcon: cartIcon, hoveredIcon: cartWhite},
+    {defIcon: heartIcon, hoveredIcon: heartWhite},
+    {defIcon: combinedArrows, hoveredIcon: multiArrowWhite},
+  ], disc: '-12%',
+  },
+  { id: 2, name: "Stevie Charcoal 87'' Sofa & Chair", price: '$199.00', newPrice: '$ 1,599.00', imageUrl: testImage, rating: ' reviews', stock: 8, sold: 30, stars: [
     {icon: star},
     {icon: star},
     {icon: star},
     {icon: star},
     {icon: star},
-  ] },
-  { id: 3, name: "Stevie Charcoal 87'' Sofa & Chair", price: '$40', newPrice: '$ 1,599.00', imageUrl: testImage, rating: ' reviews', stock: 15, sold: 80, stars: [
+  ], imgIcons: [
+    {defIcon: cartIcon, hoveredIcon: cartWhite},
+    {defIcon: heartIcon, hoveredIcon: heartWhite},
+    {defIcon: combinedArrows, hoveredIcon: multiArrowWhite},
+  ], disc: '-12%', 
+  },
+  { id: 3, name: "Stevie Charcoal 87'' Sofa & Chair", price: '$199.00', newPrice: '$ 1,599.00', imageUrl: testImage, rating: ' reviews', stock: 15, sold: 80, stars: [
     {icon: star},
     {icon: star},
     {icon: star},
     {icon: star},
     {icon: star},
-  ] },
-  { id: 4, name: "Stevie Charcoal 87'' Sofa & Chair", price: '$50', newPrice: '$ 1,599.00', imageUrl: testImage, rating: ' reviews', stock: 5, sold: 20, stars: [
+  ], imgIcons: [
+    {defIcon: cartIcon, hoveredIcon: cartWhite},
+    {defIcon: heartIcon, hoveredIcon: heartWhite},
+    {defIcon: combinedArrows, hoveredIcon: multiArrowWhite},
+  ], disc: '-12%', 
+  },
+  { id: 4, name: "Stevie Charcoal 87'' Sofa & Chair", price: '$199.00', newPrice: '$ 1,599.00', imageUrl: testImage, rating: ' reviews', stock: 5, sold: 20, stars: [
     {icon: star},
     {icon: star},
     {icon: star},
     {icon: star},
     {icon: star},
-  ] },
-  { id: 5, name: "Stevie Charcoal 87'' Sofa & Chair", price: '$20', newPrice: '$ 1,599.00', imageUrl: testImage, rating: ' reviews', stock: 10, sold: 50, stars: [
+  ], imgIcons: [
+    {defIcon: cartIcon, hoveredIcon: cartWhite},
+    {defIcon: heartIcon, hoveredIcon: heartWhite},
+    {defIcon: combinedArrows, hoveredIcon: multiArrowWhite},
+  ], disc: '-12%', 
+  },
+  { id: 5, name: "Stevie Charcoal 87'' Sofa & Chair", price: '$199.00', newPrice: '$ 1,599.00', imageUrl: testImage, rating: ' reviews', stock: 10, sold: 50, stars: [
     {icon: star},
     {icon: star},
     {icon: star},
     {icon: star},
     {icon: star},
-  ] },
-  { id: 6, name: "Stevie Charcoal 87'' Sofa & Chair", price: '$30', newPrice: '$ 1,599.00', imageUrl: testImage, rating: ' reviews', stock: 8, sold: 30, stars: [
+  ], imgIcons: [
+    {defIcon: cartIcon, hoveredIcon: cartWhite},
+    {defIcon: heartIcon, hoveredIcon: heartWhite},
+    {defIcon: combinedArrows, hoveredIcon: multiArrowWhite},
+  ], disc: '-12%', 
+  },
+  { id: 6, name: "Stevie Charcoal 87'' Sofa & Chair", price: '$199.00', newPrice: '$ 1,599.00', imageUrl: testImage, rating: ' reviews', stock: 8, sold: 30, stars: [
     {icon: star},
     {icon: star},
     {icon: star},
     {icon: star},
     {icon: star},
-  ] },
-  { id: 7, name: "Stevie Charcoal 87'' Sofa & Chair", price: '$40', newPrice: '$ 1,599.00', imageUrl: testImage, rating: ' reviews', stock: 15, sold: 80, stars: [
+  ], imgIcons: [
+    {defIcon: cartIcon, hoveredIcon: cartWhite},
+    {defIcon: heartIcon, hoveredIcon: heartWhite},
+    {defIcon: combinedArrows, hoveredIcon: multiArrowWhite},
+  ], disc: '-12%', 
+  },
+  { id: 7, name: "Stevie Charcoal 87'' Sofa & Chair", price: '$199.00', newPrice: '$ 1,599.00', imageUrl: testImage, rating: ' reviews', stock: 15, sold: 80, stars: [
     {icon: star},
     {icon: star},
     {icon: star},
     {icon: star},
     {icon: star},
-  ] },
-  { id: 8, name: "Stevie Charcoal 87'' Sofa & Chair", price: '$50', newPrice: '$ 1,599.00', imageUrl: testImage, rating: ' reviews', stock: 5, sold: 20, stars: [
+  ], imgIcons: [
+    {defIcon: cartIcon, hoveredIcon: cartWhite},
+    {defIcon: heartIcon, hoveredIcon: heartWhite},
+    {defIcon: combinedArrows, hoveredIcon: multiArrowWhite},
+  ], disc: '-12%', 
+  },
+  { id: 8, name: "Stevie Charcoal 87'' Sofa & Chair", price: '$199.00', newPrice: '$ 1,599.00', imageUrl: testImage, rating: ' reviews', stock: 5, sold: 20, stars: [
     {icon: star},
     {icon: star},
     {icon: star},
     {icon: star},
     {icon: star},
-  ] },
-  { id: 9, name: "Stevie Charcoal 87'' Sofa & Chair", price: '$20', newPrice: '$ 1,599.00', imageUrl: testImage, rating: ' reviews', stock: 10, sold: 50, stars: [
+  ], imgIcons: [
+    {defIcon: cartIcon, hoveredIcon: cartWhite},
+    {defIcon: heartIcon, hoveredIcon: heartWhite},
+    {defIcon: combinedArrows, hoveredIcon: multiArrowWhite},
+  ], disc: '-12%', 
+  },
+  { id: 9, name: "Stevie Charcoal 87'' Sofa & Chair", price: '$199.00', newPrice: '$ 1,599.00', imageUrl: testImage, rating: ' reviews', stock: 10, sold: 50, stars: [
     {icon: star},
     {icon: star},
     {icon: star},
     {icon: star},
     {icon: star},
-  ] },
-  { id: 10, name: "Stevie Charcoal 87'' Sofa & Chair", price: '$30', newPrice: '$ 1,599.00', imageUrl: testImage, rating: ' reviews', stock: 8, sold: 30, stars: [
+  ], imgIcons: [
+    {defIcon: cartIcon, hoveredIcon: cartWhite},
+    {defIcon: heartIcon, hoveredIcon: heartWhite},
+    {defIcon: combinedArrows, hoveredIcon: multiArrowWhite},
+  ], disc: '-12%', 
+  },
+  { id: 10, name: "Stevie Charcoal 87'' Sofa & Chair", price: '$199.00', newPrice: '$ 1,599.00', imageUrl: testImage, rating: ' reviews', stock: 8, sold: 30, stars: [
     {icon: star},
     {icon: star},
     {icon: star},
     {icon: star},
     {icon: star},
-  ] },
-  { id: 11, name: "Stevie Charcoal 87'' Sofa & Chair", price: '$40', newPrice: '$ 1,599.00', imageUrl: testImage, rating: ' reviews', stock: 15, sold: 80, stars: [
+  ], imgIcons: [
+    {defIcon: cartIcon, hoveredIcon: cartWhite},
+    {defIcon: heartIcon, hoveredIcon: heartWhite},
+    {defIcon: combinedArrows, hoveredIcon: multiArrowWhite},
+  ], disc: '-12%', 
+  },
+  { id: 11, name: "Stevie Charcoal 87'' Sofa & Chair", price: '$199.00', newPrice: '$ 1,599.00', imageUrl: testImage, rating: ' reviews', stock: 15, sold: 80, stars: [
     {icon: star},
     {icon: star},
     {icon: star},
     {icon: star},
     {icon: star},
-  ] },
-  { id: 12, name: "Stevie Charcoal 87'' Sofa & Chair", price: '$50', newPrice: '$ 1,599.00', imageUrl: testImage, rating: ' reviews', stock: 5, sold: 20, stars: [
+  ], imgIcons: [
+    {defIcon: cartIcon, hoveredIcon: cartWhite},
+    {defIcon: heartIcon, hoveredIcon: heartWhite},
+    {defIcon: combinedArrows, hoveredIcon: multiArrowWhite},
+  ], disc: '-12%', 
+  },
+  { id: 12, name: "Stevie Charcoal 87'' Sofa & Chair", price: '$199.00', newPrice: '$ 1,599.00', imageUrl: testImage, rating: ' reviews', stock: 5, sold: 20, stars: [
     {icon: star},
     {icon: star},
     {icon: star},
     {icon: star},
     {icon: star},
-  ] },
+  ], imgIcons: [
+    {defIcon: cartIcon, hoveredIcon: cartWhite},
+    {defIcon: heartIcon, hoveredIcon: heartWhite},
+    {defIcon: combinedArrows, hoveredIcon: multiArrowWhite},
+  ], disc: '-12%', 
+  },
   // Add more products here
 ];
 
@@ -128,10 +191,10 @@ const DealOfTheDay = () => {
 
   var settings = {
     dots: false,
-    infinite: false,
+    infinite: true,
     speed: 500,
     slidesToShow: 4,
-    slidesToScroll: 1,
+    slidesToScroll: 4,
     initialSlide: 0,
     nextArrow: <SampleNextArrow to="next"/>,
     prevArrow: <SamplePrevArrow to="prev" />,
@@ -141,6 +204,15 @@ const DealOfTheDay = () => {
         settings: {
           slidesToShow: 3,
           slidesToScroll: 3,
+          infinite: false,
+          dots: false
+        }
+      },
+      {
+        breakpoint: 850,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
           infinite: false,
           dots: false
         }
@@ -204,18 +276,6 @@ const DealOfTheDay = () => {
   // Destructure timeLeft
   const { days, hours, minutes, seconds } = timeLeft;
 
-  // products slider script
-  const [currentIndex, setCurrentIndex] = useState(0)
-  const itemsToShow = 1; // Number of items to show at a time
-  const handlePrev = () => {
-    setCurrentIndex((prevIndex) => Math.max(prevIndex - itemsToShow, 0));
-  };
-
-  const handleNext = () => {
-    setCurrentIndex((prevIndex) => Math.min(prevIndex + itemsToShow, products.length - itemsToShow));
-  };
-
-  const centerStyle = { transform: `translateX(-${currentIndex * (330 / itemsToShow)}px)` };
 
   return (
     <div className='deal-of-the-day-main-container'> 
@@ -226,49 +286,22 @@ const DealOfTheDay = () => {
             </div>
           </div>
       <div className='deal-of-the-day-outer-container'>
-          {/* <button className='deal-of-the-day-arrow deal-of-the-day-arrow-left' onClick={handlePrev} disabled={currentIndex === 0}>
-            <img src={leftArrow} alt='arrow' />
-          </button> */}
           <div className='slider-main-container'>
             <Slider {...settings}>
               {products.map((items, index) => (
-                  <div key={index} className='pp-card'>
-                      <DealOfTheDayCard productName={items.name} />
-                  </div>
+                      <DealOfTheDayCard 
+                        name={items.name} 
+                        star={items.stars}
+                        review={items.rating} 
+                        price={items.price}
+                        newPrice={items.newPrice}
+                        imgIcons={items.imgIcons}
+                        descount={items.disc}
+                      />
               ))}
             </Slider>
           </div>
-          {/* <div className='deal-of-the-day-inner-container'>
-            <div className='deal-of-the-day-products' style={centerStyle}>
-              {products.map((items, index) => (
-                <div className='deal-of-the-day-product-slider-items'>
-                  <DealOfTheDayCard productName={items.name} />
-                </div>
-              ))}
-            </div>
-          </div> */}
-          {/* <button className='deal-of-the-day-arrow deal-of-the-day-arrow-rigth' onClick={handleNext} disabled={currentIndex >= products.length - itemsToShow}>
-            <img src={rightArrow} alt='arrow' />
-          </button> */}
       </div>
-
-      {/* <div className='slider-outer-container'>
-      <div className='deal-of-the-day-border-heading'>
-            <p>Deal Of The Day</p>
-            <div className='deal-of-the-day-end-time'>
-              <p>end in: {days}d : {hours}h : {minutes}m : {seconds}s</p>
-            </div>
-          </div>
-        <div className='slider-main-container'>
-          <Slider {...settings}>
-          {products.map((items, index) => (
-              <div key={index} className='pp-card'>
-                  <DealOfTheDayCard productName={items.name} />
-              </div>
-          ))}
-          </Slider>
-      </div>
-      </div> */}
   </div>
   )
 }

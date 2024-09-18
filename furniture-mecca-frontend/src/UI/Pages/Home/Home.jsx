@@ -115,22 +115,16 @@ const categoryCardData = [
       <Slider />
       <ShipBanner bannerImg={shipBanner} paddindTrue={false} />
       <Category title={'Shop by Category'} categoryData={categoryCardData} />
-      {/* <HottestDealsBanners /> */}
       <TrendingNow />
       <FinanceBannerSlider />
       <BestSellerSlider />
-      {/* <FurnitureProduct /> */}
-      {/* <ImageHeading img={HeroImage} mobileViewImage={mobileViewHeroImage} alt={'bed image'} /> */}
       <Comparision />
       <ProductSlider cardData={productCardData} />
-      {/* <DealDayCountDown /> */}
       <DealOfTheDay />
       <FurnitureForBudget />
       <GetTheScop />
       <BlogSlider />
       <InstaGallery />
-      {/* <CustomerServicePanel />  */}
-      {/* <InstaTwoImageGallery /> */}
     </div>
   )
 }
