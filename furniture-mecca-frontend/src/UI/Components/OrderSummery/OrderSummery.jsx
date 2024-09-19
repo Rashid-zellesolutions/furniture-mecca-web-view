@@ -12,7 +12,7 @@ import whiteCircle from '../../../Assets/icons/empty-circle-white.png';
 import { useCart } from '../../../context/cartContext/cartContext';
 import SummaryOderDetails from './SummeryOrderDetails/SummaryOderDetails';
 
-const OrderSummery = ({productName, productPrice}) => {
+const OrderSummeryTwo = ({productName, productPrice}) => {
     const {cart} = useCart()
     const [trackShow, setTrackShow] = useState(true)
     const handleShowTrack = () => {
@@ -178,4 +178,4 @@ const OrderSummery = ({productName, productPrice}) => {
   )
 }
 
-export default OrderSummery
+export default OrderSummeryTwo

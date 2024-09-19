@@ -10,23 +10,6 @@ import BlogCard from './BlogCard';
 import leftArrow from '../../../Assets/icons/arrow-left-white.png';
 import rightArrow from '../../../Assets/icons/right-arrow-white.png';
 
-const SamplePrevArrow = (props) => {
-    const { className, style, onClick } = props;
-    return(
-      <div onClick={onClick} className={`blog-arrow ${className}`} >
-        <img src={leftArrow} alt='arrow' />
-      </div>
-    )
-    }
-  
-    function SampleNextArrow(props) {
-      const { className, style, onClick } = props;
-      return(
-        <div onClick={onClick} className={`blog-arrow ${className}`} >
-          <img src={rightArrow} alt='arrow'/>
-        </div>
-      )
-    }
 
 const BlogSlider = () => {
 

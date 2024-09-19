@@ -24,7 +24,7 @@
 }
 
 .breadcrum-products-container{
-    display: flex;
+    display: none;
     /* flex-wrap: wrap; */
     width: 100%;
     gap: 10px;

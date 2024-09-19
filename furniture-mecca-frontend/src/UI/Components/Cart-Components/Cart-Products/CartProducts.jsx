@@ -122,7 +122,7 @@ const CartProducts = () => {
                 {/* <button onClick={handleToggle}>
                     Continue
                 </button> */}
-                <a href='#'>Continue</a>
+                <a href='/summery-page'>Continue</a>
             </div>
         </div>
         <CartPaymnetMethoud 

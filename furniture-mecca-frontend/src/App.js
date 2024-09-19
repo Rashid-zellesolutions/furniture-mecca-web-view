@@ -45,6 +45,7 @@ import { useEffect, useState } from 'react';
 import Summery from './UI/Pages/Summery/Summery';
 import PageNotFound from './UI/Pages/404Page/404Page';
 import Cart from "./UI/Pages/Cart/Cart";
+import Summary from "./UI/Pages/Summery/Summary";
 
 
 function App() {
@@ -125,7 +126,7 @@ function App() {
           <Route path='/single-product/:id' element={<SingleProduct  />} />
           <Route path='/add-to-cart' element={<Cart />} />
           {/* <Route path='/check-page' element={<ContinueCart />} /> */}
-          <Route path='/summery-page' element={<Summery />} />
+          <Route path='/summery-page' element={<Summary />} />
           <Route path='*' element={<PageNotFound />} />
         </Routes>
         <Footer notLandingPage={currentUrl === '/' ? false : true} />

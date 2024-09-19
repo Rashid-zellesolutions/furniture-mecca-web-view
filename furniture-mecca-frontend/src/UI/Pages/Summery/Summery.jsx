@@ -1,11 +1,11 @@
 import React from 'react'
-import OrderSummery from '../../Components/OrderSummery/OrderSummery'
+import OrderSummeryTwo from '../../Components/OrderSummery/OrderSummery'
 
 const Summery = () => {
   
   return (
     <div>
-        <OrderSummery />
+        <OrderSummeryTwo />
     </div>
   )
 }

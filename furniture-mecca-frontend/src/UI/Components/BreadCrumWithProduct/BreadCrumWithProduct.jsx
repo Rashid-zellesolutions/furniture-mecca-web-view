@@ -11,6 +11,7 @@ const BreadCrumWithProduct = ({breadcrumRecentData}) => {
         <div className='breadcrum'>
             <p> <a href='#'>Home</a> / <a href='#'> Furniture</a> / <a href='#'>Living Room</a> / <a href='#'> Living Room Sets</a> </p>
         </div>
+        {/* This section is display none from css */}
         <div className='breadcrum-products-container'>
                 {breadcrumRecentData.map((item, index) => {
                     return <div className='single-product'>

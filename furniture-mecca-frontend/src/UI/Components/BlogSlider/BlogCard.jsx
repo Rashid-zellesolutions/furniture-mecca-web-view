@@ -3,10 +3,18 @@ import './BlogCard.css';
 import rightArrowWithooutOutline from '../../../Assets/icons/arrow-right-without-outline-black.png'
 import starBlack from '../../../Assets/icons/star-black.png';
 import startUnfilled from '../../../Assets/icons/star-transperent-bg.png'
+import { FaStar } from "react-icons/fa";
+import { CiStar } from "react-icons/ci";
 
 const BlogCard = ({img, category, title, createdBy, comments}) => {
     
-    const stars = [starBlack, starBlack, starBlack ,starBlack, startUnfilled]
+    const stars = [
+        {star: <FaStar size={14} />},
+        {star: <FaStar size={14} />},
+        {star: <FaStar size={14} />},
+        {star: <FaStar size={14} />},
+        {star: <CiStar size={14} />},
+    ]
 
   return (
     <>
@@ -32,7 +40,8 @@ const BlogCard = ({img, category, title, createdBy, comments}) => {
                 <div className='blog-created-by-and-comments'>
                     <p className='blog-star-rating'>
                         {stars.map((item) => (
-                            <img src={item} alt='star' />
+                            // <img src={item} alt='star' />
+                            <p>{item.star}</p>
                         ))}
                         (200)
                     </p>
