@@ -69,11 +69,11 @@
     width: 200px;
     height: 48px;
     border: 1px solid #C61B1A;
-    border-radius: 4px;
+    border-radius: 10px;
     color: #F6FAFE;
     font-size: 14px;
     line-height: 21px;
     font-weight: 500;
     cursor: pointer;
-    padding: 0 5px;
+    /* padding: 12px 20px; */
 }

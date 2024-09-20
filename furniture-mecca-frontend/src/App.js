@@ -125,14 +125,12 @@ function App() {
 
           <Route path='/single-product/:id' element={<SingleProduct  />} />
           <Route path='/add-to-cart' element={<Cart />} />
-          {/* <Route path='/check-page' element={<ContinueCart />} /> */}
           <Route path='/summery-page' element={<Summary />} />
           <Route path='*' element={<PageNotFound />} />
         </Routes>
         <Footer notLandingPage={currentUrl === '/' ? false : true} />
         <button onClick={handleClickTop} className='scroll-to-top-button'>
           <IoIosArrowUp size={30} className='lead-to-top-btn' />
-          {/* <img src={aarrowTop} alt='arrow up' className='lead-to-top-btn' /> */}
         </button>
       </div>
   );

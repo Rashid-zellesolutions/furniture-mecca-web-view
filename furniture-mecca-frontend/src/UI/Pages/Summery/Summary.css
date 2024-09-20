@@ -17,4 +17,23 @@
     flex-direction: column;
     width: 50%;
     background-color: #F6FAFE;
+    padding: 72px;
+    gap: 50px;
+}
+
+@media only screen and (max-width: 1024px){
+    .summary-main-container{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+    }
+
+    .summary-left-section{
+        width: 100%;
+    }
+    
+    .summary-right-section{
+        width: 100%;
+    }
 }
