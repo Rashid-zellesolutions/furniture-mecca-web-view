@@ -20,7 +20,7 @@
     font-size: 18px;
     line-height: 27px;
     font-weight: 700;
-    color: #fff;
+    color: var(--text-white);
 }
 
 .quick-view-rating{
@@ -43,7 +43,7 @@
     font-size: 16px;
     font-weight: 400;
     line-height: 24px;
-    color: #fff;
+    color: var(--text-white);
 }
 .quick-view-rating p span{
     color: #FFC750;
@@ -119,77 +119,6 @@
     right: 10px;
 }
 
-/* 
-.quick-view-image{
-    display: flex;
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    position: relative;
-    overflow: hidden;
-}
-
-.slider-main-section{
-    display: flex;
-    width: 100%;
-    height: auto;
-
-}
-
-.quick-view-active{
-    display: flex;
-    width: 100%;
-}
-
-.quick-view-inactive{
-    display: none;
-}
-
-.quick-view-slides{
-    width: 100%;
-    height: 100%;
-    position: relative;
-}
-
-.quick-view-slides img{
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-}
-
-.quick-view-arrow{
-    position: absolute;
-    top: 50%;
-    width: auto;
-    height: 25px;
-    background-color: transparent;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    z-index: 333;
-}
-
-.quick-view-arrow-disable{
-    pointer-events: none;
-    opacity: 0.5;
-    cursor: not-allowed;
-}
-
-.quick-view-arrow-left{
-    left: 10px;
-}
-
-.quick-view-arrow-right{
-    right: 10px;
-} */
-
-/* .quick-view-image img{
-
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-} */
-
 .quick-view-variations{
     display: flex;
     width: 100%;
@@ -198,19 +127,6 @@
     gap: 10px;
 }
 
-/* .quick-view-vars{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    align-items: center;
-    justify-content: center;
-}
-
-.quick-view-vars img{
-    height: 56px;
-    width: auto;
-    object-fit: contain;
-} */
 
 .quick-view-vars p{
     font-size: 13px;
@@ -222,7 +138,7 @@
     font-size: 30px;
     font-weight: 600;
     line-height: 45px;
-    color: #fff !important;
+    color: var(--text-white) !important;
     margin: 25px 0;
 }
 
@@ -277,7 +193,7 @@
     background-color: #C61B1A;
     border: 1px solid #C61B1A;
     border-radius: 8px;
-    color: #fff;
+    color: var(--text-white);
     font-size: 15px;
     font-weight: 600;
     line-height: 23px;
@@ -338,7 +254,7 @@
     width: 100%;
     height: 0;
     overflow: hidden;
-    background-color: orange;
+    /* background-color: orange; */
     margin-top: 10px;
     transition: height 0.3s ease;
 }

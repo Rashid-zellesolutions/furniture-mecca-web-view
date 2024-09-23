@@ -37,7 +37,7 @@
 }
 
 .cart-header h3{
-    color: #ffff;
+    color: var(--text-white);
     text-decoration: underline;
     font-size: 40px;
     font-weight: 700;

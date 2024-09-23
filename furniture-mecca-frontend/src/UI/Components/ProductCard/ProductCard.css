@@ -120,7 +120,7 @@
 .overlay-buttons .overlay-button:hover{
     background-color: var(--active-nav-item-color);
     border: 1px solid var(--active-nav-item-color);
-    color: white;
+    color: var(--text-white);
 }
 
 /* Hover effect */
@@ -229,8 +229,7 @@
 }
 
 .color-variation{
-    padding: 15px;
-    /* padding: 25px; */
+    padding: 12px;
     cursor: pointer;
     border-radius: 50%;
 }
@@ -238,8 +237,6 @@
 .product-delivery-time{
     font-size: 12px;
     line-height: 18px;
-    /* font-size: 26px;
-    line-height: 40px; */
     font-weight: 600;
     margin-top: 25px;
 }

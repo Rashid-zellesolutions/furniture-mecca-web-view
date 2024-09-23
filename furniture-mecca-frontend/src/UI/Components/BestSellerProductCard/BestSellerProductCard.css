@@ -16,11 +16,6 @@
     padding: 0;
 }
 
-/* .heart-icon-div img{
-    width: 30px;
-    height: 30px;
-} */
-
 .product-main-image-div{
     display: flex;
     width: 100%;
@@ -88,71 +83,3 @@
     font-weight: 600;
     color: var(--active-nav-item-color);
 }
-
-/* @media only screen and (max-width: 2900px){
-    .product-name-div h3{
-        font-size: 40px;
-        line-height: 46px;
-    }
-    .best-sellerdel-price{
-        font-size: 28px;
-    }
-    
-    .best-seller-new-price{
-        font-size: 32px;
-    }
-} */
-
-/* @media only screen and (max-width: 2375px){
-    .product-name-div h3{
-        font-size: 30px;
-        line-height: 34px;
-    }
-    .best-sellerdel-price{
-        font-size: 22px;
-    }
-    
-    .best-seller-new-price{
-        font-size: 28px;
-    }
-}
-
-@media only screen and (max-width: 1850px){
-    .product-name-div h3{
-        font-size: 24px;
-        line-height: 28px;
-    }
-    .best-sellerdel-price{
-        font-size: 18px;
-    }
-    
-    .best-seller-new-price{
-        font-size: 22px;
-    }
-}
-
-@media only screen and (max-width: 1460px){
-    .product-name-div h3{
-        font-size: 18px;
-    }
-    .best-sellerdel-price{
-        font-size: 15px;
-    }
-    
-    .best-seller-new-price{
-        font-size: 18px;
-    }
-}
-
-@media only screen and (max-width: 1200px){
-    .product-name-div h3{
-        font-size: 15px;
-    }
-    .best-sellerdel-price{
-        font-size: 12px;
-    }
-    
-    .best-seller-new-price{
-        font-size: 15px;
-    }
-} */

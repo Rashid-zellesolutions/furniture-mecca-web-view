@@ -5,7 +5,7 @@
     right: 0;
     width: 100%;
     height: 100%;
-    color: #ffff;
+    color: var(--text-white);
     overflow: hidden;
     transition: width 0.5s ease;
     display: flex;
@@ -26,7 +26,7 @@
     right: 0;
     width: 0;
     height: 100%;
-    color: #ffff;
+    color: var(--text-white);
     overflow: hidden;
     transition: width 0.5s ease;
     display: flex;
@@ -52,7 +52,7 @@
     font-size: 20px;
     font-weight: 700;
     line-height: 30px;
-    color: #ffff;
+    color: var(--text-white);
 }
 
 .card-types-div{
@@ -140,11 +140,12 @@
     font-size: 15px;
     font-weight: 500;
     line-height: 23px;
-    color: #ffff;outline: none;
+    color: var(--text-white);
+    outline: none;
 }
 
 .input-type-name input::placeholder{
-    color: #ffff;
+    color: var(--text-white);
 }
 
 /* .input-type-name input:focus{

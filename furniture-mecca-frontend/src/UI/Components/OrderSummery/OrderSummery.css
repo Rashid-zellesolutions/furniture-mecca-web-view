@@ -4,7 +4,7 @@
     width: 100%;
     background-color: #666666;
     /* padding: 10px; */
-    color: #fff;
+    color: var(--text-white);
 }
 
 .summery-heading-div{
@@ -19,11 +19,11 @@
     font-size: 20px;
     font-weight: 700;
     line-height: 30px;
-    color: #ffff;
+    color: var(--text-white);
 }
 
 .summery-heading-div button{
-    color: #fff;
+    color: var(--text-white);
     width: 25px;
     height: 25px;
     background-color: transparent;
@@ -36,7 +36,7 @@
     font-size: 12px;
     font-weight: 300;
     line-height: 18px;
-    color: #fff;
+    color: var(--text-white);
 }
 
 .summery-user-name-and-icon{
@@ -58,7 +58,7 @@
     font-size: 12px;
     font-weight: 600;
     line-height: 18px;
-    color: #fff;
+    color: var(--text-white);
 }
 
 .summery-user-name-and-number{
@@ -251,7 +251,7 @@
     display: flex;
     width: max-content;
     background-color: #C61B1A;
-    color: #ffff;
+    color: var(--text-white);
     align-items: center;
     justify-content: center;
     gap: 10px;
@@ -280,7 +280,7 @@
     background-color: #666666;
     border-radius: 25px;
     padding: 10px 50px;
-    color: #fff ;
+    color: var(--text-white);
 }
 
 .desktop-summery-main-div h3{
@@ -418,7 +418,7 @@
 .desktop-price-total-div{
     display: flex;
     width: 100%;
-    color: #fff;
+    color: var(--text-white);
     margin-top: 20px;
     padding: 10px;
     border: 1px solid #949494;
@@ -501,7 +501,7 @@
     background-color: rgba(0, 0, 0, 0.5);
     width: 100%;
     border-radius: 25px;
-    color: #fff;
+    color: var(--text-white);
 }
 
 .order-track-heading-secton{
@@ -605,7 +605,7 @@
     gap: 10px;
     padding: 12px 15px;
     background-color: #C61B1A;
-    color: #fff;
+    color: var(--text-white);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -718,13 +718,7 @@
         line-height: 18px;
         color: #FFC750;
     }
-
-    /* Map query */
-    /* .order-track-heading-secton {
-        
-        padding: 10px;
-        justify-content: start;
-    } */
+    
     .tick-and-heading img {
         height: 40px;
         width: auto;

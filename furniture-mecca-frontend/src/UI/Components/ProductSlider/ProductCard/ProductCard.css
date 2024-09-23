@@ -94,7 +94,7 @@
 }
 
 .product-details button a{
-    color: white;
+    color: var(--text-white);
     text-decoration: none;
 }
 

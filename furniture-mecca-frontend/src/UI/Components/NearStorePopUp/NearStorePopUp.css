@@ -15,7 +15,7 @@
 .near-store-pop-up.show{
     visibility: visible;
     opacity: 1;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.5s ease-in-out;
 }
 .near-store-pop-up.show .near-store-container{
     transform: translateX(-0%);
@@ -34,7 +34,7 @@
     right: 0;
     height: 100%;
     position: absolute;
-    background-color: white;
+    background-color: var(--text-white);
     transition: all 0.5s ease-in-out;
     color: white;
 }
@@ -63,7 +63,7 @@
 }
 
 .pop-up-header i{
-    background-color: white;
+    background-color: var(--text-white);
     padding: 11px 13px;
     border-radius: 50%;
 }

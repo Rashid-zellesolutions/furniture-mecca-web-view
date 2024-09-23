@@ -236,7 +236,7 @@ const handleThumbnailClick = (index) => {
                 <p>4.1</p>
                 <Link>200 Reviews</Link>
             </div>
-            <h3 className='single-product-price'>{productData.productCard.priceTag}</h3>
+            <h3 className='single-product-price'>${productData.productCard.priceTag}</h3>
             <p className='single-product-installment-price-price'>$9/month for 6 months - Total {productData.productCard.priceTag}</p>
             <span className='single-product-shipping'>
                 {/* <p>Free Shipping</p> */}

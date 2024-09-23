@@ -7,9 +7,9 @@
 }
 
 .products-main-container h3{
-    font-size: 30px;
-    font-weight: 700;
-    line-height: 45px;
+    font-size: 25px;
+    font-weight: 600;
+    line-height: 37px;
     color: var(--product-text-color);
 }
 
@@ -676,7 +676,7 @@ label {
 
 .view-more-btn:hover{
     background-color: var(--hover-btn-bg);
-    color: #ffff;
+    color: var(--text-white);
 }
 
 /* Related Category Style */
@@ -771,9 +771,6 @@ label {
     transition: width 0.5s ease;
 }
 
-/* .cart-side-section-containt-div.show-side-cart-containt{
-    width: 430px;
-} */
 
 .cart-section-heading-div{
     display: flex;
@@ -853,7 +850,7 @@ label {
     border: 1px solid #595959;
     height: 50px;
     border-radius: 3px;
-    color: #ffff;
+    color: var(--text-white);
     font-size: 15px;
     line-height: 23px;
     font-weight: 600;
@@ -869,7 +866,7 @@ label {
     border-radius: 3px;
     border: 1px solid #C61B1A;
     background-color: #C61B1A;
-    color: #fff;
+    color: var(--text-white);
     font-size: 15px;
     line-height: 23px;
     font-weight: 600;
@@ -933,6 +930,5 @@ label {
     top: 0;
     position: absolute;
     background-color: #666666;
-    color: #fff;
+    color: var(--text-white);
 }
-

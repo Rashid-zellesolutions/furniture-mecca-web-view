@@ -110,16 +110,17 @@ const DealOfTheDayCard = ({name, star, review, price, newPrice, imgIcons, descou
   return (
     <div className='deal-of-the-day-product-card'>
       <div className='deal-of-the-day-product-rating-and-name'>
-        <div className='deal-of-the-day-rating-and-reviews'>
-          {star.map((items, innIndex) => (
-            <img src={items.icon} alt='star' />
-          ))}
-          <p>({review})</p>
-        </div>
         <h3 className='deal-of-the-day-product-name'>{name}</h3>
         <div className='deal-of-the-day-price'>
           <del>{price}</del>
           <p>{newPrice}</p>
+        </div>
+        <div className='deal-of-the-day-rating-and-reviews'>
+          {star.map((items, innIndex) => (
+            // <img src={items.icon} alt='star' />
+            <p className='deal-of-the-day-stars'>{items.icon}</p>
+          ))}
+          <p>({review})</p>
         </div>
       </div>
       <div className='deal-of-the-day-product-image'>

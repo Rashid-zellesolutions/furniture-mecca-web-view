@@ -5,7 +5,7 @@
     border-radius: 8px;
     background-color: transparent;
     padding: 8px 10px;
-    color: #ffff;
+    color: var(--text-white);
     font-size: 15px;
     font-weight: 400;
     line-height: auto;
@@ -13,7 +13,7 @@
 }
 
 .customer-info input::placeholder{
-    color: #fff;
+    color: var(--text-white);
     font-size: 15px;
     line-height: auto;
     font-weight: 400;

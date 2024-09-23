@@ -1,10 +1,7 @@
 import React, { useEffect, useState } from "react";
 import './FinanceBannerSlider.css';
-import installmentBanner from '../../../Assets/Furniture Mecca/Landing Page/Pay option banner/New Main Financing.jpg';
 import paypalBanner from '../../../Assets/Furniture Mecca/Landing Page/sale banner/New-Financing-WF-1.jpg';
 import moveForword from '../../../Assets/Furniture Mecca/Landing Page/sale banner/New-Financing-AAF-1.jpg';
-import arrowLeft from '../../../Assets/icons/arrow-left.png';
-import arrowRight from '../../../Assets/icons/arrow-right.png';
 
 function FinanceBannerSlider() {
     const images = [
@@ -20,14 +17,6 @@ function FinanceBannerSlider() {
         }, 5000);
         return () => clearInterval(intervel)
     }, [images.length]);
-
-    const nextSlide = () => {
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length)
-    }
-
-    const prevSlide = () => {
-        setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
-    }
   
   return (
     <div className="carousel-container">
@@ -38,12 +27,6 @@ function FinanceBannerSlider() {
                 </div>
             })}
         </div>
-        {/* <button className="carousel-control prev" onClick={prevSlide}>
-            <img src={arrowLeft} alt="arrow left" />
-        </button>
-        <button className="carousel-control next" onClick={nextSlide}>
-            <img src={arrowRight} alt="arrow right" />
-        </button> */}
     </div>
   );
 }

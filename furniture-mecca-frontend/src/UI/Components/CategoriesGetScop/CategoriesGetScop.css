@@ -44,7 +44,7 @@
 }
 
 .heading-and-links h3{
-    color: white;
+    color: var(--text-white);
     font-size: 30px;
     font-weight: 700;
     margin-bottom: 20px;
@@ -57,7 +57,7 @@
 }
 
 .heading-and-links span a{
-    color: white;
+    color: var(--text-white);
     text-decoration: none;
     font-weight: 500;
 }
@@ -100,7 +100,7 @@
 }
 
 .scop-input-email button a{
-    color: white;
+    color: var(--text-white);
     text-decoration: none;
     font-weight: 400;
     font-size: 15px;
@@ -117,7 +117,7 @@
 }
 
 .scop-input p{
-    color: white;
+    color: var(--text-white);
 }
 
 .product-text-details{
@@ -130,62 +130,6 @@
     /* height: fit-content; */
     overflow: hidden;
 }
-
-
-/* @media only screen and (max-width: 2710px){
-    .product-text-details{
-        height: 30vh;
-    }
-}
-
-@media only screen and (max-width: 2425px){
-    .product-text-details{
-        height: 55vh;
-    }
-}
-
-@media only screen and (max-width: 1825px){
-    .product-text-details{
-        height: 62vh;
-    }
-}
-
-@media only screen and (max-width: 1750px){
-    .product-text-details{
-        height: 70vh;
-    }
-}
-
-@media only screen and (max-width: 1565px){
-    .product-text-details{
-        height: 80vh;
-    }
-}
-
-
-@media only screen and (max-width: 1370px){
-    .product-text-details{
-        height: 95vh;
-    }
-}
-
-@media only screen and (max-width: 1305px){
-    .product-text-details{
-        height: 39vh;
-    }
-}
-
-@media only screen and (max-width: 1105px){
-    .product-text-details{
-        height: 40vh;
-    }
-}
-
-@media only screen and (max-width: 1015px){
-    .product-text-details{
-        height: 42vh;
-    }
-} */
 
 .product-text{
     width: 60%;
@@ -232,14 +176,6 @@
     /* background-color: orange; */
 }
 
-/* @media only screen and (max-width: 2360px){
-    .product-text{
-        width: 75%;
-    }
-    .image-gallery-slider{
-        width: 25%;
-    }
-} */
 
 .vertical-slider {
     display: flex;
@@ -247,9 +183,6 @@
     animation: slide 15s linear infinite; /* Infinite scrolling animation */
     gap: 10px;
     padding: 0 10px;
-    /* height: 30%; */
-    /* background-color: purple; */
-    /* flex-grow: 0; */
 }
 
 .img-one {
@@ -269,30 +202,6 @@
     object-fit: cover;
     cursor: pointer;
 }
-
-
-/* @media only screen and (max-width: 1330px){
-    .img-one {
-        width: 180px;
-    }
-    
-    .img-two {
-        width: 180px;
-    }
-} */
-
-
-/* @media only screen and (max-width: 1100px){
-    .img-one {
-        width: 150px;
-        height: 180px !important;
-    }
-    
-    .img-two {
-        width: 150px;
-        height: 240px !important;
-    }
-} */
 
 @keyframes slide {
     0% {

@@ -113,7 +113,7 @@
     border: 2px solid #2F7A97;
     font-size: 15px;
     font-weight: 600;
-    color: #fff;
+    color: var(--text-white);
     cursor: pointer;
 }
 
@@ -183,7 +183,7 @@
     background-color: #2F7A97;
     border: 1px solid #2F7A97;
     border-radius: 10px;
-    color: #fff;
+    color: var(--text-white);
     font-size: 20px;
     font-weight: 600;
     cursor: pointer;
@@ -204,7 +204,7 @@
     background-color: #2F7A97;
     border: 1px solid #2F7A97;
     border-radius: 10px;
-    color: #fff;
+    color: var(--text-white);
     font-size: 20px;
     font-weight: 600;
     cursor: pointer;

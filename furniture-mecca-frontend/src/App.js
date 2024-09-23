@@ -71,12 +71,28 @@ function App() {
     {title: "Outlet", img: Outlet, link: '#'},
   ]
 
+  const [isVisible, setIsVisible] = useState(false);
+  const handleScroll = () => {
+    const scrollTop = window.scrollY;
+    if(scrollTop > 200){
+      setIsVisible(true);
+    }else{
+      setIsVisible(false)
+    }
+  }
+
   const handleClickTop = () => {
     window.scrollTo({
       top: 0,
       behavior: 'smooth'
     })
   }
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
 
   return (
       <div>
@@ -129,7 +145,7 @@ function App() {
           <Route path='*' element={<PageNotFound />} />
         </Routes>
         <Footer notLandingPage={currentUrl === '/' ? false : true} />
-        <button onClick={handleClickTop} className='scroll-to-top-button'>
+        <button onClick={handleClickTop} className={`scroll-to-top-button ${isVisible ? 'show-scrollTop' : ''}`}>
           <IoIosArrowUp size={30} className='lead-to-top-btn' />
         </button>
       </div>

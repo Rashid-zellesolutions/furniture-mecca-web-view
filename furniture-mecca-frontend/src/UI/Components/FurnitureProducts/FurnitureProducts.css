@@ -112,7 +112,7 @@
     align-items: center;
     padding: 0 20px;
     background-color: #484F59;
-    color: white;
+    color: var(--text-white);
     font-size: 14px;
     font-weight: 400;
     line-height: 18px;
@@ -287,7 +287,7 @@
         border-radius: 4px;
         border: none;
         margin-top: 10px;
-        color: white;
+        color: var(--text-white);
         font-size: 14px;
         font-weight: 600;
         line-height: 16px;

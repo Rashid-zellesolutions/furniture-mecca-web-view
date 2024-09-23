@@ -303,7 +303,7 @@ const Products = () => {
                     </div>
                 </div>
                 <div className='product-main'>
-                    {products.map((item, index) => {
+                    {products.slice(0, 3).map((item, index) => {
                         return <ProductCard key={index} maxWidthAccordingToComp={'33.33%'} justWidth={'100%'} tagIcon={item.productTag ? item.productTag : item.heart}
                             tagClass={` ${item.productTag ? 'tag-img' : 'heart-icon'}`}
                             tagDivClass={`${item.productTag ? 'product-tag-div' : 'heart-icon-div'}`}

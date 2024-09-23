@@ -81,7 +81,7 @@ const ProductCard = ({tagIcon, tagClass, tagDivClass, mainImage, productCardCont
                     <p>{reviewCount}</p>
                 </div>
                 <p className='product-low-price-addvetisement'>{lowPriceAddvertisement}</p>
-                <h3 className='product-price-tag'>{priceTag}</h3>
+                <h3 className='product-price-tag'>$ {priceTag}</h3>
                 <div className='product-financing-addvertisement-div'>
                 <p>{financingAdd}</p>
                 <a href='#'>{learnMore}</a>

@@ -3,7 +3,6 @@
     flex-direction: column;
     width: 100%;
     height: auto;
-    background-color: green;
 }
 
 .might-also-need-products-div h3{
@@ -18,7 +17,6 @@
     overflow-y: hidden;
     overflow-x: auto;
     gap: 10px;
-    background-color: orange;
     padding: 10px;
 }
 

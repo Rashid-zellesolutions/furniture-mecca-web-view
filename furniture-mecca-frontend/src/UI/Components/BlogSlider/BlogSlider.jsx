@@ -7,8 +7,6 @@ import diningRoomBlogImage from '../../../Assets/Furniture Mecca/Landing Page/bl
 import livingRoomBlogImage from '../../../Assets/Furniture Mecca/Landing Page/blogs/Some-Basics-On-Keeping-Your-Living-Room-Furniture-Clean 1.png';
 import mattressBlogImage from '../../../Assets/Furniture Mecca/Landing Page/blogs/Perks-Of-Using-High-Quality-Mattresses-For-Sleeping 1.png';
 import BlogCard from './BlogCard';
-import leftArrow from '../../../Assets/icons/arrow-left-white.png';
-import rightArrow from '../../../Assets/icons/right-arrow-white.png';
 
 
 const BlogSlider = () => {
@@ -60,16 +58,16 @@ const BlogSlider = () => {
     };
 
     const blogsData = [
-        {img: diningRoomBlogImage, category: 'Dining Room 1', title: 'Advantages Of Purchasing a Firm Mattress', createdBy: 'Furniture Mecca', comments: '4 comments'},
-        {img: livingRoomBlogImage, category: 'Dining Room 2', title: 'Benifits Of Accent Furniture', createdBy: 'Furniture Mecca', comments: '4 comments'},
-        {img: mattressBlogImage, category: 'Dining Room 3', title: 'How To Choose the Ideal Furniture Shop for Your House', createdBy: 'Furniture Mecca', comments: '4 comments'},
-        {img: diningRoomBlogImage, category: 'Dining Room 4', title: 'Benifits Of Accent Furniture', createdBy: 'Furniture Mecca', comments: '4 comments'},
-        {img: diningRoomBlogImage, category: 'Dining Room 5', title: 'Benifits Of Accent Furniture', createdBy: 'Furniture Mecca', comments: '4 comments'},
-        {img: diningRoomBlogImage, category: 'Dining Room 6', title: 'Benifits Of Accent Furniture', createdBy: 'Furniture Mecca', comments: '4 comments'},
-        {img: diningRoomBlogImage, category: 'Dining Room 7', title: 'Benifits Of Accent Furniture', createdBy: 'Furniture Mecca', comments: '4 comments'},
-        {img: diningRoomBlogImage, category: 'Dining Room 8', title: 'Benifits Of Accent Furniture', createdBy: 'Furniture Mecca', comments: '4 comments'},
-        {img: diningRoomBlogImage, category: 'Dining Room 9', title: 'Benifits Of Accent Furniture', createdBy: 'Furniture Mecca', comments: '4 comments'},
-        {img: diningRoomBlogImage, category: 'Dining Room 10', title: 'Benifits Of Accent Furniture', createdBy: 'Furniture Mecca', comments: '4 comments'},
+        {img: diningRoomBlogImage, category: 'Dining Room', title: 'Advantages Of Purchasing a Firm Mattress', createdBy: 'Furniture Mecca', comments: '4 comments'},
+        {img: livingRoomBlogImage, category: 'Bed Room', title: 'Benifits Of Accent Furniture', createdBy: 'Furniture Mecca', comments: '4 comments'},
+        {img: mattressBlogImage, category: 'Mattresses', title: 'How To Choose the Ideal Furniture Shop for Your House', createdBy: 'Furniture Mecca', comments: '4 comments'},
+        {img: diningRoomBlogImage, category: 'Loveseats', title: 'Benifits Of Accent Furniture', createdBy: 'Furniture Mecca', comments: '4 comments'},
+        {img: diningRoomBlogImage, category: 'Kids Room', title: 'Benifits Of Accent Furniture', createdBy: 'Furniture Mecca', comments: '4 comments'},
+        {img: diningRoomBlogImage, category: 'Living Room', title: 'Benifits Of Accent Furniture', createdBy: 'Furniture Mecca', comments: '4 comments'},
+        {img: diningRoomBlogImage, category: 'Accent Furniture', title: 'Benifits Of Accent Furniture', createdBy: 'Furniture Mecca', comments: '4 comments'},
+        {img: diningRoomBlogImage, category: 'Rugs', title: 'Benifits Of Accent Furniture', createdBy: 'Furniture Mecca', comments: '4 comments'},
+        {img: diningRoomBlogImage, category: 'Tent Sale', title: 'Benifits Of Accent Furniture', createdBy: 'Furniture Mecca', comments: '4 comments'},
+        {img: diningRoomBlogImage, category: 'Outlets', title: 'Benifits Of Accent Furniture', createdBy: 'Furniture Mecca', comments: '4 comments'},
     ]
       // products slider script
     const [currentIndex, setCurrentIndex] = useState(0)
@@ -94,13 +92,13 @@ const BlogSlider = () => {
                 turning your home into a haven filled with both charm and character.
             </p>
             <div className='blogs-slider-main-container'>
-            <   Slider {...settings}>
+              <Slider {...settings}>
                     {blogsData.map((item, index) => (
                       <div key={index} className='blog-cards-container'>
                         <BlogCard key={index} img={item.img} category={item.category} title={truncateTitle(item.title, maxLength)} createdBy={item.createdBy} comments={item.comments} />
                       </div>
                     ))}
-                </Slider>
+              </Slider>
             </div>
         </div>
     );

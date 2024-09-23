@@ -2,7 +2,7 @@
     display: flex;
     width: 100%;
     gap: 15px;
-    padding: 25px 60px;
+    padding: var(--global-padding);
     /* height: 60vh; */
 }
 
@@ -13,22 +13,6 @@
     gap: 15px;
     align-items: stretch;
 }
-
-/* .best-seller-cards-container, .best-seller-banners-container{
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.best-seller-cards-container{
-    width: 75%;
-    align-items: stretch;
-}
-
-.best-seller-banners-container {
-    width: 25%;
-    height: auto; 
-} */
 
 /* Optional styling for the cards and banners */
 .best-seller-cards {
@@ -52,8 +36,8 @@
 
 .best-seller-menu h3{
     font-size: 25px;
-    font-weight: 700;
-    line-height: 29px;
+    font-weight: 600;
+    line-height: 37px;
     color: var(--text-color);
 }
 
@@ -91,18 +75,24 @@
     height: auto;
 }
 
+.best-seller-product-image-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 /* Best Seller Banner */
 .best-seller-banners-container{
     display: flex;
     flex-direction: column;
     width: 25%;
     height: auto;
-    gap: 10px;
+    /* gap: 10px; */
 }
 
 .best-seller-banners-container img{
-    width: 100%;
+    width: auto;
     height: 100%;
-    object-fit: cover;
+    object-fit: fill;
     /* max-height: 347px; */
 }

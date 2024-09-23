@@ -1,8 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
 import './BestSeller.css';
 import BestSellerProductCard from '../BestSellerProductCard/BestSellerProductCard';
-import bannerOne from '../../../Assets/images/best-seller-banner-one.png';
-import bannerTwo from '../../../Assets/images/best-seller-banner-two.png';
+import bannerOne from '../../../Assets/Furniture Mecca/category page/best sellers/banner-1.png';
+import bannerTwo from '../../../Assets/Furniture Mecca/category page/best sellers/banner-2.png';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import Loader from '../Loader/Loader';
@@ -75,31 +75,17 @@ const BestSeller = () => {
             ))}
                 </div>
             </div>
-            {/* <div className='best-seller-cards'>
-                {productCardData.map((item, index) => {
-                    return <BestSellerProductCard key={index} heartIcon={item.heartIcon} 
-                        productMainImage={item.mainImage} 
-                        starIcon={item.ratingStars} 
-                        reviews={item.reviews} 
-                        productName={item.productTitle}
-                        oldPrice={item.defaultPrice}
-                        newPrice={item.priceTag}
-                        handleCardClicked={() => handleProductClick(item)}
-                    />
-                })}
-            </div> */}
             <div className='products-slider-container'>
                 {loading && <Loader />} {/* Show loader when loading */}
-                {/* <button className='product-slider-arrow left' onClick={handlePrevClick}>
-                    <img src={arrowLeft} alt="left" />
-                </button> */}
                 <div className='best-seller-slider' style={{ transform: `translateX(${offset}%)` }} >
                     {productCardData.slice(currentIndex * itemsPerPage, (currentIndex + 1) * itemsPerPage).map((item, index) => (
                         <div key={index} className='best-seller-product-card-div' onClick={() => handleProductClick(item)}>
-                            <img src={item.mainImage} alt='img' className='best-seller-product-main-image' />
+                            <div className='best-seller-product-image-container'>
+                                <img src={item.mainImage} alt='img' className='best-seller-product-main-image' />
+                            </div>
                             <span className='product-rating-span'>
                                 {item.ratingStars.map((star, starIndex) => (
-                                    <img key={starIndex} src={star.starIcon} alt='star' />
+                                    <p>{star.starIcon}</p>
                                 ))}
                                 <p>{item.reviews}</p>
                             </span>
@@ -114,9 +100,6 @@ const BestSeller = () => {
                         </div>
                     ))}
                 </div>
-                {/* <button className='product-slider-arrow right' onClick={handleNextClick}>
-                    <img src={arrowRight} alt="right" />
-                </button> */}
             </div> 
         </div>
         <div className='best-seller-banners-container'>

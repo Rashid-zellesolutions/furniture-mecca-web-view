@@ -184,7 +184,7 @@
 }
 
 .single-product-heading{
-    font-size: 31px;
+    font-size: 28px;
     line-height: 44px;
     font-weight: 700;
     color: var(--text-color);
@@ -351,13 +351,6 @@
     margin: 0;
 }
 
-/* .item-count input:focus {
-    box-shadow: inset 0 0 10px rgba(195, 0, 0, 0.5);
-}
-
-.item-count input:hover{
-    box-shadow: inset 0 0 10px rgba(195, 0, 0, 0.5);
-} */
 
 .plus-btn{
     display: flex;
@@ -401,7 +394,7 @@
     font-size: 16px;
     line-height: 24px;
     font-weight: 400;
-    color: #FFFF;
+    color: var(--text-white);
     background-color: var(--active-nav-item-color);
     cursor: pointer;
     outline: none;

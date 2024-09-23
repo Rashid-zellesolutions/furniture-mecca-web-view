@@ -45,7 +45,6 @@ const BlogCard = ({img, category, title, createdBy, comments}) => {
                         ))}
                         (200)
                     </p>
-                    <hr />
                     <p>{comments}</p>
                 </div>
             </div>

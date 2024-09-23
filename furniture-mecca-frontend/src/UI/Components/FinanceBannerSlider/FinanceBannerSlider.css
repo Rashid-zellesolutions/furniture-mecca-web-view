@@ -2,8 +2,6 @@
     position: relative;
     width: 100%;
     height: max-content;
-    /* margin: 0;
-    padding: 0; */
     overflow: hidden;
     box-sizing: border-box;
 }
@@ -13,12 +11,6 @@
     transition: transform 1s ease-in-out;
     width: 100%;
 }
-
-/* .carousel-slides {
-    display: flex;
-    width: 300%; 
-    animation: slide 9s infinite; 
-  } */
 
 .carousel-slide{
     min-width: 100%;

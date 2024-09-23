@@ -7,8 +7,8 @@
     background-image: url('../../../Assets/to-be-change/bb\ 1.png');
     background-repeat: no-repeat;
     background-size: cover;
-    margin-bottom: 25px;
-    margin-top: 25px;
+    /* margin-bottom: 25px; */
+    /* margin-top: 25px; */
 }
 
 .get-the-scop-form-container{
@@ -72,7 +72,7 @@
     font-size: 15px;
     line-height: 15px;
     font-weight: 600;
-    color: white;
+    color: var(--text-white);
     cursor: pointer;
     transition: all 0.3s ease-in-out;
     border-radius: 4px;
@@ -141,10 +141,6 @@
     margin-bottom: 20px;
 }
 
-/* .banner-container img:hover{
-    animation: float 1.5s ease-in-out infinite;
-} */
-
 .get-the-scop-banner button{
     background-color: var(--button-color);
     /* bottom: 12%; */
@@ -153,7 +149,7 @@
     font-size: 16px;
     line-height: 16px;
     text-transform: capitalize;
-    color: white;
+    color: var(--text-white);
     /* padding: 12px 24px; */
     width: 190px;
     height: 46px;
@@ -171,21 +167,9 @@
         font-size: 16px;
     }
 }
-/* 
-@keyframes float {
-    0%{
-        transform: translateY(0%);
-    }
-    50%{
-        transform: translateY(-2%);
-    }
-    100%{
-        transform: translateY(0%);
-    }
-} */
 
 .get-the-scop-banner button a{
-    color: white;
+    color: var(--text-white);
     text-decoration: none;
 }
 
@@ -276,7 +260,7 @@
         border-radius: 5px;
         background-color: #484F59;
         border: 1px solid #484F59;
-        color: white; 
+        color: var(--text-white);
     }
 }
 

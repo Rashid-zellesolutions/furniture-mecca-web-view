@@ -1,12 +1,14 @@
 :root{
   --text-color: #595959;
+  --text-white: #fff;
   --icon-color: #C30000;
   --button-color: #2F7A97;
   --bg-color: #FFFFFF;
   --work-sans-font: "Work Sans", sans-serif;
   --hover-font-color: #C30000;
   --border-color: #D9D9D9;
-  --active-nav-item-color: #C30000;
+  --active-nav-item-color: #C61B1A;
+
   --button-color: #484F59;
   --footer-bg-color: #484F59;
   --footer-nav-items-color: #F8F8F8;
@@ -18,7 +20,8 @@
   --product-text-color: #595959;
   --hover-btn-bg: #595959;
   --service-card-bg: #f7f7f7;
-  --global-padding: 25px 60px
+  /* --global-padding: 35px 60px */
+  --global-padding: 35px 60px;
 }
 
 *{
@@ -29,6 +32,7 @@
 
 body {
   font-family: var(--Poppins-font);
+  color: var(--text-color);
 }
 
 body::-webkit-scrollbar {

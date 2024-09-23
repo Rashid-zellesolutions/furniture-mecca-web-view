@@ -5,7 +5,7 @@
     right: 0;
     width: 0;
     height: 100%;
-    color: #ffff;
+    color: var(--text-white);
     overflow: hidden;
     transition: width 0.5s ease;
     display: flex;
@@ -26,7 +26,7 @@
     font-size: 24px;
     background: none;
     border: none;
-    color: #ffff;
+    color: var(--text-white);
     cursor: pointer;
     z-index: 555;
   }
@@ -36,7 +36,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
     width: 55px;
     height: 150px;
     padding: 20px 0;

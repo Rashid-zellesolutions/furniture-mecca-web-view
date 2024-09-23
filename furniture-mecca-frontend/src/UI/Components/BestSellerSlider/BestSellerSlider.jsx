@@ -52,10 +52,10 @@ const BestSellerSlider = () => {
     const [currentIndex, setCurrentIndex] = useState(0); // Current page index
 
     // Helper function to get the cards for the current page
-    const getCurrentCards = () => {
-        const start = currentIndex * cardsPerPage;
-        return productCardData.slice(start, start + cardsPerPage);
-    };
+    // const getCurrentCards = () => {
+    //     const start = currentIndex * cardsPerPage;
+    //     return productCardData.slice(start, start + cardsPerPage);
+    // };
 
     // Handle page change
     const handlePageChange = (index) => {
@@ -100,7 +100,8 @@ const BestSellerSlider = () => {
                             </div>
                             <span className='product-rating-span'>
                                 {item.ratingStars.map((star, starIndex) => (
-                                    <img key={starIndex} src={star.starIcon} alt='star' />
+                                    // <img key={starIndex} src={star.starIcon} alt='star' />
+                                    <p className='best-seller-stars'>{star.starIcon}</p>
                                 ))}
                                 <p>{item.reviews}</p>
                             </span>

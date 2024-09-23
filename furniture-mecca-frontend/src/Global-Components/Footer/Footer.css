@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    padding: 40px;
+    padding: 40px 40px 20px 40px;
     background-color: var(--footer-bg-color);
 }
 
@@ -31,30 +31,9 @@
 .footer-nav-items{
     font-weight: 400;
     font-size: 14px;
-    line-height: 21px;
+    line-height: 19px;
     padding: 8px 10px 8px 0px;
 }
-
-/* @media only screen and (max-width: 1280px){
-    .footer-nav-link-heading {
-        font-size: 0.875rem;
-    }
-
-    .footer-nav-items{
-        font-weight: 300;
-        font-size: 0.69rem;
-        padding: 4px 5px 4px 0px;
-    }
-} */
-
-/* @media only screen and (max-width: 1140px){
-    .footer-nav-link-heading {
-        font-size: 0.81rem;
-    }
-    .footer-nav-items{
-        font-size: 0.63rem;
-    }
-} */
 
 .footer-nav-items a{
     color: var(--footer-nav-items-color);
@@ -110,7 +89,7 @@
     flex-direction: column;
     justify-content: space-around;
     padding: 0 20px;
-    color: white;
+    color: var(--text-white);
 }
 
 .rating-stars-container h3{
@@ -201,7 +180,7 @@
     display: flex;
     align-items: center;
     gap: 10px;
-    color: white;
+    color: var(--text-white);
 }
 
 .nearby-store-adress span:nth-child(2){
@@ -210,14 +189,14 @@
 
 .nearby-store-adress span p{
     font-size: 10px;
-    color: white;
+    color: var(--text-white);
     line-height: 12px;
 }
 
 .nearby-store-adress div{
     display: flex;
     flex-direction: column;
-    color: white;
+    color: var(--text-white);
 }
 
 .nearby-store-adress div a{
@@ -253,7 +232,7 @@
 .footer-get-the-scoop-main-section h3{
     font-size: 20px;
     font-weight: 500;
-    color: #fff;
+    color: var(--text-white);
     margin-bottom: 10px;
 }
 
@@ -269,7 +248,7 @@
     height: 50px;
     border: 1px solid var(--border-color);
     border-radius: 5px;
-    background-color: #fff;
+    background-color: var(--bg-color);
     align-items: center;
     justify-content: start;
     padding: 0 15px;
@@ -291,7 +270,7 @@
     padding: 14px 32px;
     border: 1px solid #C61B1A;
     background-color: #C61B1A;
-    color: #fff;
+    color: var(--text-white);
     font-size: 15px;
     font-weight: 500;
     height: 50px;
@@ -302,7 +281,7 @@
 .footer-get-the-scoop-main-section p{
     font-size: 14px;
     font-weight: 300;
-    color: #fff;
+    color: var(--text-white);
 }
 
 .footer-care-and-about-section{
@@ -326,7 +305,7 @@
 }
 
 .footer-care-and-about-links{
-    color: white;
+    color: var(--text-white);
     text-decoration: none;
     font-size: 14px;
     font-weight: 400;
@@ -345,7 +324,7 @@
 }
 
 .footer-rights-reserved-container p{
-    color: #fff;
+    color: var(--text-white);
     font-size: 15px;
     font-weight: 400;
     line-height: 23px;
@@ -375,15 +354,6 @@
     width: 15px;
     height: 15px;
 }
-
-/* @media only screen and (max-width: 1000px){
-    .footer-main-container{
-        display: none;
-    }
-    .mobile-view-footer-main-div{
-        display: flex;
-    }
-} */
 
 .empty-space-div{
     display: flex;
@@ -437,7 +407,7 @@
     height: 120px;
     padding: 20px;
     background-color: #1F2123;
-    color: #fff;
+    color: var(--text-white);
     border-radius: 5px;
     gap: 20px;
     cursor: pointer;
@@ -460,7 +430,7 @@
     font-size: 18px;
     font-weight: 700;
     line-height: 21px;
-    color: #fff;
+    color: var(--text-white);
 }
 
 .tag-rating-stars{
@@ -480,7 +450,7 @@
     font-size: 15px;
     font-weight: 400;
     line-height: 18px;
-    color: #fff;
+    color: var(--text-white);
 }
 
 .footer-left-contact-section{
@@ -499,8 +469,8 @@
 }
 
 .footer-left-contact-section span img{
-    width: auto;
-    height: auto;
+    width: 22px;
+    height: 22px;
     object-fit: contain;
 }
 
@@ -508,7 +478,11 @@
     font-size: 18px;
     line-height: 27px;
     font-weight: 500;
-    color: #fff;
+    color: var(--text-white);
+}
+
+.footer-left-contact-section span p:hover{
+    color: #dfdfdf;
 }
 
 /* Footer-Nearest Store */
@@ -525,7 +499,7 @@
     font-size: 20px;
     line-height: 30px;
     font-weight: 600;
-    color: #fff;
+    color: var(--text-white);
     margin-bottom: 30px;
 }
 
@@ -569,9 +543,9 @@
 
 .near-store-details-section span p{
     font-size: 14px;
-    line-height: 21px;
+    line-height: 19px;
     font-weight: 400;
-    color: #fff;
+    color: var(--text-white);
 }
 
 .appointment-and-outlet-div{
@@ -582,14 +556,22 @@
 }
 
 .appointment-and-outlet-div a{
-    color: #fff;
+    color: var(--text-white);
 }
 
 .appointment-and-outlet-div a p{
     font-size: 14px !important;
     line-height: 21px !important;
     font-weight: 600 !important;
-    color: #fff !important;
+    color: var(--text-white) !important;
+}
+
+.appointment-and-outlet-div a:hover{
+    color: #dfdfdf;
+}
+
+.appointment-and-outlet-div a p:hover{
+    color: #dfdfdf !important;
 }
 
 /* Right Section Styling */
@@ -617,7 +599,7 @@
     font-size: 20px;
     line-height: 30px;
     font-weight: 600;
-    color: #fff;
+    color: var(--text-white);
     margin-bottom: 10px;
 }
 
@@ -636,7 +618,7 @@
 }
 
 .footer-get-scoop-input-search input{
-    background-color: #fff;
+    background-color: var(--text-white);
     height: 50px;
     border: none;
     outline: none;
@@ -649,7 +631,7 @@
 
 .footer-get-scoop-input-search button{
     background-color: #C61B1A;
-    color: #fff;
+    color: var(--text-white);
     height: 50px;
     /* width: 26%; */
     width: 154px;
@@ -663,7 +645,7 @@
     font-size: 14px;
     line-height: 21px;
     font-weight: 400;
-    color: #fff;
+    color: var(--text-white);
 }
 
 .right-section-care-and-about{
@@ -684,7 +666,7 @@
     font-size: 20px;
     line-height: 30px;
     font-weight: 600;
-    color: #fff;
+    color: var(--text-white);
     margin-bottom: 30px;
 }
 
@@ -695,7 +677,12 @@
     font-weight: 400;
     line-height: 21px;
     text-decoration: none;
-    color: #fff;
+    color: var(--text-white);
     margin-bottom: 8px;
 }
+
+.footer-costumer-care-and-about a:hover{
+    color: #dfdfdf;
+}
+
 

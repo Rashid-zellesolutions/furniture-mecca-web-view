@@ -43,7 +43,7 @@
     background-color: var(--button-color);
     padding: 14px 40px;
     margin-top: 20px;
-    color: white;
+    color: var(--text-white);
     font-size: 14px;
     line-height: 21px;
     font-weight: 600;
@@ -83,13 +83,13 @@
 .faq-details p:nth-child(2){
     font-size: 13px;
     line-height: 24px;
-    font-size: 300;
+    font-weight: 300;
     text-align: justify;
 }
 
 .faq-details p:nth-child(3){
-    font-size: 22px;
-    line-height: 33px;
+    font-size: 25px;
+    line-height: 37px;
     font-weight: 600;
     padding-bottom: 16px;
 }
