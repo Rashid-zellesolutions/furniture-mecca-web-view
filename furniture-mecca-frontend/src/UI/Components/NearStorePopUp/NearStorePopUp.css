@@ -64,13 +64,21 @@
 
 .pop-up-header i{
     background-color: var(--text-white);
-    padding: 11px 13px;
+    /* padding: 11px 13px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
     border-radius: 50%;
+    width: max-content;
+    height: max-content;
+    /* border-radius: 50%; */
 }
 
 .pop-up-header i img{
-    width: 30px;
-    height: 30px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
 }
 
 .pop-up-header h3{

@@ -45,6 +45,7 @@
     font-weight: 600;
     line-height: 37px;
     color: #595959;
+    margin-top: 5px;
 }
 
 .deal-of-the-day-outer-container{
@@ -64,7 +65,7 @@
 .slick-arrow.slick-next,
 .slick-arrow.slick-prev{
 position: absolute;
-    top: 70%;
+    top: 80%;
     transform: translateY(-50%);
     border: none;
     cursor: pointer;
@@ -85,8 +86,8 @@ position: absolute;
     object-fit: contain;
 }
 
-.slick-arrow.slick-prev{left: -10px;}
-.slick-arrow.slick-next{right: -0px;}
+.slick-arrow.slick-prev{left: -20px;}
+.slick-arrow.slick-next{right: -10px;}
 
 .slick-prev::before,.slick-next::before{
    display:none;    

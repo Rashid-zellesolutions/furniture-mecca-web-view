@@ -6,11 +6,13 @@ import bannerTwo from '../../../Assets/Furniture Mecca/category page/best seller
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import Loader from '../Loader/Loader';
+import { IoStar } from "react-icons/io5";
 
 
 import heartIcon from '../../../Assets/icons/like.png'
 import arrowLeft from '../../../Assets/icons/arrow-left.png'
 import arrowRight from '../../../Assets/icons/arrow-right.png'
+import testImage from '../../../Assets/Furniture Mecca/category page/best sellers/Lisbon-bed-dresser-600x400 1.png'
 
 const BestSeller = () => {
     const bestSellerNav = ['Living Room', 'Bedroom', 'Dining Room']
@@ -29,82 +31,41 @@ const BestSeller = () => {
         console.log("Clicked on ", item.id);
     }
 
-    // cards script
-
-
-    const [loading, setLoading] = useState(false); 
-    const [currentIndex, setCurrentIndex] = useState(0);
-    const itemsPerRow = 3;
-    const rows = 2;
-    const itemsPerPage = itemsPerRow * rows;
-    const totalItems = productCardData.length;
-    const maxIndex = Math.ceil(totalItems / itemsPerPage) - 1;
-    const sliderRef = useRef(null);
-
-    useEffect(() => {
-        if (sliderRef.current) {
-            const containerWidth = sliderRef.current.scrollWidth;
-            sliderRef.current.style.width = `${containerWidth}px`;
-        }
-    }, [productCardData]);
-
-    const handlePrevClick = () => {
-        setCurrentIndex(prevIndex => (prevIndex > 0 ? prevIndex - 1 : maxIndex));
-    };
-
-    const handleNextClick = () => {
-        setCurrentIndex(prevIndex => (prevIndex < maxIndex ? prevIndex + 1 : 0));
-    };
-
-    const offset = -currentIndex * 100; // Adjust offset for sliding
+    const itemPerPage = 6
+    const maxIndex = Math.ceil(productCardData.length / itemPerPage) -1;
+    const [currentIndex, setCurrentIndex] = useState(1)
+    const handleIndex = (index) => {
+        setCurrentIndex((prevIndex) => (prevIndex < maxIndex ? prevIndex + 1 : 0))
+    }
 
   return (
-    <div className='best-seller-main-container'>
-        <div className='best-seller-cards-container'>
-            <div className='best-seller-menu'>
-                <h3>Best Sellers</h3>
-                <div className='best-seller-nav-items'>
-                {bestSellerNav.map((item, index) => (
-                <p
-                    key={index}
-                    className={activeItem === index ? 'active' : ''}
-                    onClick={() => handleActiveItem(index)}
-                >
-                    {item}
-                </p>
-            ))}
-                </div>
-            </div>
-            <div className='products-slider-container'>
-                {loading && <Loader />} {/* Show loader when loading */}
-                <div className='best-seller-slider' style={{ transform: `translateX(${offset}%)` }} >
-                    {productCardData.slice(currentIndex * itemsPerPage, (currentIndex + 1) * itemsPerPage).map((item, index) => (
-                        <div key={index} className='best-seller-product-card-div' onClick={() => handleProductClick(item)}>
-                            <div className='best-seller-product-image-container'>
-                                <img src={item.mainImage} alt='img' className='best-seller-product-main-image' />
-                            </div>
-                            <span className='product-rating-span'>
-                                {item.ratingStars.map((star, starIndex) => (
-                                    <p>{star.starIcon}</p>
-                                ))}
-                                <p>{item.reviews}</p>
-                            </span>
-                            <p className='productmain-name'>{item.productTitle}</p>
-                            <div className='price-and-heart'>
-                                <span>
-                                    <del>{item.defaultPrice}</del>
-                                    <p>{item.priceTag}</p>
-                                </span>
-                                <img src={heartIcon} alt='heart' />
-                            </div>
-                        </div>
+    <div className='category-besst-seller-main-container'>
+        <div className='category-best-seller-cards-section'>
+            <div className='category-best-seller-menu'>
+                <h3>Best Seller</h3>
+                <div className='category-best-seller-menu-items'>
+                    {bestSellerNav.map((item, index) => (
+                        <p key={index} className={activeItem === index ? 'active' : ''} onClick={() => handleActiveItem(index)}>Living Room</p>
                     ))}
                 </div>
-            </div> 
+            </div>
+            <div className='category-products-main-container'>
+                {productCardData.slice(currentIndex * itemPerPage, (currentIndex + 1) * itemPerPage).map((item, index) => (
+                <BestSellerProductCard
+                    key={index}
+                    productMainImage={item.mainImage}
+                    starIcon={item.ratingStars}
+                    reviews={item.reviews}
+                    productName={item.productTitle}
+                    oldPrice={item.defaultPrice}
+                    newPrice={item.priceTag} 
+                />
+                ))}
+            </div>
         </div>
-        <div className='best-seller-banners-container'>
+        <div className='category-best-seller-banners-section'>
             <img src={bannerOne} alt='banner one' />
-            <img src={bannerTwo} alt='banner two' />
+            <img src={bannerTwo} alt='banner one' />
         </div>
     </div>
   )

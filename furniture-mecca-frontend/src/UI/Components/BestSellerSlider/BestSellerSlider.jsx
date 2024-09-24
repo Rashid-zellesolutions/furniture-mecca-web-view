@@ -8,6 +8,7 @@ import bestSellerMainSecondImage from '../../../Assets/Furniture Mecca/Landing P
 import heartIcon from '../../../Assets/icons/like.png'
 import { Link, useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import BestSellerProductCard from '../BestSellerProductCard/BestSellerProductCard';
 
 
 
@@ -51,12 +52,6 @@ const BestSellerSlider = () => {
     const totalPages = Math.ceil(productCardData.length / cardsPerPage); // Total number of pages
     const [currentIndex, setCurrentIndex] = useState(0); // Current page index
 
-    // Helper function to get the cards for the current page
-    // const getCurrentCards = () => {
-    //     const start = currentIndex * cardsPerPage;
-    //     return productCardData.slice(start, start + cardsPerPage);
-    // };
-
     // Handle page change
     const handlePageChange = (index) => {
         setCurrentIndex(index);
@@ -92,28 +87,17 @@ const BestSellerSlider = () => {
                 <img src={activeItem === 0 ?  BestSellerSliderMainBanner : bestSellerMainSecondImage} alt='main banner' />
             </div>
             <div className='products-slider-container'>
-                <div className='best-seller-slider' style={{ transform: `translateX(-${(currentIndex / totalPages) * 100}%)` }}>
+                <div className='best-seller-slider' style={{ transform: `translateX(-${(currentIndex / totalPages) * 101}%)` }}>
                     {productCardData.slice(currentIndex, currentIndex + cardsPerPage).map((item, index) => (
-                        <div key={index} className='best-seller-product-card-div' /* onClick={() => handleProductClick(item)} */ >
-                            <div className='best-seller-product-main-image-div'>
-                                <img src={item.mainImage} alt='img' className='best-seller-product-main-image' />
-                            </div>
-                            <span className='product-rating-span'>
-                                {item.ratingStars.map((star, starIndex) => (
-                                    // <img key={starIndex} src={star.starIcon} alt='star' />
-                                    <p className='best-seller-stars'>{star.starIcon}</p>
-                                ))}
-                                <p>{item.reviews}</p>
-                            </span>
-                            <p className='productmain-name'>{item.productTitle}</p>
-                            <div className='price-and-heart'> 
-                                <span>
-                                    <del>{item.defaultPrice}</del>
-                                    <p>{item.priceTag}</p>
-                                </span>
-                                <img src={heartIcon} alt='heart' />
-                            </div>
-                        </div>
+                        <BestSellerProductCard 
+                            key={index} 
+                            productMainImage={item.mainImage} 
+                            starIcon={item.ratingStars} 
+                            reviews={item.reviews} 
+                            productName={item.productTitle} 
+                            oldPrice={item.defaultPrice}
+                            newPrice={item.priceTag}
+                        />
                     ))}
                 </div>
             </div>

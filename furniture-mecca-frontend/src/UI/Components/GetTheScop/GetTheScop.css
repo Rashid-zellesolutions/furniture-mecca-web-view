@@ -64,6 +64,9 @@
 }
 
 .get-the-scop-input button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: var(--button-color);
     width: 180px;
     height: 40px;
@@ -72,18 +75,51 @@
     font-size: 15px;
     line-height: 15px;
     font-weight: 600;
-    color: var(--text-white);
     cursor: pointer;
-    transition: all 0.3s ease-in-out;
     border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: all 0.3s ease-in-out;
 }
 
-.get-the-scop-input button:hover{
+.get-the-scop-input button a{
+    color: var(--text-white);
+    position: absolute;
+    z-index: 1;
+    transition: all 0.5s ease-in-out;
+}
+
+.get-the-scop-input button::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: var(--text-white); /* New background color */
+    transform: translateX(-100%) skew(-45deg); /* Start off-screen */
+    transition: transform 0.5s ease-in-out; /* Smooth transition */
+    z-index: 0; /* Behind text */
+}
+
+.get-the-scop-input button:hover::before{
+    transform: translateX(0) skew(0deg); /* Slide in background */
+}
+
+.get-the-scop-input button:hover a{
+    color: var(--button-color);
+    position: absolute;
+    transition: color 0.5s ease-in-out;
+    
+}
+
+/* .get-the-scop-input button:hover{
     background-color: transparent;
     border: 2px solid var(--button-color);
     color: var(--button-color);
     font-weight: 600;
-}
+} */
 
 .get-the-scop-form p{
     color: var(--text-color);

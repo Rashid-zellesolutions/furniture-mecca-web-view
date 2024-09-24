@@ -9,12 +9,12 @@ export const CartProvider = ({children}) => {
         const savedCart = localStorage.getItem('cart');
         return savedCart ? JSON.parse(savedCart) : []
     })
+
     useEffect(() => {
         const storedCart = localStorage.getItem('cart');
         if (storedCart) {
             setCart(JSON.parse(storedCart));
         }
-        // console.log("cart from storage", storedCart)
     }, []);
 
     // save cart to local storage when eer it changes
@@ -22,8 +22,6 @@ export const CartProvider = ({children}) => {
         localStorage.setItem('cart', JSON.stringify(cart));
         console.log("cart storage", cart)
     }, [cart])
-
-    // const [cart, setCart] = useState([]);
 
     // Add Items To Cart
     const addToCart = (product) => {
@@ -47,11 +45,6 @@ export const CartProvider = ({children}) => {
             }
         });
     };
-
-    
-    
-
-    // console.log("after cart", cart)
 
     // Remove Cart Item
     const removeFromCart = (id) => {

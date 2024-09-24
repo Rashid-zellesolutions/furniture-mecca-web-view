@@ -9,7 +9,7 @@ import eyeBlack from '../../../Assets/icons/eye-black.png';
 import eyeWhite from '../../../Assets/icons/eye-white.png';
 import namer from 'color-namer';
 
-const ProductCard = ({tagIcon, tagClass, tagDivClass, mainImage, productCardContainerClass, mouseEnter, mouseLeave, ProductTitle, stars, reviewCount, lowPriceAddvertisement,
+const ProductCard = ({tagIcon, tagClass, mainImage, productCardContainerClass, mouseEnter, mouseLeave, ProductTitle, stars, reviewCount, lowPriceAddvertisement,
     priceTag, financingAdd, handleQuickView, learnMore, colorVariation, handleAddToCart, handleCartSectionOpen, mainIndex, deliveryTime, handleVariantColor, selectedColorIndices, maxWidthAccordingToComp, borderLeft, justWidth, handleCardClick
 }) => {
     
@@ -52,7 +52,8 @@ const ProductCard = ({tagIcon, tagClass, tagDivClass, mainImage, productCardCont
     <>
         <div className={`${productCardContainerClass} ${borderLeft ? 'hide-after' : ''} `} style={{maxWidth: maxWidthAccordingToComp, width: justWidth}}>
             <div className='product-card-data'>
-                <div className={tagDivClass}>
+                <div className='tag-and-heart'>
+                    <h3>In Stock</h3>
                     <img src={tagIcon} alt='heart img' className={tagClass} />
                 </div>
                 <div className='product-main-image-container'>
@@ -76,7 +77,8 @@ const ProductCard = ({tagIcon, tagClass, tagDivClass, mainImage, productCardCont
                 <p className='product-title' onClick={handleCardClick}> <Link> {ProductTitle} </Link> </p>
                 <div className='product-rating-stars-div'>
                     {stars.map((stars, starIndex) => {
-                        return <img key={starIndex} src={stars.icon} alt={stars.title} className='rating-star' />
+                        // return <img key={starIndex} src={stars.icon} alt={stars.title} className='rating-star' />
+                        return <i> {<stars.icon />}</i>
                     })}
                     <p>{reviewCount}</p>
                 </div>

@@ -11,13 +11,12 @@ import { Link } from 'react-router-dom';
 
 const Nav = ({navLinks}) => {
 
-    const [dropdownOpen, setDropdownOpen] = useState(0);
+    const [dropdownOpen, setDropdownOpen] = useState(null);
     const [activeIndex, setActiveIndex] = useState(null)
     const location = useLocation()
 
     const handleMouseEnter = (index) => {
         setDropdownOpen(index)
-        console.log('drop down index', dropdownOpen)
     }
     const handleMouseLeave = () => {
         setDropdownOpen(null);
@@ -26,10 +25,10 @@ const Nav = ({navLinks}) => {
         setActiveIndex(index)
     }
     useEffect(() => {
+        setDropdownOpen(null)
         setActiveIndex(location.pathname)
     }, [location])
 
-    console.log('drop down index', dropdownOpen)
     // drop Down Data
     const livingroomLinks = [
         {

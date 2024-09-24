@@ -1,98 +1,163 @@
-.best-seller-main-container{
+.category-besst-seller-main-container{
     display: flex;
     width: 100%;
-    gap: 15px;
+    gap: 20px;
     padding: var(--global-padding);
-    /* height: 60vh; */
 }
 
-.best-seller-cards-container{
+.category-best-seller-cards-section{
     display: flex;
     flex-direction: column;
-    width: 75%;
-    gap: 15px;
-    align-items: stretch;
+    flex-grow: 1;
+    gap: 20px;
 }
 
-/* Optional styling for the cards and banners */
-.best-seller-cards {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-    width: 100%;
-    height: auto;
-}
-
-/* Best Saller menu */
-.best-seller-menu{
+.category-best-seller-menu{
     display: flex;
     width: 100%;
-    height: 48px;
-    /* box-shadow: 1px 1px 8px 0px #00000026; */
     align-items: center;
     justify-content: space-between;
-    padding: 0 10px; 
 }
 
-.best-seller-menu h3{
+.category-best-seller-menu h3{
     font-size: 25px;
-    font-weight: 600;
     line-height: 37px;
-    color: var(--text-color);
-}
-
-
-
-.best-seller-nav-items{
-    display: flex;
-    gap: 30px;
-    align-items: center;
-}
-
-.best-seller-nav-items p{
-    font-size: 15px;
-    font-weight: 400;
-    line-height: 22px;
-    color: var(--text-color);
-    cursor: pointer;
-    /* border-bottom: 3px solid #ffff; */
-}
-
-.best-seller-nav-items p.active{
-    border-bottom: 3px solid var(--active-nav-item-color);
-    font-size: 18px;
     font-weight: 600;
-    line-height: 27px;
 }
 
+.category-best-seller-menu-items{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.category-best-seller-menu-items p{
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 15px;
+    line-height: 22px;
+    font-weight: 400;
+    border-bottom: 3px solid #fff;
+    cursor: pointer;
+}
+
+.category-best-seller-menu-items p.active{
+    font-size: 18px;
+    line-height: 27px;
+    font-weight: 600;
+    border-bottom: 3px solid var(--active-nav-item-color);
+}
 
 /* Best Seller Product Cards */
-.best-seller-cards{
+.category-products-main-container{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
     width: 100%;
     height: auto;
+    gap: 20px;
+    /* overflow: hidden; */
 }
 
-.best-seller-product-image-container{
+.category-product-card{
+    box-shadow: 1px 1px 4px 0px #00000026;
     display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.category-product-card:hover{
+    transform: scale(1.02);
+}
+
+
+.category-product-image{
+    display: flex;
+    width: 100%;
     align-items: center;
     justify-content: center;
 }
 
-/* Best Seller Banner */
-.best-seller-banners-container{
-    display: flex;
-    flex-direction: column;
-    width: 25%;
-    height: auto;
-    /* gap: 10px; */
+.category-product-image img{
+    width: 75%;
+    height: 100%;
+    object-fit: contain;
 }
 
-.best-seller-banners-container img{
+.category-product-rating-section{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 5px;
+}
+
+.category-product-rating-stars{
+    color: #50BED3;
+}
+
+.category-product-rating-section p{
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 300;
+}
+
+.category-product-name{
+    display: flex;
+    width: 100%;
+}
+
+.category-product-name h3{
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 500;
+}
+
+.category-product-price-and-heart{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.category-product-price{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.category-product-price del{
+    font-size: 14px;
+    line-height: 21px;
+    font-weight: 600;
+}
+
+.category-product-price p{
+    font-size: 18px;
+    line-height: 27px;
+    font-weight: 600;
+    color: var(--active-nav-item-color);
+}
+
+.category-product-price-and-heart img{
+    width: auto;
+    height: 22px;
+    object-fit: contain;
+}
+
+
+
+/* Best Seller Banner Section */
+.category-best-seller-banners-section{
+    display: flex;
+    flex-direction: column;
+    width: 380px;
+    height: auto;
+}
+
+.category-best-seller-banners-section img{
     width: auto;
     height: 100%;
-    object-fit: fill;
-    /* max-height: 347px; */
+    object-fit: cover;
 }

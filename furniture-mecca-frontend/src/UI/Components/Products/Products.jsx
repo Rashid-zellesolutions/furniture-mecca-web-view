@@ -1,7 +1,7 @@
 import React, { useEffect, useState} from 'react'
 import './Products.css';
 import { Link, useParams } from 'react-router-dom';
-import AddBtn from '../../../Assets/icons/add-icon.png'
+import AddBtn from '../../../Assets/icons/add-bold-btn.png'
 import { MdKeyboardArrowDown } from "react-icons/md";
 import filterHumberger from '../../../Assets/icons/humberger-icon.png'
 import { useDispatch, useSelector } from 'react-redux';
@@ -239,10 +239,11 @@ const Products = () => {
             <div className={`filters-section ${hideFilters ? 'hide-filter' : ''}`}>
                 <div className='hide-filters-btn'>
                     <button onClick={handleFilterSection}> 
-                        {/* <img src={arrowBlack} alt='arrow black' />  */}
+                        <img src={arrowBlack} alt='arrow black' /> 
                         Hide Filters
                     </button>
                 </div>
+                <div className='filters-inner-container'>
                 <div className='filters-heading-section'>
                     <h3>Filters</h3>
                     <p>Clear Filters</p>
@@ -282,31 +283,36 @@ const Products = () => {
                         {showAllFilters ? 'Show Less Filters' : 'View All Filters'}
                     </button>
                 </div>
-                
+                </div>
             </div>
             {/* Products section code */}
             <div className={`products-section ${hideFilters ? 'full-width' : ''}`}>
                 {/* product heading */}
                 <div className='products-heading'>
                     <p>220 Items starting at $266.99</p>
-                    <div className='sortby-relevance'>
-                        <h3>Sort by:</h3>
-                        <span onClick={handleRelevance}>
-                            <p>Relevance</p>
-                            <MdKeyboardArrowDown size={20} />
-                        </span>
-                        <div className={`relevance-dropdown ${relevanceTrue ? 'show-relevance' : ''}`}>
-                            <p>Item One</p>
-                            <p>Item Two</p>
-                            <p>Item Three</p>
+                    <div className='relevance-container'>
+                        <div className='relevance-heading'>
+                            <h3>Sort by:</h3>
+                            <span onClick={handleRelevance}>
+                                <p>Relevance</p>
+                                <MdKeyboardArrowDown size={20} className={`relevance-arrow ${relevanceTrue ? 'rotate-relevance-arrow' : ''}`} />
+                            </span>
+                            <div className={`relevance-dropdown ${relevanceTrue ? 'show-relevance' : ''}`}>
+                                    <p>Item One</p>
+                                    <p>Item Two</p>
+                                    <p>Item Three</p>
+                                </div>
                         </div>
+                        
                     </div>
                 </div>
                 <div className='product-main'>
                     {products.slice(0, 3).map((item, index) => {
-                        return <ProductCard key={index} maxWidthAccordingToComp={'33.33%'} justWidth={'100%'} tagIcon={item.productTag ? item.productTag : item.heart}
+                        return <ProductCard key={index} 
+                            maxWidthAccordingToComp={'33.33%'} 
+                            justWidth={'100%'} 
+                            tagIcon={item.productTag ? item.productTag : item.heart}
                             tagClass={` ${item.productTag ? 'tag-img' : 'heart-icon'}`}
-                            tagDivClass={`${item.productTag ? 'product-tag-div' : 'heart-icon-div'}`}
                             mainImage={hoveredIndex === index && item.hoverImage ? item.hoverImage : item.mainImage}
                             productCardContainerClass={`product-card ${hideFilters ? 'card-width-increase' : ''}`}
                             mouseEnter={() => handleImageHover(index)}

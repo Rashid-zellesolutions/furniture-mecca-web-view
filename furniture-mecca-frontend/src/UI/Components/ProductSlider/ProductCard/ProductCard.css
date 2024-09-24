@@ -78,11 +78,13 @@
 }
 
 .product-details button{
-    background-color: var(--button-color);
+    /* background-color: var(--button-color); */
+    background-color: var(--text-white);
+    color: var(--button-color);
     font-size: 14px;
     line-height: 16px;
     height: 50px;
-    border: 2px solid var(--button-color);
+    border: 1px solid var(--button-color);
     width: max-content;
     padding: 5px 30px;
     border-radius: 5px;
@@ -90,15 +92,61 @@
     margin-top: 20px;
     margin-bottom: 15px;
     cursor: pointer;
+    position: relative;
+    overflow: hidden;
     transition: all 0.3s ease-in-out;
 }
 
-.product-details button a{
-    color: var(--text-white);
-    text-decoration: none;
+.product-details button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: var(--button-color); /* New background color */
+    transform: translateX(-100%); /* Start off-screen */
+    transition: transform 0.5s ease-in-out; /* Smooth transition */
+    z-index: 0; /* Behind text */
 }
 
-.product-details button:hover{
+/* .product-details button::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; 
+    height: 100%; 
+    border: 2px solid var(--button-color); 
+    transform: translateX(-100%); 
+    transition: transform 0.5s ease-in-out; 
+    border-radius: 5px; 
+    z-index: 0; 
+} */
+
+.product-details button:hover::before {
+    transform: translateX(0); /* Slide in background */
+}
+
+/* .product-details button:hover::after {
+    transform: translateX(0); 
+} */
+
+
+
+.product-details button a{
+    color: var(--button-color);
+    text-decoration: none;
+    position: relative; /* Ensure the text is above the background */
+    z-index: 1; /* Make sure the text appears above the ::before element */
+    transition: color 0.3s ease;
+}
+
+.product-details button:hover a{
+    color: var(--text-white);
+}
+
+/* .product-details button:hover{
     background-color: transparent;
     border: 2px solid var(--active-nav-item-color);
 }
@@ -107,7 +155,7 @@
     color: var(--active-nav-item-color);
     font-weight: 500;
     
-}
+} */
 
 @media only screen and (max-width: 700px){
     .product{

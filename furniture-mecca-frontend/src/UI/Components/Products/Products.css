@@ -2,15 +2,16 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    padding: 0 60px 15px 60px;
+    padding: 0 60px 70px 60px;
     gap: 5px;
 }
 
 .products-main-container h3{
-    font-size: 25px;
+    font-size: 30px;
     font-weight: 600;
-    line-height: 37px;
+    line-height: 33px;
     color: var(--product-text-color);
+    /* margin-top: 5px; */
 }
 
 /* Filters Toggle Section */
@@ -285,7 +286,7 @@
 .products-and-filter-container{
     display: flex;
     /* border-top: 2px solid var(--border-color); */
-    padding: 10px 0;
+    padding: 15px 0 0px 0;
     gap: 15px;
     /* height: 580px;
     background-color: orange;
@@ -300,16 +301,14 @@
 .filters-section{
     display: flex;
     flex-direction: column;
-    width: 25%;
+    width: 23%;
     height: max-content;
-    gap: 35px;
+    gap: 30px;
     padding-right: 15px;
-    border-right: 1px solid var(--border-color);
+    /* border-right: 1px solid var(--border-color); */
     transition: height 0.3s ease-in-out;
-    /* height: 100vh; */
     overflow-y: auto;
     overflow-x: hidden;
-    /* background-color: orange; */
 }
 
 .filters-section.hide-filter{
@@ -324,24 +323,32 @@
 }
 
 .hide-filters-btn button{
-    /* font-size: 14px;
-    font-weight: 400; */
     background-color: transparent;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: none;
+    border: 1px solid #000;
     outline: none;
     /* width: 125px; */
     height: 40px;
     padding: 10px;
     gap: 15px;
-    /* border-radius: 25px; */
+    border-radius: 25px;
     font-size: 14px;
     line-height: 21px;
-    font-weight: 400;
-    text-decoration: underline;
+    font-weight: 500;
+    text-decoration: none;
     cursor: pointer;
+}
+
+.filters-inner-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    border-right: 1px solid var(--border-color);
+    gap: 15px;
+    padding: 0 10px;
 }
 
 
@@ -355,8 +362,9 @@
 
 .filters-heading-section h3{
     font-size: 22px;
+    margin: 0 !important;
     line-height: 33px;
-    font-weight: 600;
+    font-weight: 500;
 }
 
 .filters-heading-section p{
@@ -381,7 +389,7 @@
     flex-direction: column;
     width: 100%;
     border-bottom: 2px solid var(--border-color);
-    padding: 10px 10px;
+    padding: 20px 15px;
 }
 
 .single-filter span{
@@ -402,10 +410,12 @@
     width: 30px;
     height: 30px;
     cursor: pointer;
+    transition: transform 0.3s ease-in-out;
 }
 
 .rotate{
     transform: rotate(45deg);
+    transition: transform 0.3s ease-in-out;
 }
 
 .filters{
@@ -414,7 +424,7 @@
     overflow-x: hidden;
     overflow-y: hidden;
     height: 0px;
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
     height: 0;
     transition: all 0.3s ease-in-out;
 }
@@ -550,7 +560,7 @@ label {
     display: flex;
     flex-direction: column;
     height: max-content;
-    width: 75%;
+    width: 77%;
 }
 
 .products-section.full-width{
@@ -566,70 +576,80 @@ label {
     border-bottom: 2px solid var(--border-color);
 }
 
-.sortby-relevance{
+.relevance-container{
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: max-content;
+    /* border-bottom: none !important; */
+}
+
+.relevance-heading{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     gap: 5px;
+    position: relative;
+    /* border-bottom: none !important; */
+}
+
+.relevance-heading span{
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+    gap: 2px;
+    cursor: pointer;
     position: relative;
 }
 
-.sortby-relevance h3{
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 24px;
-}
-.sortby-relevance span{
-    display: flex;
-    cursor: pointer;
+.relevance-heading span p{
+    font-size: 14px;
+    line-height: 21px;
+    font-weight: 400;
+    color: #D7D7D7;
 }
 
-.sortby-relevance span p{
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 21px;
+.relevance-arrow{
+    transition: transform 0.3s ease;
+}
+
+.rotate-relevance-arrow{
+    transform: rotate(180deg);
+    transition: all 0.3s ease;
+}
+
+.relevance-heading h3{
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 600;
 }
 
 .relevance-dropdown{
-    display: none;
-    width: 150px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    /* border: 1px solid #D7D7D7; */
     position: absolute;
-    background-color: #ffff;
-    z-index: 222;
-    border: 1px solid var(--border-color);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    top: 35px;
-    overflow-x: hidden;
-    overflow-y: auto;
-    height: 120px;
+    top: 30px;
+    background-color: #fff;
+    z-index: 999;
+    transition: all 0.3s ease;
 }
-
-.relevance-dropdown::-webkit-scrollbar {
-    width: 8px; /* Slim width */
-}
-
-/* Style the scrollbar track */
-.relevance-dropdown::-webkit-scrollbar-track {
-    background: #f1f1f1; /* Light gray background */
-    border-radius: 10px; /* Rounded corners */
-}
-
-/* Style the scrollbar thumb */
-.relevance-dropdown::-webkit-scrollbar-thumb {
-    background: #888; /* Darker gray for the thumb */
-    border-radius: 10px; /* Rounded corners */
-}
-
-/* Style the scrollbar thumb on hover */
-.relevance-dropdown::-webkit-scrollbar-thumb:hover {
-    background: #555; /* Darker shade on hover */
-}
-
 .relevance-dropdown.show-relevance{
-    display: block;
-    cursor: pointer;
+    height: 95px;
+    border: 1px solid var(--border-color);
 }
 
 .relevance-dropdown p{
-    padding: 8px 10px;
+    width: 100%;
+    padding: 5px;
+    font-size: 14px;
+    line-height: 21px;
+    font-weight: 400;
+    color: var(--text-color);
+    cursor: pointer;
 }
 
 .relevance-dropdown p:hover{
@@ -638,7 +658,7 @@ label {
 
 /* main products card */
 .product-main{
-    padding: 10px 0 20px 0; 
+    padding: 10px 0 25px 0; 
     display: flex;
     flex-direction: row;
     width: 100%;

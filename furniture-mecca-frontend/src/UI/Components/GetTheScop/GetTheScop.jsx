@@ -16,20 +16,15 @@ const GetTheScop = () => {
               </span>
               <div className='get-the-scop-input'>
                   <input type='text' placeholder='Email Address' />
-                  <button>Sign me up</button>
+                  <button><a>Sign me up</a></button>
               </div>
               <p>By Signing Up you agree to our Terms of Use and Privacy Policy</p>
           </div>
         </div>
         <div className='get-the-scop-banner'>
             <h3>Furniture Mecca Promotions</h3>
-            {/* <p>Get Exclusive Promotional Offers For The Year 2024</p> */}
             <p>Get Exclusive Promotions For The Year 2024</p>
             <button> <a href='#'> Click To See FLyer </a> </button>
-            {/* <div className='banner-container'>
-              <img src={banner} alt="banner" className='float-image' />
-              <button> <a href='#'> Click To See FLyer </a> </button>
-            </div> */}
         </div>
       </div>
       <div className='mobile-view-scop-main-container'>

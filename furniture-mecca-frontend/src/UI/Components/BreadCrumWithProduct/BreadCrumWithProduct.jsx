@@ -1,8 +1,5 @@
 import React from 'react'
 import './BreadCrumWithProduct.css';
-// import imageOne from '../../../Assets/category/brown-soffa.png';
-// import imageTwo from '../../../Assets/category/white-soffa.png';
-// import imageThree from '../../../Assets/category/black-soffa.png'
 
 const BreadCrumWithProduct = ({breadcrumRecentData}) => {
 
