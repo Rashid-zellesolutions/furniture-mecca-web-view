@@ -25,7 +25,52 @@ import AlsoNeed from '../AlsoNeed/AlsoNeed';
 
 
 
+// Alice Slider
+import AliceCarousel from 'react-alice-carousel';
+import "react-alice-carousel/lib/alice-carousel.css";
+
+import imgOne from '../../../Assets/Furniture Mecca/Landing Page/instagram images/Rectangle 874.png';
+import imgTwo from '../../../Assets/Furniture Mecca/Landing Page/instagram images/Rectangle 875.png';
+import imgThree from '../../../Assets/Furniture Mecca/Landing Page/instagram images/Rectangle 876.png';
+import imgFour from '../../../Assets/Furniture Mecca/Landing Page/instagram images/Rectangle 877.png';
+import imgFive from '../../../Assets/Furniture Mecca/Landing Page/instagram images/Rectangle 878.png';
+
+
+
 const SingleProductStickySection = (productData) => {
+
+  // Alice Slider
+  const images = [imgOne, imgTwo, imgThree, imgFour, imgFive];
+    const [activeIndex, setActiveIndex] = useState(0);
+    const carouselRef = useRef(null);
+
+    const handleThumbnailClickk = (index) => {
+        setActiveIndex(index);
+        carouselRef.current.slideTo(index); // Slide to the selected thumbnail
+    };
+
+    const handleNextSlide = () => {
+      const newIndex = activeIndex + 1;
+      if (newIndex < images.length) {
+          setActiveIndex(newIndex);
+          carouselRef.current.slideTo(newIndex); // Slide to the next thumbnail
+      }
+    };
+
+    const handlePrevSlide = () => {
+      const newIndex = activeIndex - 1;
+      if (newIndex >= 0) {
+          setActiveIndex(newIndex);
+          carouselRef.current.slideTo(newIndex); // Slide to the previous thumbnail
+      }
+    };
+
+    // Calculate the visible thumbnails
+    const visibleThumbnails = () => {
+        const totalImages = images.length;
+        const startIndex = Math.max(0, activeIndex > totalImages - 4 ? totalImages - 4 : activeIndex);
+        return images.slice(startIndex, startIndex + 4);
+    };
 
   // sticky behavior scrip
   const leftSectionRef = useRef(null);
@@ -60,101 +105,6 @@ const SingleProductStickySection = (productData) => {
 
   // Sticky Behavior cript end
 
-
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [thumbnailIndex, setThumbnailIndex] = useState(0);
-  const mainSliderRef = useRef(null);
-  const thumbnailSliderRef = useRef(null);
-  const [disableMainLeft, setDisableMainLeft] = useState(true);
-  const [disableMainRight, setDisableMainRight] = useState(false);
-  const [disableThumbLeft, setDisableThumbLeft] = useState(true);
-  const [disableThumbRight, setDisableThumbRight] = useState(false);
-
-  const sliderImages = [
-    { name: 'image one', img: moonDanceImg },
-    { name: 'image two', img: moonDanceImg },
-    { name: 'image three', img: moonDanceImg },
-    { name: 'image four', img: moonDanceImg },
-    { name: 'image five', img: moonDanceImg },
-    { name: 'image six', img: moonDanceImg },
-    { name: 'image seven', img: moonDanceImg },
-    { name: 'image eight', img: moonDanceImg },
-  ];
-
-  const updateDisableStates = () => {
-    if (mainSliderRef.current) {
-      const isAtMainStart = mainSliderRef.current.scrollLeft === 0;
-      const isAtMainEnd = mainSliderRef.current.scrollWidth - mainSliderRef.current.scrollLeft === mainSliderRef.current.clientWidth;
-      setDisableMainLeft(isAtMainStart);
-      setDisableMainRight(isAtMainEnd);
-    }
-    
-    if (thumbnailSliderRef.current) {
-      const isAtThumbStart = thumbnailSliderRef.current.scrollLeft === 0;
-      const isAtThumbEnd = thumbnailSliderRef.current.scrollWidth - thumbnailSliderRef.current.scrollLeft === thumbnailSliderRef.current.clientWidth;
-      setDisableThumbLeft(isAtThumbStart);
-      setDisableThumbRight(isAtThumbEnd);
-    }
-  };
-
-  useEffect(() => {
-    // Ensure refs are not null before adding event listeners
-    const mainSlider = mainSliderRef.current;
-    const thumbnailSlider = thumbnailSliderRef.current;
-
-    if (mainSlider) {
-        mainSlider.addEventListener('scroll', updateDisableStates);
-    }
-
-    if (thumbnailSlider) {
-        thumbnailSlider.addEventListener('scroll', updateDisableStates);
-    }
-
-    return () => {
-        // Ensure refs are not null before removing event listeners
-        if (mainSlider) {
-            mainSlider.removeEventListener('scroll', updateDisableStates);
-        }
-
-        if (thumbnailSlider) {
-            thumbnailSlider.removeEventListener('scroll', updateDisableStates);
-        }
-    };
-}, []);
-
-
-useEffect(() => {
-    if (thumbnailSliderRef.current) {
-      const thumbnailWidth = thumbnailSliderRef.current.clientWidth / 3;
-      thumbnailSliderRef.current.scrollTo({
-        left: currentIndex * thumbnailWidth - (thumbnailWidth / 2),
-        behavior: 'smooth'
-      });
-    }
-  }, [currentIndex]);
-
-  const scrollLeft = () => {
-    if (mainSliderRef.current && thumbnailSliderRef.current) {
-      mainSliderRef.current.scrollBy({ left: -mainSliderRef.current.clientWidth, behavior: 'smooth' });
-      thumbnailSliderRef.current.scrollBy({ left: -thumbnailSliderRef.current.clientWidth / 3, behavior: 'smooth' });
-      setCurrentIndex(prevIndex => Math.max(prevIndex - 1, 0));
-    }
-  };
-
-  const scrollRight = () => {
-    if (mainSliderRef.current && thumbnailSliderRef.current) {
-      mainSliderRef.current.scrollBy({ left: mainSliderRef.current.clientWidth, behavior: 'smooth' });
-      thumbnailSliderRef.current.scrollBy({ left: thumbnailSliderRef.current.clientWidth / 3, behavior: 'smooth' });
-      setCurrentIndex(prevIndex => Math.min(prevIndex + 1, sliderImages.length - 1));
-    }
-  };
-
-
-const handleThumbnailClick = (index) => {
-    setCurrentIndex(index);
-    setThumbnailIndex(index);
-    mainSliderRef.current.scrollTo({ left: mainSliderRef.current.clientWidth * index, behavior: 'smooth' });
-  };
 
 //   Second Section Functions
 
@@ -195,38 +145,45 @@ const handleThumbnailClick = (index) => {
   return (
     <div className='sticky-main-container'>
       <div className='left-section'>
-        <div className='main-sticky-slider'>
-          <div className={`stickyslider-arrow sticky-arrow-left ${disableMainLeft ? 'disabled' : ''}`} onClick={() => scrollLeft('main')}>
-            <img src={arrowLeft} alt='arrow left' />
-          </div>
-          <div className='sticky-section-slider' ref={mainSliderRef}>
-            {sliderImages.map((item, index) => (
-              <div className='sticky-slide' key={index}>
-                <img src={productData.productCard.mainImage} alt={item.name} />
-              </div>
+      <div className='single-product-alice-slider'>
+        <button className='single-product-arrow single-product-arrow-left' onClick={handlePrevSlide} >
+          <img src={arrowLeft} alt='left' />
+        </button>
+        <AliceCarousel
+            ref={carouselRef} // Attach the ref
+            activeIndex={activeIndex}
+            disableDotsControls
+            disableButtonsControls
+            items={images.map((img, index) => (
+                <img key={index} src={img} className="single-product-slider-img" alt={`Slide ${index}`} />
+            ))
+            }
+            responsive={{
+                0: { items: 1 },
+                1024: { items: 1 }
+            }}
+        />
+        <div className="single-product-slider-thumbnails">
+            {images.map((img, index) => (
+                <div
+                    key={index}
+                    className={`single-product-slider-thumbnail ${activeIndex === index ? '' : 'single-product-slider-thumbnail-inactive'}`}
+                    onClick={() => handleThumbnailClickk(index)}
+                >
+                    <img src={img} alt={`Thumbnail ${index}`} />
+                </div>
             ))}
-          </div>
-          <div className={`stickyslider-arrow sticky-arrow-right ${disableMainRight ? 'disabled' : ''}`} onClick={() => scrollRight('main')}>
-            <img src={arrowRight} alt='arrow right' />
-          </div>
         </div>
-        <div className='thumbnail-slider-container'>
-          <div className='thumbnail-slider' ref={thumbnailSliderRef}>
-            {sliderImages.map((thumbnailItem, thumbnailIndex) => (
-              <div
-                key={thumbnailIndex}
-                className={`thumb-slide ${currentIndex === thumbnailIndex ? 'selected' : ''}`}
-                onClick={() => handleThumbnailClick(thumbnailIndex)}
-              >
-                <img src={productData.productCard.mainImage} alt={thumbnailItem.name} />
-              </div>
-            ))}
-          </div>
-        </div>
+        <button className='single-product-arrow single-product-arrow-right' onClick={handleNextSlide}>
+          <img src={arrowRight} alt='right' />
+        </button>
+    </div>
       </div>
       <div className='right-section'>
         <div className='single-product-detail-container'>
-            <h3 className='single-product-heading'>{productData.productCard.productTitle}</h3>
+            {/* <h3 className='single-product-heading'>{productData.productCard.productTitle}</h3> */}
+            
+            <h3 className='single-product-heading'>Trevor Brown 90'' Manual Reclining Sofa & 79'' Console Loveseat</h3>
             <div className='single-product-rating'>
                 <span className='stars-icon'>
                     {ratingStars.map((item, index) => {
@@ -236,10 +193,12 @@ const handleThumbnailClick = (index) => {
                 <p>4.1</p>
                 <Link>200 Reviews</Link>
             </div>
-            <h3 className='single-product-price'>${productData.productCard.priceTag}</h3>
-            <p className='single-product-installment-price-price'>$9/month for 6 months - Total {productData.productCard.priceTag}</p>
+            {/* <h3 className='single-product-price'>${productData.productCard.priceTag}</h3> */}
+            <h3 className='single-product-price'>$199.00</h3>
+            {/* <p className='single-product-installment-price-price'>$9/month for 6 months - Total {productData.productCard.priceTag} </p> */}
+            
             <span className='single-product-shipping'>
-                {/* <p>Free Shipping</p> */}
+                <p className='single-product-installment-price-price'>$9/month for 6 months - Total $ 199.00 </p>
                 <p>Get it between July 27 - July 31'</p>
             </span>
             <div className='single-product-frame-color'>
@@ -270,7 +229,7 @@ const handleThumbnailClick = (index) => {
                       {isLoading ? 'Loading...' : 'Add To Cart'}
                   </button>
                 </div>
-                {/* <AlsoNeed /> */}
+                <AlsoNeed />
                 <WhatWeOffer />
                 <ProductOverView />
                 <SingleProductFAQ />

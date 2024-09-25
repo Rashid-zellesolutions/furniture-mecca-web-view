@@ -18,13 +18,17 @@ import InstaGallery from '../../Components/InstaGallery/InstaGallery'
 import Shopvia from '../../Components/ShopViaBanner/Shopvia'
 import { useDispatch } from 'react-redux'
 import InstaTwoImageGallery from '../../Components/InstaTwoImageGallery/InstaTwoImageGallery'
+import { useProducts } from '../../../context/productsContext/productContext'
 
 const SingleProduct = () => {
-  const location = useLocation();
-  const productCard = location.state || {};
-  console.log("Card Data", productCard);
-  const dynamicData = productCard.productCard || productCard.products
+  // const location = useLocation();
+  // const productCard = location.state || {};
+  // console.log("Card Data", productCard);
+  // const dynamicData = productCard.productCard || productCard.products
   // console.log("Dynamic Card Data ", dynamicData)
+
+  const {products} = useProducts()
+
   
   const handleClickTop = () => {
     window.scrollTo({
@@ -34,22 +38,15 @@ const SingleProduct = () => {
   }
   useEffect(() => {
     handleClickTop()
-  }, [productCard]);
+  }, [products]);
   
-  if(!productCard){
+  if(!products){
     return <div>Product Not Found</div>
   }
 
-  // const dispatch = useDispatch;
-  //   const {productId} = useParams();
-  //   const product = productCard.find((product) => String((productCard.id) === productId))
-  //   const handleAdd = (product) => {
-  //       dispatch(add(product))
-  //   }
-
   return (
     <div>
-        <SingleProductStickySection productCard={dynamicData} />
+        <SingleProductStickySection productData={products} />
         <SimillerProducts />
         <FrequentlyBought />
         <RatingAndReview />

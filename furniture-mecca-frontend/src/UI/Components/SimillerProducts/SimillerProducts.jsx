@@ -5,10 +5,12 @@ import { useSelector } from 'react-redux'
 import ProductCard from '../ProductCard/ProductCard'
 import arrowLeftRed from '../../../Assets/icons/arrow-left-red.png';
 import arrowRightRed from '../../../Assets/icons/arrow-right-red.png';
+import { useProducts } from '../../../context/productsContext/productContext'
 
 const SimillerProducts = () => {
 
-    const productData = useSelector((state) => state.products.data)
+    // const productData = useSelector((state) => state.products.data)
+    const {products} = useProducts()
     const [hoveredIndex, setHoveredIndex] = useState(null);
     const [hideFilters, setHideFilters] = useState(false);
 
@@ -31,7 +33,7 @@ const SimillerProducts = () => {
     };
 
     // Select Color Variations Functions
-    const [selectedColorIndices, setSelectedColorIndices] = useState(Array(productData.length).fill(0));
+    const [selectedColorIndices, setSelectedColorIndices] = useState(Array(products.length).fill(0));
     const handleVariantImageClick = (cardIndex, colorIndex) => {
         const updatedIndices = [...selectedColorIndices];
         updatedIndices[cardIndex] = colorIndex;
@@ -75,7 +77,7 @@ const SimillerProducts = () => {
                 <img src={arrowLeftRed} alt='arrow-left' />
             </button>
             <div className='similler-products-cards' ref={scrollContainerRef}>
-                {productData.slice(0, 12).map((item, index) => (
+                {products.slice(0, 12).map((item, index) => (
                     <ProductCard
                         key={index}
                         maxWidthAccordingToComp={'100%'} justWidth={'310px'}
@@ -99,6 +101,7 @@ const SimillerProducts = () => {
                         selectedColorIndices={selectedColorIndices}
                         handleVariantColor={() => handleVariantImageClick(index, colorIndex)}
                         borderLeft={index % 4 === 3}
+                        stock={item.stock}
                     />
                 ))}
             </div>

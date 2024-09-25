@@ -3,7 +3,7 @@
     flex-direction: column;
     gap: 50px;
     width: 100%;
-    padding: 50px 60px;
+    padding: var(--global-padding);
 }
 
 .out-door-and-fav{
@@ -21,9 +21,9 @@
 }
 
 .out-door-fav-details h3{
-    font-size: 20px;
-    line-height: 28px;
-    font-weight: 700;
+    font-size: 25px;
+    line-height: 37px;
+    font-weight: 600;
     color: var(--text-color);
 }
 
@@ -70,7 +70,7 @@
 .related-category-div h3{
     font-size: 25px;
     line-height: 37px;
-    font-weight: 700;
+    font-weight: 600;
     color: var(--text-color);
 }
 
@@ -89,9 +89,4 @@
     border: 1px solid var(--border-color);
     border-radius: 25px;
     cursor: pointer;
-}
-
-.related-category:hover{
-    border: 1px solid var(--active-nav-item-color);
-    color: var(--active-nav-item-color);
 }

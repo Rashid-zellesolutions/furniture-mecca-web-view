@@ -3,6 +3,6 @@
     flex-direction: column;
     width: 100%;
     background-color: #f7f7f7;
-    padding: 50px 60px;
+    padding: var(--global-padding);
     gap: 16px;
 }

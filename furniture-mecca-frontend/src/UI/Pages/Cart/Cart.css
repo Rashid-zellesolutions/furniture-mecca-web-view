@@ -8,9 +8,10 @@
 .cart-body{
     display: flex;
     width: 100%;
-    padding: 0 60px;
+    padding: 10px 0 10px 60px;
     gap: 10px;
-    min-height: 100vh;
+    min-height: 60vh;
+    position: relative;
     /* background-color: orange; */
 }
 
@@ -18,7 +19,7 @@
     display: flex;
     width: 75%;
     padding: 30px 20px 0 0;
-    border-right: 1px solid #d9d9d9;
+    /* border-right: 1px solid #d9d9d9; */
 }
 
 .cart-you-may-like-section{
@@ -29,9 +30,17 @@
     gap: 10px;
     position: sticky;
     top: 0px; 
-    height: 80vh; 
+    height: max-content; 
     z-index: 10;
     overflow: hidden;
+    box-shadow: -1px 0px 8px 0px #0000001A;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    /* right: 0;
+    top: 10px; 
+    z-index: 99999; */
+    background-color: #fff;
+
 }
 
 .cart-you-may-like-section h3{

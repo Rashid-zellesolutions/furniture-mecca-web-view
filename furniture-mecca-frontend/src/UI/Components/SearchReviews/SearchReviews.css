@@ -26,7 +26,7 @@
 .search-bar{
     display: flex;
     align-items: center;
-    border: 1px solid var(--active-nav-item-color);
+    border: 1px solid var(--border-color);
     border-radius: 10px;
     height: 50px;
     background-color: white;
@@ -81,14 +81,10 @@
 .related-revew-section p{
     padding: 5px 15px;
     border: 1px solid var(--border-color);
+    background-color: #fff;
     font-size: 16px;
     font-weight: 400;
     line-height: 24px;
     border-radius: 25px;
     cursor: pointer;
-}
-
-.related-revew-section p:hover{
-    border: 1px solid var(--active-nav-item-color);
-    color: var(--active-nav-item-color);
 }

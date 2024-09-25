@@ -4,7 +4,6 @@ import imageOne from '../../../Assets/Furniture Mecca/product page/comment image
 import imageTwo from '../../../Assets/Furniture Mecca/product page/comment images/default_name 8.png';
 import imageThree from '../../../Assets/Furniture Mecca/product page/comment images/default_name 9.png';
 import filledStar from '../../../Assets/icons/Star 19.png';
-import unFilledStar from '../../../Assets/icons/blue-outline-star.png'
 
 const AlsoNeed = () => {
     const mightNeedData = [
@@ -25,25 +24,26 @@ const AlsoNeed = () => {
         }
     ]
   return (
-    <div className='might-also-need-products-div'>
+    <div className='might-need-main-container'>
         <h3>You Might Also Need</h3>
-        <div className='might-also-need-products-slider'>
-            {mightNeedData.map((items, index) => {
-                return <div className='might-need-product-card'>
-                    <div className='might-need-product-image-div'>
-                        <img src={items.img} alt='img' />
-                    </div>
-                    <div>
-                        <p className='might-needproduct-name'>{items.name}</p>
-                        <p>{items.colorAndCategory}</p>
-                        <p>{items.price}</p>
-                        {items.filledStars.map((star, index) => (
-                            <img src={star} alt='star' />
-                        ))}
-                        <p>{items.reviewCount}</p>
+        <div className='might-need-cards-main-container'>
+            {mightNeedData.map((item, index) => (
+                <div key={index} className='might-need-product-card'>
+                    <img src={item.img} alt='img' />
+                    <div className='you-might-need-product-contant'>
+                        <h3>{item.name}</h3>
+                        <p>{item.colorAndCategory}</p>
+                        <p className='might-need-product-price'>{item.price}</p>
+                        <span className='might-need-product-rating'>
+                            {item.filledStars.map((star) => (
+                                <img src={star} alt='star' />
+                            ))}
+                            <p>({item.reviewCount})</p>
+                        </span>
                     </div>
                 </div>
-            })}
+            ))}
+            
         </div>
     </div>
   )

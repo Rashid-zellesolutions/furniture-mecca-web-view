@@ -1,14 +1,14 @@
 .what-we-offer-container{
     display: flex;
     width: 100%;
-    gap: 24px;
+    gap: 25px;
     flex-direction: column;
 }
 
 .what-we-offer-container h3{
     font-size: 20px;
     line-height: 30px;
-    font-weight: 700;
+    font-weight: 600;
     color: var(--text-color);
 }
 
@@ -18,8 +18,8 @@
     width: 100%;
     gap: 10px;
     border-bottom: 1px solid var(--border-color);
-    padding: 10px 0;
-    margin-bottom: 40px;
+    padding: 10px 0 23px 0;
+    /* margin-bottom: 40px; */
 }
 
 .servise-card{
@@ -156,7 +156,7 @@
 
 .servise-card-details-section h3{
     font-size: 16px;
-    font-weight: 700;
+    font-weight: 500;
     line-height: 24px;
 }
 

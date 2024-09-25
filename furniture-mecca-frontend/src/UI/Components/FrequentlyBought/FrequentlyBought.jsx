@@ -3,9 +3,11 @@ import './FrequentlyBought.css';
 import { useSelector } from 'react-redux';
 import ProductCard from '../ProductCard/ProductCard';
 import { useNavigate } from 'react-router-dom';
+import { useProducts } from '../../../context/productsContext/productContext';
 
 const FrequentlyBought = () => {
-    const productData = useSelector((state) => state.products.data)
+    // const productData = useSelector((state) => state.products.data)
+    const {products} = useProducts()
     const navigate = useNavigate()
     const handleProductClicked = (item) => {
       navigate(`/single-product/${item.id}`)
@@ -14,7 +16,7 @@ const FrequentlyBought = () => {
     const [hoveredIndex, setHoveredIndex] = useState(null);
     const [hideFilters, setHideFilters] = useState(false);
 
-    console.log(productData)
+    // console.log(productData)
 
     
 
@@ -40,7 +42,7 @@ const FrequentlyBought = () => {
 
     
     // Select Color Variations Functions
-    const [selectedColorIndices, setSelectedColorIndices] = useState(Array(productData.length).fill(0));
+    const [selectedColorIndices, setSelectedColorIndices] = useState(Array(products.length).fill(0));
     const handleVariantImageClick = (cardIndex, colorIndex) => {
         const updatedIndices = [...selectedColorIndices];
         updatedIndices[cardIndex] = colorIndex;
@@ -52,7 +54,7 @@ const FrequentlyBought = () => {
     <div className='frequently-bought-main'>
         <h3>Frequently Bought Together</h3>
         <div className='frequently-bought-card'>
-        {productData.slice(0, 5).map((item, index) => (
+        {products.slice(0, 5).map((item, index) => (
                         <ProductCard
                             key={index}
                             maxWidthAccordingToComp={'100%'}
@@ -77,6 +79,7 @@ const FrequentlyBought = () => {
                             handleVariantColor={() => handleVariantImageClick(index, colorIndex)}
                             borderLeft={index % 4 === 3}
                             handleCardClick={() => handleProductClicked(item)}
+                            stock={item.stock}
                         />
                     ))}
         </div>

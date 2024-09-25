@@ -3,7 +3,7 @@
     flex-direction: column;
     width: 100%;
     background-color: #f7f7f7;
-    padding: 10px 60px;
+    padding: var(--global-padding);
     gap: 16px;
 }
 
@@ -11,7 +11,7 @@
     color: var(--text-color);
     font-size: 25px;
     line-height: 37px;
-    font-weight: 700;
+    font-weight: 600;
 }
 
 .rating-and-review-main-container p{

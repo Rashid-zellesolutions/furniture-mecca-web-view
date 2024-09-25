@@ -6,7 +6,7 @@
     gap: 10px;
     overflow-y: auto;
     overflow-x: hidden;
-    height: 650px;
+    height: 60vh;
     position: sticky;
 }
 
@@ -22,7 +22,9 @@
     height: auto;
     padding: 10px;
     gap: 5px;
-    box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.1); */
+    box-shadow: 1px 1px 6px 0px #0000001A;
+
     border-radius: 4px;
     cursor: pointer;
 

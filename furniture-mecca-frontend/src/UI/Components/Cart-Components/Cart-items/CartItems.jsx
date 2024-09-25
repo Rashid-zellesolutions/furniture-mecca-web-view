@@ -8,11 +8,15 @@ import plusCharcol from '../../../../Assets/icons/plus.png';
 import minusCharcol from '../../../../Assets/icons/minus.png'
 import crossBtn from '../../../../Assets/icons/Mask group (1).png'
 import { HiOutlineArrowPathRoundedSquare } from "react-icons/hi2";
+import rotatedArrow from '../../../../Assets/icons/arrow-rotate-white.png'
+import unProtectedIcon from '../../../../Assets/icons/un-protected.png';
+import protectedIcon from '../../../../Assets/icons/protected.png'
 
 const CartItems = ({cartProductName, cartPRoductImage, cartProductColor, cartProductTitle, cartProductTotalPrice, 
     cartSingleProductPrice, isCartOpen, onlyMobile, productColor, quantity, handleRomoveProduct,  cartIndex, productsLength, handleIncreament, handleDecreament, handleTotalPrice}) => {
   
         const [saveForLeter, setSaveForLeter] = useState(false)
+        const [isProtected, setIsProtected] = useState(false)
         
         const productTotalPrice = cartSingleProductPrice * quantity;
         const singlePrice = cartSingleProductPrice.toLocaleString('en-US', {
@@ -30,6 +34,8 @@ const CartItems = ({cartProductName, cartPRoductImage, cartProductColor, cartPro
                 setSaveForLeter(false);
             }, 2000);
         }
+
+        const handleProtected = () => {setIsProtected(!isProtected)}
         
     return (
     <>
@@ -79,9 +85,13 @@ const CartItems = ({cartProductName, cartPRoductImage, cartProductColor, cartPro
                 </button>
                 <div className='desktop-name-and-single-price'>
                     <h3>{cartProductName}</h3>
-                    <p className='desktop-product-extra-info'>Gray</p>
+                    <p className='desktop-product-extra-info'>$599</p>
                     <p className='desktop-product-extra-info'>Table & 4 Chairs</p>
-                    <p className='desktop-product-extra-info'>Yes, Protect it (+$99)</p>
+                    {/* <p className='desktop-product-extra-info'>Yes, Protect it (+$99)</p> */}
+                    <button className={`protect-product-tag ${isProtected ? 'protect-tick' : ''}`} onClick={handleProtected}>
+                        <img src={isProtected ? protectedIcon : unProtectedIcon} alt='unProtected' />
+                        {isProtected ? 'Protected(+99)' : 'Prodect'}
+                    </button>
                     <p>{singlePrice}</p>
                 </div>
                 <div className={`desktop-quantity-and-save-for-leter ${isCartOpen ? 'hide-quantity' : ''}`}>
@@ -99,7 +109,7 @@ const CartItems = ({cartProductName, cartPRoductImage, cartProductColor, cartPro
                     <p>$ {formatedProductTotalPrice}</p>
                     {/* <p>$ {productTotalPrice}</p> */}
                     <button className='save-for-leter' onClick={handleSaveForLeter}>
-                       <HiOutlineArrowPathRoundedSquare size={20} className={`${saveForLeter ? 'arrow-rotate' : ''}`} /> Save For Later
+                       <img src={rotatedArrow} className={`${saveForLeter ? 'arrow-rotate' : ''}`} /> Save For Later
                     </button>
                 </div>
                 <div className={isCartOpen ? 'cart-open-quantity-and-total-price' : 'cart-close-quantity-and-total-price'}>

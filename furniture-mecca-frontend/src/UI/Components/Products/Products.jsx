@@ -325,6 +325,7 @@ const Products = () => {
                             handleAddToCart={() => addToCart(item)}
                             handleCartSectionOpen={() => handleCartSectionOpen(item)}
                             handleQuickView={() => handleQuickViewOpen()}
+                            stock={item.stock}
                         />
                     })}
                 </div>
