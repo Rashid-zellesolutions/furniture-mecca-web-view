@@ -8,7 +8,7 @@ const LocationPopUp = ({searchLocation, handleCloseSearch}) => {
   return (
     <div className={`show-location-modal ${searchLocation ? 'increase-width-location-modal' : ''} `}>
               <div className='location-modal-containt-div'>
-                <button className={`close-language-modal ${searchLocation ? '' : 'hide-close-btn' }`} onClick={handleCloseSearch}>
+                <button className={`close-location-modal ${searchLocation ? '' : 'hide-location-close-btn' }`} onClick={handleCloseSearch}>
                   <img src={closeBtn} alt='close btn' />
                 </button>
                 <div className='location-heading-and-search-bar-section'>

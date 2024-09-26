@@ -6,8 +6,9 @@ import searchIcon from '../../../Assets/icons/search.png';
 import { TbCurrentLocation } from "react-icons/tb";
 import AddBtn from '../../../Assets/icons/add-icon.png';
 import { MdOutlineStars } from "react-icons/md";
+import closeBtn from '../../../Assets/icons/close-btn-black.png';
 
-const NearStorePopUp = ({isOpen, setIsOpen}) => {
+const NearStorePopUp = ({isOpen, setIsOpen, handleCloseNearBy}) => {
     const [storeOpenIndex, setOpenStoreIndex] = useState(-1);
     const handleStoreHoursDetails = (index) => {
         setOpenStoreIndex(storeOpenIndex === index ? -1 : index)
@@ -146,7 +147,10 @@ const NearStorePopUp = ({isOpen, setIsOpen}) => {
     <div className={`near-store-pop-up ${isOpen ? 'show' : ''}`}>
         <div className='near-store-container'>
             <div className='pop-up-header'>
-                <span onClick={() => setIsOpen(!isOpen)}> <IoCloseOutline size={20} /> </span>
+                <span onClick={handleCloseNearBy}> 
+                    {/* <IoCloseOutline size={20} />  */}
+                    <img src={closeBtn} alt='btn' />
+                </span>
                 <i>
                     <img src={NearStore} alt='near' />
                 </i>

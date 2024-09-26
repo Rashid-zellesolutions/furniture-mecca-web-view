@@ -104,9 +104,9 @@ const FAQ = () => {
                     Sofas and loveseats, ottomans and accent chairs, plus more.All perfectly paired to 
                     create your coziest living space or party place!
                 </p>
-                <p>Living Room Set FAQs</p>
             </div>
             <div className='questions-answeres'>
+                <p className='faq-heading'>Living Room Set FAQs</p>
                 {Qna.map((item, index) => {
                     return <div key={index} className='question-toggler'>
                         <div className='question-section' onClick={() => handleToggle(index)}>

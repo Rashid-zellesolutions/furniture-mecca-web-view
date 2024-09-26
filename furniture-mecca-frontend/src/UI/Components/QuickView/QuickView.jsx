@@ -13,8 +13,22 @@ import redHeart from '../../../Assets/icons/red-heart.png'
 import arrowDown from '../../../Assets/icons/arrow-down-white.png';
 import arrowLeft from '../../../Assets/icons/arrow-left.png';
 import arrowRight from '../../../Assets/icons/arrow-right.png';
+import CartSidePannel from '../Cart-side-section/CartSidePannel';
+import { useProducts } from '../../../context/productsContext/productContext';
+import { useCart } from '../../../context/cartContext/cartContext';
 
 const QuickView = () => {
+
+    const {products} = useProducts()
+    const {cart, addToCart, cartSectionOpen, setCartSectionOpen, increamentQuantity, decreamentQuantity, removeFromCart, calculateTotalPrice} = useCart();
+    const [showCart, setShowCart] = useState(false);
+    const handleCartSectionOpen = () => {
+        setShowCart(true);
+    }
+    const handleCartSectionClose = () => {
+        setShowCart(false)
+    }
+
     const stars = [filledStar, filledStar, filledStar, filledStar, unFilledStar]
     const [viewDetails, setViewDetails]= useState(false)
     const handleViewDetails = () => {
@@ -44,7 +58,7 @@ const QuickView = () => {
                         <img src={star} alt='star' />
                     ))}
                 </div>
-                <p>4.1 <span>200 Reviews</span></p>
+                <p>(200)</p>
                 
             </div>
         </div>
@@ -87,15 +101,15 @@ const QuickView = () => {
                 </button>
             </div>
             <img src={redHeart} alt='heart' className='quickview-heart-icon'/>
-            <button className='quick-view-add-to-cart'>
+            <button className='quick-view-add-to-cart' onClick={handleCartSectionOpen}>
                 Add To Cart
             </button>
         </div>
         <div className='quick-view-details-section'>
             <div className='quick-view-detail-single-section'>
-                <div className='quick-view-details-heading'>
+                <div className='quick-view-details-heading' onClick={handleViewDetails}>
                     <p>Spacifications</p>
-                    <button onClick={handleViewDetails}>
+                    <button >
                         <img src={arrowDown} alt='arrow down' className={viewDetails ? 'quick-view-rotate-up' : 'quick-view-rotate-down'} />
                     </button>
                 </div>
@@ -104,6 +118,14 @@ const QuickView = () => {
                 </div>
             </div>
         </div>
+        <CartSidePannel 
+            cartData={cart}
+            addToCartClicked={showCart}
+            handleCartSectionClose={handleCartSectionClose} 
+            removeFromCart={removeFromCart}
+            decreamentQuantity={decreamentQuantity}
+            increamentQuantity={increamentQuantity}
+        />
     </div>
   )
 }

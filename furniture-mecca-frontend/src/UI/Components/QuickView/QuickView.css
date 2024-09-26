@@ -17,10 +17,11 @@
 }
 
 .quick-view-heading-and-rating h3{
-    font-size: 18px;
-    line-height: 27px;
-    font-weight: 700;
+    font-size: 15px;
+    line-height: 20px;
+    font-weight: 500;
     color: var(--text-white);
+    padding: 0 20px 13px 0;
 }
 
 .quick-view-rating{
@@ -29,26 +30,22 @@
     align-items: center;
     justify-content: start;
     gap: 10px;
+    margin-bottom: 6px;
 }
 
 .quick-view-start{
     display: flex;
     align-items: center;
     justify-content: start;
-    gap: 5px;
+    gap: 0px;
 
 }
 
 .quick-view-rating p{
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 24px;
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 18px;
     color: var(--text-white);
-}
-.quick-view-rating p span{
-    color: #FFC750;
-    text-decoration: underline;
-    margin-left: 5px;
 }
 
 .quick-view-image-and-variations{
@@ -57,7 +54,7 @@
     width: 100%;
     height: auto;
     margin-top: 10px;
-    gap: 25px;
+    gap: 10px;
 }
 
 .quick-view-slider {
@@ -127,11 +124,19 @@
     gap: 10px;
 }
 
+.quick-view-var-one p{
+    color: #fff;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 19px;
+
+}
 
 .quick-view-vars p{
     font-size: 13px;
     font-weight: 400;
-    line-height: 20px;
+    line-height: 19px;
+    color: #fff;
 }
 
 .quick-view-price{
@@ -139,7 +144,7 @@
     font-weight: 600;
     line-height: 45px;
     color: var(--text-white) !important;
-    margin: 25px 0;
+    margin: 20px 0;
 }
 
 .quick-view-add-item-or-cart-btn{
@@ -212,7 +217,8 @@
     width: 100%;
     align-items: center;
     justify-content: center;
-    padding: 20px 0;
+    padding-top: 10px;
+    margin-top: 10px;
     border-bottom: 2px solid #d7d7d7;
 }
 
@@ -221,12 +227,14 @@
     width: 100%;
     align-items: center;
     justify-content: space-between;
+    cursor: pointer;
 }
 
 .quick-view-details-heading p{
-    font-size: 18px;
-    font-weight: 700;
+    font-size: 16px;
+    font-weight: 500;
     line-height: 24px;
+    color: #fff;
 }
 
 .quick-view-details-heading button{

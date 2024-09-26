@@ -32,6 +32,7 @@
     flex-direction: column;
     gap: 15px;
     flex: 1;
+    z-index: 0;
 }
 
 .best-seller-slider-menu-bar{
@@ -41,6 +42,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 0 10px;
+    z-index: 0;
 }
 
 .best-seller-slider-menu-bar h3{
@@ -78,7 +80,9 @@
     position: relative;
     overflow: hidden;
     width: 100%; 
-    padding: 2px;
+    padding: 5px;
+    z-index: 0;
+    /* background-color: orange; */
 }
 
 
@@ -90,6 +94,7 @@
     /* flex-wrap: wrap; */
     gap: 10px;
     width: 100%;
+    z-index: 0;
 }
 
 .product-slider-arrow{

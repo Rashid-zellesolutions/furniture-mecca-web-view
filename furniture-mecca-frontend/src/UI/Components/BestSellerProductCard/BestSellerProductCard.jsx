@@ -4,6 +4,14 @@ import heartIcon from '../../../Assets/icons/like.png'
 
 const BestSellerProductCard = ({ productMainImage, starIcon, reviews, productName, oldPrice, newPrice, singleProductLink, handleCardClicked}) => {
 
+    const maxLength = 40;
+    const truncateTitle = (title, maxLength) => {
+        if (title.length > maxLength) {
+            return title.slice(0, maxLength) + '...';
+        }
+        return title;
+    };
+
   return (
     <div className='category-product-card'>
         <div className='category-product-image'>
@@ -18,7 +26,7 @@ const BestSellerProductCard = ({ productMainImage, starIcon, reviews, productNam
             <p>({reviews})</p>
         </div>
         <div className='category-product-name'>
-            <h3>{productName}</h3>
+            <h3>{truncateTitle(productName, maxLength)}</h3>
         </div>
         <div className='category-product-price-and-heart'>
             <div className='category-product-price'>

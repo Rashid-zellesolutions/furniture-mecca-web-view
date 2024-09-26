@@ -190,7 +190,7 @@ const DealOfTheDay = () => {
 
   var settings = {
     dots: false,
-    infinite: true,
+    infinite: false,
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 4,
@@ -274,6 +274,8 @@ const DealOfTheDay = () => {
 
   // Destructure timeLeft
   const { days, hours, minutes, seconds } = timeLeft;
+
+  
 
 
   return (

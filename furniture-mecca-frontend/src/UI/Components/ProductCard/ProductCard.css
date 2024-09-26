@@ -2,41 +2,50 @@
 .product-card {
     box-sizing: border-box;
     position: relative;
-    padding: 15px;
+    padding: 15px 13px;
+    box-shadow: 1px 1px 4px 0px #00000026;
+    cursor: pointer;
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s ease-in-out;
 }
 
-.product-card::before,
+.product-card:hover{
+    transform: scale(1.02);
+    /* border: 1px solid var(--border-color); */
+}
+
+/* .product-card::before,
 .product-card::after {
     content: '';
     position: absolute;
     background: var(--border-color);
-}
+} */
 
-.product-card::after {
+/* .product-card::after {
     bottom: 0;
     left: 30px;
     right: 30px;
     height: 2px;
-}
+} */
 
   /* Left and right borders */
-.product-card > div::before,
+/* .product-card > div::before,
 .product-card > div::after {
     content: '';
     position: absolute;
     width: 2px;
     background: var(--border-color);
-}
+} */
 
-.product-card > div::after {
+/* .product-card > div::after {
     top: 30px;
     bottom: 30px;
     right: 0;
-}
+} */
 
-.product-card.hide-after > div::after {
+/* .product-card.hide-after > div::after {
     display: none;
-}
+} */
 
 /* Product Card Border Effect End */
 .tag-and-heart{
@@ -160,7 +169,7 @@
     font-size: 15px;
     font-weight: 500;
     line-height: 22px;
-    margin-bottom: 15px;
+    margin-bottom: 7px;
     cursor: pointer;
 }
 
@@ -211,7 +220,8 @@
     font-size: 18px !important;
     line-height: 27px !important;
     font-weight: 600 !important;
-    margin-top: 5px;
+    margin-top: 15px;
+    margin-bottom: 10px;
 }
 
 .product-financing-addvertisement-div{

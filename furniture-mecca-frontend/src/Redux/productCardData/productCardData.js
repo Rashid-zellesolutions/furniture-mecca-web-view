@@ -14,8 +14,8 @@ const productCardSlicer = createSlice({
     name : 'productCard',
     initialState: {
         data: [
-            {id: 1, productTitle: "Stevie Charcoal 87'' Sofa & Chair 1", defaultPrice: '$ 188.00', priceTag: '$ 1,599.00', heartIcon: heartIcon, mainImage: productImageOne, ratingStars: Array(5).fill({starIcon: IoStar }), reviews: '(200)', category: 'living-room' },
-            {id: 2, productTitle: "Stevie Charcoal 87'' Sofa & Chair 2", defaultPrice: '$ 199.00', priceTag: '$ 1,599.00', heartIcon: heartIcon, mainImage: productImageTwo, ratingStars: Array(5).fill({starIcon: IoStar}), reviews: '(200)', category: 'living-room'  },
+            {id: 1, productTitle: "Stevie Charcoal", defaultPrice: '$ 188.00', priceTag: '$ 1,599.00', heartIcon: heartIcon, mainImage: productImageOne, ratingStars: Array(5).fill({starIcon: IoStar }), reviews: '(200)', category: 'living-room' },
+            {id: 2, productTitle: "Stevie Charcoal 87'' Sofa & Chair 2 sdfsdf sdfsdffd", defaultPrice: '$ 199.00', priceTag: '$ 1,599.00', heartIcon: heartIcon, mainImage: productImageTwo, ratingStars: Array(5).fill({starIcon: IoStar}), reviews: '(200)', category: 'living-room'  },
             {id: 3, productTitle: "Stevie Charcoal 87'' Sofa & Chair 3", defaultPrice: '$ 199.00', priceTag: '$ 1,599.00', heartIcon: heartIcon, mainImage: productImageThree, ratingStars: Array(5).fill({starIcon: IoStar}), reviews: '(200)', category: 'living-room'  },
             {id: 4, productTitle: "Stevie Charcoal 87'' Sofa & Chair 4", defaultPrice: '$ 199.00', priceTag: '$ 1,599.00', heartIcon: heartIcon, mainImage: productImageFour, ratingStars: Array(5).fill({starIcon: IoStar}), reviews: '(200)', category: 'living-room'  },
             {id: 5, productTitle: "Stevie Charcoal 87'' Sofa & Chair 5", defaultPrice: '$ 199.00', priceTag: '$ 1,599.00', heartIcon: heartIcon, mainImage: productImageFive, ratingStars: Array(5).fill({starIcon: IoStar}), reviews: '(200)', category: 'living-room'  },

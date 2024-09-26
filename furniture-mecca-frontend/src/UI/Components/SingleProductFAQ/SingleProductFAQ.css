@@ -36,11 +36,12 @@
     width: 20px;
     height: 20px;
     cursor: pointer;
+    transition: transform 0.3s ease;
 }
 
-.arrow-rotate{
-    transform: rotate(175deg);
-    transition: all 0.3s ease-in-out;
+.single-product-arrow-rotate{
+    transform: rotate(180deg);
+    /* transition: all 0.3s ease-in-out; */
 
 }
 

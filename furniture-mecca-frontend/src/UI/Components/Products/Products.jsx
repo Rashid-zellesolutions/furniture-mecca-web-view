@@ -10,14 +10,15 @@ import { useNavigate } from 'react-router-dom';
 import arrowBlack from '../../../Assets/icons/hide-arrow-black.png'
 import { useProducts } from '../../../context/productsContext/productContext';
 import { useCart } from '../../../context/cartContext/cartContext';
-import cartBlack from '../../../Assets/icons/big-black-cart.png';
+// import cartBlack from '../../../Assets/icons/big-black-cart.png';
 import closeBtn from '../../../Assets/icons/close-btn.png'
-import CartItems from '../Cart-Components/Cart-items/CartItems';
+// import CartItems from '../Cart-Components/Cart-items/CartItems';
 
-import minusBtn from '../../../Assets/icons/minus-white.png';
-import plusBtn from '../../../Assets/icons/plus-white.png';
-import CartSideSection from '../Cart-side-section/CartSideSection';
+// import minusBtn from '../../../Assets/icons/minus-white.png';
+// import plusBtn from '../../../Assets/icons/plus-white.png';
+// import CartSideSection from '../Cart-side-section/CartSideSection';
 import QuickView from '../QuickView/QuickView';
+import CartSidePannel from '../Cart-side-section/CartSidePannel';
 
 const Products = () => {
     // products context data
@@ -49,16 +50,12 @@ const Products = () => {
     }
     const handleQuickViewClose = () => {setQuickView(false)}
     
-   
     // navigate to single product page with product data
     const handleProductClick = (item) => {
         navigate(`/single-product/${item.id}`, { state: { products: item } });
         console.log(`card clicked /single-product/${item.id}`)
     };
     
-
-    
-
     // filters data
     const filtersData = [
         {name: 'Product Type' , icon: AddBtn, filters: [
@@ -197,8 +194,8 @@ const Products = () => {
         updatedIndices[cardIndex] = colorIndex;
         setSelectedColorIndices(updatedIndices);
     };
-
     const colorIndex = useSelector((state) => state.colorIndex.colorIndex)
+
   return (
     <div className='products-main-container'>
         <h3>Dining Room Furniture Sets</h3>
@@ -346,7 +343,7 @@ const Products = () => {
         </div>
 
         {/* Cart Side Section */}
-        <div className={`cart-side-main-section ${addToCartClicked ? 'show-side-cart' : ''} `}>
+        {/* <div className={`cart-side-main-section ${addToCartClicked ? 'show-side-cart' : ''} `}>
             <button className='cart-section-close-btn' onClick={handleCartSectionClose}>
                 <img src={closeBtn} alt='close btn' />
             </button>
@@ -386,7 +383,15 @@ const Products = () => {
                     </button>
                 </div>
             </div>
-        </div>
+        </div> */}
+        <CartSidePannel 
+            cartData={cart}
+            addToCartClicked={addToCartClicked}
+            handleCartSectionClose={handleCartSectionClose} 
+            removeFromCart={removeFromCart}
+            decreamentQuantity={decreamentQuantity}
+            increamentQuantity={increamentQuantity}
+        />
 
         {/* Quick View Section */}
         <div className={`quick-view-section ${quickViewClicked ? 'show-quick-view-section' : ''}`}>

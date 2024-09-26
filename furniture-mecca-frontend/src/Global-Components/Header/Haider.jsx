@@ -18,9 +18,21 @@ import usaFlag from '../../Assets/icons/usa-flage.png'
 import LocationPopUp from '../../UI/Components/LocationPopUp/LocationPopUp';
 import LanguagePopUp from '../../UI/Components/LanguagePopUp/LanguagePopUp';
 import PromotionalBanner from '../../UI/Components/PromotionalBanner/PromotionalBanner';
+import CartSidePannel from '../../UI/Components/Cart-side-section/CartSidePannel';
+import { useCart } from '../../context/cartContext/cartContext';
+import { useProducts } from '../../context/productsContext/productContext';
 
 const Haider = () => {
   const [isTabMenuOpen, setIsTabMenuOpen] = useState(false);
+  const [showCart, setShowCart] = useState(false)
+  const {products} = useProducts()
+    const {cart, addToCart, cartSectionOpen, setCartSectionOpen, increamentQuantity, decreamentQuantity, removeFromCart, calculateTotalPrice} = useCart()
+  const handleCartSectionOpen = () => {
+    setShowCart(true)
+  }
+  const handleCartSectionClose = () => {
+    setShowCart(false)
+  }
 
   const handleTabMenu = () => {
     setIsTabMenuOpen(!isTabMenuOpen)
@@ -40,7 +52,12 @@ const Haider = () => {
   ]
   const [nearStorePopUp, setNearStorePopUp] = useState(false)
   const handleNearStorePopUp = () => {
-    setNearStorePopUp(!nearStorePopUp)
+    setNearStorePopUp(true)
+  }
+
+  const handleCloseNearStoreModal = () => {
+    setNearStorePopUp(false)
+    console.log("near stor pop up", nearStorePopUp)
   }
 
   const storeDetailsData = [
@@ -94,6 +111,7 @@ const Haider = () => {
   }
   const handleCloseSearch = () => {
     setSearchLocation(false)
+    console.log("close btn cicked", searchLocation)
   }
 
   return (
@@ -123,7 +141,7 @@ const Haider = () => {
           <div className='nearby-address-div'>
               <div className='icon-and-nearby-city'>
                 <img src={NearStoreIcon} alt='near by' onClick={handleNearStorePopUp} />
-                <NearStorePopUp isOpen={nearStorePopUp} setIsOpen={setNearStorePopUp} />
+                <NearStorePopUp isOpen={nearStorePopUp} handleCloseNearBy={handleCloseNearStoreModal} />
                 <div className='near-by-city-time' onClick={handleNearStorePopUp}>
                   <p>Nearest Store</p>
                   <span>
@@ -144,7 +162,7 @@ const Haider = () => {
           <Link>
           <img src={HeartIcon} alt="heart" />
           </Link>
-          <Link to={'/add-to-cart'}>
+          <Link onClick={handleCartSectionOpen}>
             <img src={cartIcon} alt="cart" />
           </Link>
         </div>
@@ -209,6 +227,14 @@ const Haider = () => {
 
             {/* Location Modal */}
             <LocationPopUp searchLocation={searchLocation} handleCloseSearch={handleCloseSearch} />
+            <CartSidePannel
+            cartData={cart}
+              addToCartClicked={showCart}
+              handleCartSectionClose={handleCartSectionClose}
+              increamentQuantity={increamentQuantity}
+              decreamentQuantity={decreamentQuantity}
+              removeFromCart={removeFromCart}
+            />
     </div>
   )
 }

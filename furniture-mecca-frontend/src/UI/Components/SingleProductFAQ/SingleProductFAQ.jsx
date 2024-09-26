@@ -62,7 +62,7 @@ const SingleProductFAQ = () => {
                     return <div key={index} className='details-toggler'>
                         <div className='single-product-details-section' onClick={() => handleToggle(index)}>
                             <p>{item.question}</p>
-                            <img src={item.icon} alt='add btn' className={`${activeIndex === index ? 'arrow-rotate' : ''}`} />
+                            <img src={item.icon} alt='add btn' className={`${activeIndex === index ? 'single-product-arrow-rotate' : ''}`} />
                         </div>
                         <div className={`single-product-details-answered-section ${activeIndex === index ? 'show-answere' : ''}`}
                         ref={el =>  answerRef.current[index] = el} 

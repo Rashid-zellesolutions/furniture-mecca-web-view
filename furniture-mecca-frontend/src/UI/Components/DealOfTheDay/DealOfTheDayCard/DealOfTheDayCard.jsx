@@ -106,11 +106,20 @@ const DealOfTheDayCard = ({name, star, review, price, newPrice, imgIcons, descou
 
   const handleIconMouseEnter = (index) => {setIsHovered(index)}
   const handleIconMouseLeave = () => {setIsHovered(null)}
+
+  // Deal of the day product name limitations
+  const maxLength = 40;
+    const truncateTitle = (title, maxLength) => {
+        if (title.length > maxLength) {
+            return title.slice(0, maxLength) + '...';
+        }
+        return title;
+    };
     
   return (
     <div className='deal-of-the-day-product-card'>
       <div className='deal-of-the-day-product-rating-and-name'>
-        <h3 className='deal-of-the-day-product-name'>{name}</h3>
+        <h3 className='deal-of-the-day-product-name'>{truncateTitle(name, maxLength)}</h3>
         <div className='deal-of-the-day-price'>
           <del>{price}</del>
           <p>{newPrice}</p>

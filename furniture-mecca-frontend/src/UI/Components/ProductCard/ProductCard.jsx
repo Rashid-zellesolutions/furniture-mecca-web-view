@@ -62,15 +62,15 @@ const ProductCard = ({tagIcon, tagClass, mainImage, productCardContainerClass, m
                         onMouseEnter={mouseEnter}
                         onMouseLeave={mouseLeave} />
                         <div className='overlay-buttons'>
-                            <button className={`overlay-button ${cartClicked ? 'loading' : ''}`} onClick={handleCartSectionOpen} /* onClick={handleAddToCart} */ onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+                            <button className={`overlay-button ${cartClicked ? 'loading' : ''}`} onClick={handleQuickView} /* onClick={handleAddToCart} */ onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
                                 <img src={cardHovered ? cartIcon : cartBlack} alt='cart' />
                                 Add to cart
                             </button>
-                            <button className='overlay-button' onClick={handleQuickView} onMouseEnter={handleQuickViewHover} onMouseLeave={handlQuickViewLeave}>
+                            <Link to={'/single-product/1'} className='overlay-button' onMouseEnter={handleQuickViewHover} onMouseLeave={handlQuickViewLeave}>
                                 {/* <img src={cardHovered ? eyeWhite : eyeIcon} alt="eye icon" /> */}
                                 <img src={quickViewHovered ? eyeWhite : eyeBlack} alt='cart' />
-                                Quick View
-                            </button>
+                                View Product
+                            </Link>
                         </div>
                 </div>
 
@@ -82,12 +82,12 @@ const ProductCard = ({tagIcon, tagClass, mainImage, productCardContainerClass, m
                     })}
                     <p>{reviewCount}</p>
                 </div>
-                <p className='product-low-price-addvetisement'>{lowPriceAddvertisement}</p>
+                {/* <p className='product-low-price-addvetisement'>{lowPriceAddvertisement}</p> */}
                 <h3 className='product-price-tag'>$ {priceTag}</h3>
-                <div className='product-financing-addvertisement-div'>
-                <p>{financingAdd}</p>
-                <a href='#'>{learnMore}</a>
-            </div>
+                {/* <div className='product-financing-addvertisement-div'>
+                    <p>{financingAdd}</p>
+                    <a href='#'>{learnMore}</a>
+                </div> */}
             <div className='color-variation-div'>
                 {colorVariation.map((color, colorIndex) => {
                     return <span key={colorIndex} className='color-variation' onClick={() => handleClick(colorIndex, color)}
@@ -98,7 +98,7 @@ const ProductCard = ({tagIcon, tagClass, mainImage, productCardContainerClass, m
                     }}></span>
                 })}
             </div>
-                <p className='product-delivery-time'>{deliveryTime}</p>
+                {/* <p className='product-delivery-time'>{deliveryTime}</p> */}
             </div>
         </div>
 

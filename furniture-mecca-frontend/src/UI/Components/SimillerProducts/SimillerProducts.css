@@ -1,7 +1,7 @@
 .similler-products-main-container {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 15px;
     padding: var(--global-padding);
 }
 
@@ -23,7 +23,10 @@
     grid-auto-flow: column; 
     overflow-x: hidden;
     white-space: nowrap; 
+    gap: 10px;
+    padding: 10px 0;
 }
+
 
 .similler-products-cards::-webkit-scrollbar{
     display: none;

@@ -3,27 +3,30 @@
 .show-language-modal{
     position: fixed;
     display: flex;
-    width: 430px;
+    width: 0;
     top: 0;
-    right: -430px;
+    right: 0;
     height: 100%;
-    background-color: #fff;
+    background-color: rgba(0, 0, 0, 0.7);
     z-index: 999999;
     overflow: hidden;
-    transition: right 0.3s ease;
+    transition: width 0.5s ease;
 }
 
 .show-language-modal.increase-width-language-modal{
-    right: 0;
+    width: 100%;
 }
 
 .language-modal-containt-div{
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 430px;
+    background-color: #fff;
     height: 100%;
-    position: relative;
+    position: absolute;
     z-index: 9999;
+    right: 0;
+    top: 0;
 }
 
 .close-language-modal{
@@ -35,17 +38,25 @@
     border: none;
     outline: none;
     cursor: pointer;
+    width: 20px;
+    height: 20px;
 }
 
-.close-language-modal.hide-close-btn{
+.close-language-modal img{
+    width: auto;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* .close-language-modal.hide-close-btn{
     display: none;
-}
+} */
 
 
 
-.hide-language-modal{
+/* .hide-language-modal{
     display: none;
-}
+} */
 
 .select-language-container{
     display: flex;
@@ -63,6 +74,8 @@
     width: 100%;
     align-items: center;
     justify-content: center;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--border-color);
 }
 
 .modal-headin-div h3{
