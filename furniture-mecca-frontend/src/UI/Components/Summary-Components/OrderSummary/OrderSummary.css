@@ -10,7 +10,7 @@
 .order-summary-main-container h3{
     font-size: 20px;
     line-height: 30px;
-    font-weight: 700;
+    font-weight: 600;
 }
 
 .order-summary-details{
@@ -55,14 +55,14 @@
 
 .selected-product-name-and-price h3{
     font-size: 14px;
-    line-height: 21px;
+    line-height: 18px;
     font-weight: 500;
 }
 
 .selected-product-name-and-price p{
     font-size: 14px;
     line-height: 21px;
-    font-weight: 500;
+    font-weight: 400;
 }
 
 .selected-product-color{
@@ -73,16 +73,11 @@
     gap: 5px;
 }
 
+
 .selected-product-color p{
     font-size: 14px;
-    line-height: 21px;
-    font-weight: 400;
-}
-
-.selected-product-color h3{
-    font-size: 14px;
-    line-height: 21px;
-    font-weight: 400;
+    line-height: 18px;
+    font-weight: 300;
 }
 
 .products-tax-and-total{
@@ -121,6 +116,12 @@
     align-items: center;
     width: 100%;
     justify-content: space-between;
+}
+
+.selected-product-total span h3, p{
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 600;
 }
 
 @media only screen and (min-width: 481px) and (max-width: 600px){

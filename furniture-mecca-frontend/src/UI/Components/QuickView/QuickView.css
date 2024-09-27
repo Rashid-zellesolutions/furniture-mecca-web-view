@@ -219,7 +219,7 @@
     justify-content: center;
     padding-top: 10px;
     margin-top: 10px;
-    border-bottom: 2px solid #d7d7d7;
+    border-bottom: 1px solid var(--border-color);
 }
 
 .quick-view-details-heading{
@@ -228,6 +228,7 @@
     align-items: center;
     justify-content: space-between;
     cursor: pointer;
+    padding: 0 10px;
 }
 
 .quick-view-details-heading p{
@@ -241,10 +242,18 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 15px;
+    height: 15px;
     background-color: transparent;
     border: none;
     outline: none;
     cursor: pointer;
+}
+
+.quick-view-details-heading button img {
+    width: auto;
+    height: 100%;
+    object-fit: contain;
 }
 
 .quick-view-rotate-up{
@@ -268,5 +277,11 @@
 }
 
 .quick-view-details.show-details{
-    height: 80px;
+    height: auto;
+}
+
+.quick-view-details p{
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 400;
 }

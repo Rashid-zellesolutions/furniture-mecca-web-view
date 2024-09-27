@@ -29,7 +29,7 @@ import AlsoNeed from '../AlsoNeed/AlsoNeed';
 import AliceCarousel from 'react-alice-carousel';
 import "react-alice-carousel/lib/alice-carousel.css";
 
-import imgOne from '../../../Assets/Furniture Mecca/Landing Page/instagram images/Rectangle 874.png';
+import imgOne from '../../../Assets/Furniture Mecca/Landing Page/instagram images/B560__02 1.png';
 import imgTwo from '../../../Assets/Furniture Mecca/Landing Page/instagram images/Rectangle 875.png';
 import imgThree from '../../../Assets/Furniture Mecca/Landing Page/instagram images/Rectangle 876.png';
 import imgFour from '../../../Assets/Furniture Mecca/Landing Page/instagram images/Rectangle 877.png';
@@ -40,7 +40,7 @@ import imgFive from '../../../Assets/Furniture Mecca/Landing Page/instagram imag
 const SingleProductStickySection = (productData) => {
 
   // Alice Slider
-  const images = [imgOne, imgTwo, imgThree, imgFour, imgFive];
+  const images = [imgOne, imgOne, imgOne, imgOne, imgOne];
     const [activeIndex, setActiveIndex] = useState(0);
     const carouselRef = useRef(null);
 
@@ -182,52 +182,56 @@ const SingleProductStickySection = (productData) => {
       <div className='right-section'>
         <div className='single-product-detail-container'>
             {/* <h3 className='single-product-heading'>{productData.productCard.productTitle}</h3> */}
-            
-            <h3 className='single-product-heading'>Trevor Brown 90'' Manual Reclining Sofa & 79'' Console Loveseat</h3>
-            <div className='single-product-rating'>
-                <span className='stars-icon'>
-                    {ratingStars.map((item, index) => {
-                        return <img key={index} src={item.icon} alt={item.name} className='star-img' />
-                    })}
-                </span>
-                <p>4.1</p>
-                <Link>200 Reviews</Link>
-            </div>
-            {/* <h3 className='single-product-price'>${productData.productCard.priceTag}</h3> */}
-            <h3 className='single-product-price'>$199.00</h3>
-            {/* <p className='single-product-installment-price-price'>$9/month for 6 months - Total {productData.productCard.priceTag} </p> */}
-            
-            <span className='single-product-shipping'>
-                <p className='single-product-installment-price-price'>$9/month for 6 months - Total $ 199.00 </p>
-                <p>Get it between July 27 - July 31'</p>
-            </span>
-            <div className='single-product-frame-color'>
-                <span className='color-frame-heading'>
-                    <p>Select Frame Color: </p><Link>Black</Link>
-                </span>
-                <div className='variant-images-div'>
-                    {variantImages.map((item, index) => {
-                        return <div key={index} className='variant'>
-                            <img src={item.img} alt={item.name} />
-                            <p>{item.name}</p>
-                        </div>
-                    })}
+            <div className='single-page-product-name-anddetails'>
+              <h3 className='single-product-heading'>Trevor Brown 90'' Manual Reclining Sofa & 79'' Console Loveseat</h3>
+              <div className='single-product-rating'>
+                  <span className='stars-icon'>
+                      {ratingStars.map((item, index) => {
+                          return <img key={index} src={item.icon} alt={item.name} className='star-img' />
+                      })}
+                  </span>
+                  <p>4.1</p>
+                  <Link>200 Reviews</Link>
+              </div>
+              {/* <h3 className='single-product-price'>${productData.productCard.priceTag}</h3> */}
+              <div className='single-product-prices'>
+                <del className='single-product-old-price'>$199.00</del>
+                <h3 className='single-product-new-price'>$1,599.00</h3>
+              </div>
+              {/* <p className='single-product-installment-price-price'>$9/month for 6 months - Total {productData.productCard.priceTag} </p> */}
+              
+              <span className='single-product-shipping'>
+                  <p className='single-product-installment-price-price'>$9/month for 6 months - Total $ 199.00 </p>
+                  <p>Get it between July 27 - July 31'</p>
+              </span>
+              <div className='single-product-frame-color'>
+                  <span className='color-frame-heading'>
+                      <p>Select Frame Color: </p><Link>Black</Link>
+                  </span>
+                  <div className='variant-images-div'>
+                      {variantImages.map((item, index) => {
+                          return <div key={index} className='single-product-color-variant'>
+                              <img src={item.img} alt={item.name} />
+                              <p>{item.name}</p>
+                          </div>
+                      })}
+                  </div>
                 </div>
-            </div>
-                <div className='add-cart-or-add-items-div'>
-                    <div className='item-count'>
-                        <button className={`minus-btn ${count === 1 ? 'disabled' : ''}`} onClick={handleDecrease} disabled={count === 1}>
-                            <img src={minus} alt='minus btn' />
-                        </button>
-                        <input type='number' value={count} readOnly/>
-                        <button className='plus-btn' onClick={handleIncrease}>
-                            <img src={plus} alt='plus btn' />
-                        </button>
-                    </div>
-                    <img src={redHeart} alt='red-heart-icon' className='red-heart-icon' />
-                    <button  className={`add-to-cart-btn ${isLoading ? 'loading' : ''}`} onClick={handleClick}>
-                      {isLoading ? 'Loading...' : 'Add To Cart'}
-                  </button>
+                  <div className='add-cart-or-add-items-div'>
+                      <div className='item-count'>
+                          <button className={`minus-btn ${count === 1 ? 'disabled' : ''}`} onClick={handleDecrease} disabled={count === 1}>
+                              <img src={minus} alt='minus btn' />
+                          </button>
+                          <input type='number' value={count} readOnly/>
+                          <button className='plus-btn' onClick={handleIncrease}>
+                              <img src={plus} alt='plus btn' />
+                          </button>
+                      </div>
+                      <img src={redHeart} alt='red-heart-icon' className='red-heart-icon' />
+                      <button  className={`add-to-cart-btn ${isLoading ? 'loading' : ''}`} onClick={handleClick}>
+                        {isLoading ? 'Loading...' : 'Add To Cart'}
+                    </button>
+                  </div>
                 </div>
                 <AlsoNeed />
                 <WhatWeOffer />

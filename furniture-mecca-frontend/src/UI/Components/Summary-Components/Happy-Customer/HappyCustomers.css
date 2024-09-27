@@ -8,7 +8,7 @@
 .happy-customers h3{
     font-size: 18px;
     line-height: 27px;
-    font-weight: 700;
+    font-weight: 600;
 }
 
 .happy-customer-comment{
@@ -35,8 +35,8 @@
 
 .customer-profile-and-name h3{
     font-size: 14px;
-    line-height: 27px;
-    font-weight: 700;
+    line-height: 21px;
+    font-weight: 600;
 }
 
 .customer-rating{
@@ -44,6 +44,12 @@
     align-items: center;
     gap: 2px;
     color: #F0AD4E;
+}
+
+.happy-customer-comment p{
+    font-size: 14px;
+    line-height: 21px;
+    font-weight: 400;
 }
 
 

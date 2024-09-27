@@ -14,19 +14,19 @@ const HappyCustomers = () => {
             <h3>5000+ Happy Customers</h3>
             {happyCustomerComment.map((items, index) => (
               <div className='happy-customer-comment'>
-              <div className='customer-frofile-and-rating'>
-                <div className='customer-profile-and-name'>
-                  <img src={items.profile} alt='frofile' />
-                  <h3>{items.name}</h3>
+                <div className='customer-frofile-and-rating'>
+                  <div className='customer-profile-and-name'>
+                    <img src={items.profile} alt='frofile' />
+                    <h3>{items.name}</h3>
+                  </div>
+                  <div className='customer-rating'>
+                    {[0,1,2,3,4].map((item) => (
+                      <FaStar size={18} />
+                    ))}
+                  </div>
                 </div>
-                <div className='customer-rating'>
-                  {[0,1,2,3,4].map((item) => (
-                    <FaStar size={18} />
-                  ))}
-                </div>
+                <p>{items.comment}</p>
               </div>
-              <p>{items.comment}</p>
-          </div>
             ))}
             
           </div>

@@ -21,10 +21,10 @@ const OrderSummary = () => {
                                 <p>{items.price}</p>
                             </span>
                             <span className='selected-product-color'>
-                                <p>SELECTED COLOR: </p><h3> {items.selectedColor}</h3>
+                                <p> {items.selectedColor}</p>
                             </span>
                             <span className='selected-product-color'>
-                                <p>SELECT PACKAGE: </p><h3>{items.selectedPackage}</h3>
+                                <p>{items.selectedPackage}</p>
                             </span>
                         </div>
                     </div>

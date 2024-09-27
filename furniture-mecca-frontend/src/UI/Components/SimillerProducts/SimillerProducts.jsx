@@ -45,7 +45,12 @@ const SimillerProducts = () => {
 
     const scrollContainerRef = useRef(null);
     const cardWidth = 310; // Adjust the width of your cards here
+    const [simillerProductIndex, setSimillerProductIndex] = useState(0);
     const handleScroll = (direction) => {
+        const newIndex = simillerProductIndex + direction;
+        if(newIndex >= 0 && newIndex <= products.length - 1){
+            setSimillerProductIndex(newIndex)
+        }
         const container = scrollContainerRef.current;
         if (container) {
             const scrollAmount = direction * cardWidth * 4;
@@ -64,6 +69,8 @@ const SimillerProducts = () => {
     const handleTouchMove = (e) => {
         e.preventDefault();
     };
+
+    
     
   return (
     <div className='similler-products-main-container'>
@@ -71,8 +78,9 @@ const SimillerProducts = () => {
         <div className='similler-products-wrapper' onMouseDown={handleMouseDown}
             onTouchMove={handleTouchMove}>
             <button
-                className='scroll-button left'
+                className={`scroll-button left ${simillerProductIndex >= products.length ? 'disable-similler-product-arrow' : ''}`}
                 onClick={() => handleScroll(-1)}
+                disabled={simillerProductIndex === 0}
             >
                 <img src={arrowLeftRed} alt='arrow-left' />
             </button>
@@ -106,7 +114,7 @@ const SimillerProducts = () => {
                 ))}
             </div>
             <button
-                className='scroll-button right'
+                className={`scroll-button right ${simillerProductIndex >= products.length ? 'disable-similler-product-arrow' : ''}`}
                 onClick={() => handleScroll(1)}
             >
                 <img src={arrowRightRed} about='arrow-right' />

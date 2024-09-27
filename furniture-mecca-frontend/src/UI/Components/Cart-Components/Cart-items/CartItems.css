@@ -149,7 +149,8 @@
     width: 100%;
     max-height: 173px;
     gap: 10px;
-    box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 10px 0px #0000001A;
+
     border-radius: 4px;
     padding: 15px;
 }
@@ -226,7 +227,7 @@
     font-size: 18px;
     font-weight: 600;
     line-height: 18px;
-    color: #595959;
+    color: var(--active-nav-item-color);
 }
 
 .protect-product-tag{

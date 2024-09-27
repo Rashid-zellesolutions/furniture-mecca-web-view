@@ -38,15 +38,18 @@ const Products = () => {
     const handleCartSectionOpen = (item) => {
         setAddToCartClicked(true)
         console.log("Cart Data ", cart)
-        addToCart(item)
+        // addToCart(item)
     }
 
     const handleCartSectionClose = () => {
         setAddToCartClicked(false)
     }
 
+    const [quickViewProduct, setQuickViewProduct] = useState({})
     const handleQuickViewOpen = (item) => {
         setQuickView(true);
+        setQuickViewProduct(item)
+
     }
     const handleQuickViewClose = () => {setQuickView(false)}
     
@@ -304,9 +307,10 @@ const Products = () => {
                     </div>
                 </div>
                 <div className='product-main'>
-                    {products.slice(0, 3).map((item, index) => {
-                        return <ProductCard key={index} 
-                            maxWidthAccordingToComp={'33.33%'} 
+                    {products.slice(0, 9).map((item, index) => {
+                        return <ProductCard key={index}
+                            slug={item.slug}
+                            maxWidthAccordingToComp={'32%'} 
                             justWidth={'100%'} 
                             tagIcon={item.productTag ? item.productTag : item.heart}
                             tagClass={` ${item.productTag ? 'tag-img' : 'heart-icon'}`}
@@ -321,7 +325,7 @@ const Products = () => {
                             borderLeft={index % 3 === 2} handleCardClick={() => handleProductClick(item)}
                             handleAddToCart={() => addToCart(item)}
                             handleCartSectionOpen={() => handleCartSectionOpen(item)}
-                            handleQuickView={() => handleQuickViewOpen()}
+                            handleQuickView={() => handleQuickViewOpen(item)}
                             stock={item.stock}
                         />
                     })}
@@ -399,7 +403,7 @@ const Products = () => {
                 <img src={closeBtn} alt='close' />
             </button>
             <div className={`quickview-containt ${quickViewClicked ? 'show-quick-view-containt' : ''}`}>
-                <QuickView />
+                <QuickView setQuickViewProduct={quickViewProduct} />
             </div>
         </div>
     </div>

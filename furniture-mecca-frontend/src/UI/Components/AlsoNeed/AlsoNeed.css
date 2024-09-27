@@ -6,8 +6,8 @@
 }
 
 .might-need-main-container h3{
-    font-size: 25px;
-    line-height: 37px;
+    font-size: 20px;
+    line-height: 30px;
     font-weight: 600;
 }
 
@@ -18,7 +18,7 @@
     overflow-y: hidden;
     overflow-x: auto;
     gap: 15px;
-    padding: 10px;
+    padding-bottom: 10px;
 }
 
 .might-need-cards-main-container::-webkit-scrollbar {

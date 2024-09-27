@@ -665,14 +665,14 @@ label {
     display: flex;
     flex-direction: row;
     width: 100%;
-    /* flex-wrap: wrap; */
+    flex-wrap: wrap;
     /* background-color: orange; */
     /* overflow-y: auto; */
     overflow-x: hidden;
     /* height: 100vh; */
     height: auto;
     padding: 10px 5px;
-    gap: 10px;
+    gap: 15px;
     padding-bottom: 20px;
 }
 

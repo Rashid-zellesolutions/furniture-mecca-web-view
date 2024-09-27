@@ -3,8 +3,9 @@
     flex-direction: column;
     width: 100%;
     background-color: #f7f7f7;
-    padding: var(--global-padding);
+    padding: var(--inner-padding);
     gap: 16px;
+    margin-top: 35px;
 }
 
 .rating-and-review-main-container h3{

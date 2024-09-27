@@ -17,22 +17,24 @@ import CartSidePannel from '../Cart-side-section/CartSidePannel';
 import { useProducts } from '../../../context/productsContext/productContext';
 import { useCart } from '../../../context/cartContext/cartContext';
 
-const QuickView = () => {
-
+const QuickView = ({setQuickViewProduct}) => {
+    
     const {products} = useProducts()
     const {cart, addToCart, cartSectionOpen, setCartSectionOpen, increamentQuantity, decreamentQuantity, removeFromCart, calculateTotalPrice} = useCart();
+    console.log("product data", cart)
     const [showCart, setShowCart] = useState(false);
     const handleCartSectionOpen = () => {
         setShowCart(true);
+        addToCart(setQuickViewProduct)
     }
     const handleCartSectionClose = () => {
         setShowCart(false)
     }
 
     const stars = [filledStar, filledStar, filledStar, filledStar, unFilledStar]
-    const [viewDetails, setViewDetails]= useState(false)
-    const handleViewDetails = () => {
-        setViewDetails(!viewDetails);
+    const [viewDetails, setViewDetails]= useState(null)
+    const handleViewDetails = (index) => {
+        setViewDetails(prevIndex => (prevIndex === index ? null : index));
     }
 
     const sliderImages = [testimage, imgTwo, imgThree]
@@ -45,20 +47,39 @@ const QuickView = () => {
     const handleNext = () => {
         setCurrentIndex((prevIndex) => (prevIndex === sliderImages.length - 1 ? 0 : prevIndex + 1));
     };
+
+    const quickViewData = [
+        {name: 'Spacifications', 
+            para: `Well, let's face it. Coordinating living room furniture – including fabrics, 
+                pillows, colors, and sizes – can be exhausting! A living room set is an effective 
+                and convenient way to complete your living space, while eliminating the stress of 
+                matching sofas, chairs and ottomans. Don’t lose sleep over whether that loveseat`,
+        },
+        {name: 'Weight & Dimension', 
+            para: `Well, let's face it. Coordinating living room furniture – including fabrics, 
+                pillows, colors, and sizes – can be exhausting! A living room set is an effective 
+                and convenient way to complete your living space, while eliminating the stress of 
+                matching sofas, chairs and ottomans. Don’t lose sleep over whether that loveseat`,
+        }
+    ]
+
+    const [productQuantity, setProductQuantity] = useState(0) 
+    const plusProductQuantity = () => {setProductQuantity(productQuantity + 1)}
+    const minusProductQuantity = () => {setProductQuantity(prevCount => (prevCount == 1 ? 1 : productQuantity - 1))}
     
 
 
   return (
     <div className='quick-view-main'>
         <div className='quick-view-heading-and-rating'>
-            <h3>Trevor Brown 90'' Manual Reclining Sofa & 7vh9'' Console Loveseat</h3>
+            <h3>{setQuickViewProduct.productTitle}</h3>
             <div className='quick-view-rating'>
                 <div className='quick-view-start'>
-                    {stars.map((star, index) => (
-                        <img src={star} alt='star' />
+                    {setQuickViewProduct.ratingStars && setQuickViewProduct.ratingStars.map((star, index) => (
+                        <img key={index} src={star.icon} alt='star' />
                     ))}
                 </div>
-                <p>(200)</p>
+                <p>{setQuickViewProduct.reviewCount}</p>
                 
             </div>
         </div>
@@ -69,9 +90,9 @@ const QuickView = () => {
                 </button>
                 <div className="quick-view-slider-container">
                     <div className="quick-view-slider-wrapper" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
-                        {sliderImages.map((image, index) => (
-                            <img key={index} src={image} alt={`Slide ${index + 1}`} />
-                        ))}
+                    {setQuickViewProduct.productAllImages && setQuickViewProduct.productAllImages.map((image, index) => (
+                        <img key={index} src={image} alt={`Slide ${index + 1}`} />
+                    ))}
                     </div>
                 </div>
                 <button className={`quick-view-arrow quick-view-right ${currentIndex === sliderImages.length - 1 ? 'disabled' : ''}`} onClick={handleNext}>
@@ -79,24 +100,22 @@ const QuickView = () => {
                 </button>
             </div>
             <div className='quick-view-variations'>
-                <div className='quick-view-var-one'>
-                    <img src={imgVariantOne} alt='variation' />
-                    <p>Silver</p>
-                </div>
-                <div className='quick-view-vars'>
-                    <img src={imgVariantTwo} alt='variation' />
-                    <p>Brown</p>
-                </div>
+                {setQuickViewProduct.colorVariation && setQuickViewProduct.colorVariation.map((item, index) => (
+                    <div className='quick-view-var-one'>
+                        <img src={imgVariantOne} alt='variation' />
+                        <p>{item.color}</p>
+                    </div>
+                ))}
             </div>
         </div>
-        <h3 className='quick-view-price'>$859.00</h3>
+        <h3 className='quick-view-price'>${setQuickViewProduct.priceTag}</h3>
         <div className='quick-view-add-item-or-cart-btn'>
             <div className='quick-view-add-or-minus-item'>
-                <button>
+                <button onClick={decreamentQuantity}>
                     <img src={minusBtn} alt='minus' />
                 </button>
-                <p>1</p>
-                <button>
+                <p>{setQuickViewProduct.quantity}</p>
+                <button onClick={increamentQuantity}>
                     <img src={plusBtn} alt='plus' />
                 </button>
             </div>
@@ -106,17 +125,20 @@ const QuickView = () => {
             </button>
         </div>
         <div className='quick-view-details-section'>
-            <div className='quick-view-detail-single-section'>
-                <div className='quick-view-details-heading' onClick={handleViewDetails}>
-                    <p>Spacifications</p>
-                    <button >
-                        <img src={arrowDown} alt='arrow down' className={viewDetails ? 'quick-view-rotate-up' : 'quick-view-rotate-down'} />
-                    </button>
+            {quickViewData.map((items, index) => (
+                <div key={index} className='quick-view-detail-single-section'>
+                    <div className='quick-view-details-heading' onClick={() => handleViewDetails(index)}>
+                        <p>{items.name}</p>
+                        <button >
+                            <img src={arrowDown} alt='arrow down' className={viewDetails === index ? 'quick-view-rotate-up' : 'quick-view-rotate-down'} />
+                        </button>
+                    </div>
+                    <div className={`quick-view-details ${viewDetails === index ? 'show-details' : ''}`}>
+                        <p>{items.para}</p>
+                    </div>
                 </div>
-                <div className={`quick-view-details ${viewDetails ? 'show-details' : ''}`}>
-                    detailed containt
-                </div>
-            </div>
+            ))}
+            
         </div>
         <CartSidePannel 
             cartData={cart}

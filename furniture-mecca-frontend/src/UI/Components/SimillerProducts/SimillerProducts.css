@@ -57,3 +57,7 @@
 .scroll-button.right {
     right: 0;
 }
+
+.disable-similler-product-arrow{
+    opacity: 0.2;
+}

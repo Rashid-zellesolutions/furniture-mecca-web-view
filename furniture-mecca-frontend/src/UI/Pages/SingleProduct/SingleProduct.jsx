@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useContext, useEffect } from 'react'
 import './SingleProduct.css'
 import CustomerServicePanel from '../../Components/CustomerServicePanel/CustomerServicePanel'
 import CategoriesGetScop from '../../Components/CategoriesGetScop/CategoriesGetScop'
@@ -27,7 +27,13 @@ const SingleProduct = () => {
   // const dynamicData = productCard.productCard || productCard.products
   // console.log("Dynamic Card Data ", dynamicData)
 
-  const {products} = useProducts()
+  // const {products} = useProducts()
+  const {slug} = useParams();
+  console.log('product id', slug)
+  console.log('type of id',typeof slug)
+  const products = useProducts();
+  console.log("products on single page", products)
+  // const product = products.find((item) => item.slug === slug)
 
   
   const handleClickTop = () => {
@@ -55,9 +61,9 @@ const SingleProduct = () => {
         {/* <ShippingReturn /> */}
         {/* <MoreToExplore /> */}
         <OutdoorFaves />
-        <ShipBanner bannerImg={attentionBanner} paddindTrue={true} />
-        <InstaGallery />
-        <InstaTwoImageGallery />
+        {/* <ShipBanner bannerImg={attentionBanner} paddindTrue={true} /> */}
+        
+        {/* <InstaTwoImageGallery /> */}
         {/* <CategoriesGetScop /> */}
         {/* <CustomerServicePanel /> */}
     </div>

@@ -10,7 +10,7 @@ import eyeWhite from '../../../Assets/icons/eye-white.png';
 import namer from 'color-namer';
 
 const ProductCard = ({tagIcon, tagClass, mainImage, productCardContainerClass, mouseEnter, mouseLeave, ProductTitle, stars, reviewCount, lowPriceAddvertisement,
-    priceTag, financingAdd, stock, handleQuickView, learnMore, colorVariation, handleAddToCart, handleCartSectionOpen, mainIndex, deliveryTime, handleVariantColor, selectedColorIndices, maxWidthAccordingToComp, borderLeft, justWidth, handleCardClick
+    priceTag, financingAdd, slug, stock, handleQuickView, learnMore, colorVariation, handleAddToCart, handleCartSectionOpen, mainIndex, deliveryTime, handleVariantColor, selectedColorIndices, maxWidthAccordingToComp, borderLeft, justWidth, handleCardClick
 }) => {
     
     const [cartClicked, setCartClicked] = useState(true);
@@ -66,7 +66,7 @@ const ProductCard = ({tagIcon, tagClass, mainImage, productCardContainerClass, m
                                 <img src={cardHovered ? cartIcon : cartBlack} alt='cart' />
                                 Add to cart
                             </button>
-                            <Link to={'/single-product/1'} className='overlay-button' onMouseEnter={handleQuickViewHover} onMouseLeave={handlQuickViewLeave}>
+                            <Link to={`/single-product/${slug}`} className='overlay-button' onMouseEnter={handleQuickViewHover} onMouseLeave={handlQuickViewLeave}>
                                 {/* <img src={cardHovered ? eyeWhite : eyeIcon} alt="eye icon" /> */}
                                 <img src={quickViewHovered ? eyeWhite : eyeBlack} alt='cart' />
                                 View Product
@@ -82,12 +82,7 @@ const ProductCard = ({tagIcon, tagClass, mainImage, productCardContainerClass, m
                     })}
                     <p>{reviewCount}</p>
                 </div>
-                {/* <p className='product-low-price-addvetisement'>{lowPriceAddvertisement}</p> */}
                 <h3 className='product-price-tag'>$ {priceTag}</h3>
-                {/* <div className='product-financing-addvertisement-div'>
-                    <p>{financingAdd}</p>
-                    <a href='#'>{learnMore}</a>
-                </div> */}
             <div className='color-variation-div'>
                 {colorVariation.map((color, colorIndex) => {
                     return <span key={colorIndex} className='color-variation' onClick={() => handleClick(colorIndex, color)}
@@ -98,7 +93,6 @@ const ProductCard = ({tagIcon, tagClass, mainImage, productCardContainerClass, m
                     }}></span>
                 })}
             </div>
-                {/* <p className='product-delivery-time'>{deliveryTime}</p> */}
             </div>
         </div>
 

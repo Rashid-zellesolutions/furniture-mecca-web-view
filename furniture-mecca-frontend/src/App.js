@@ -139,7 +139,7 @@ function App() {
             element={<Categories categoriesMainImage={tentSaleMainImage} showBanners={false} categoryCartTitle={'Labor Day Sale'} categoryCardData={categoryCardData} newArrival={true} />} 
           />
 
-          <Route path='/single-product/:id' element={<SingleProduct  />} />
+          <Route path='/single-product/:slug' element={<SingleProduct  />} />
           {/* <Route path='/single-product' element={<SingleProduct  />} /> */}
           <Route path='/add-to-cart' element={<Cart />} />
           <Route path='/summery-page' element={<Summary />} />

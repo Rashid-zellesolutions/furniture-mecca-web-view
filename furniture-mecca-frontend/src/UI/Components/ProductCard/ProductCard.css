@@ -2,17 +2,16 @@
 .product-card {
     box-sizing: border-box;
     position: relative;
-    padding: 15px 13px;
+    padding: 10px;
     box-shadow: 1px 1px 4px 0px #00000026;
     cursor: pointer;
-    border: 1px solid var(--border-color);
+    /* border: 1px solid var(--border-color); */
     transition: transform 0.3s ease-in-out;
 }
 
-.product-card:hover{
+/* .product-card:hover{
     transform: scale(1.02);
-    /* border: 1px solid var(--border-color); */
-}
+} */
 
 /* .product-card::before,
 .product-card::after {

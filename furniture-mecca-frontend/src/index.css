@@ -20,8 +20,8 @@
   --product-text-color: #595959;
   --hover-btn-bg: #595959;
   --service-card-bg: #f7f7f7;
-  /* --global-padding: 35px 60px */
   --global-padding: 35px 60px;
+  --inner-padding: 35px 60px 0px 60px;
 }
 
 *{

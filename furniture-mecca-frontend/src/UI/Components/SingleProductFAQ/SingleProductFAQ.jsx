@@ -30,7 +30,7 @@ const SingleProductFAQ = () => {
             lose sleep over whether that loveseat you have your eye on is an ideal fit with your existing 
             furniture. Buy a sofa set instead!`,
         },
-        {question: 'Spacifications', icon: arrowDown, answereOne: 
+        {question: 'Specifications', icon: arrowDown, answereOne: 
             `Well, let's face it. Coordinating living room furniture – including fabrics, pillows, colors, 
             and sizes – can be exhausting! A living room set is an effective and convenient way to complete 
             your living space, while eliminating the stress of matching sofas, chairs and ottomans. Don’t 
