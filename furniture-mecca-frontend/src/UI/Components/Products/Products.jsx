@@ -55,8 +55,7 @@ const Products = () => {
     
     // navigate to single product page with product data
     const handleProductClick = (item) => {
-        navigate(`/single-product/${item.id}`, { state: { products: item } });
-        console.log(`card clicked /single-product/${item.id}`)
+        navigate(`/single-product/${item.slug}`, {state: {products: item}});
     };
     
     // filters data
@@ -310,6 +309,7 @@ const Products = () => {
                     {products.slice(0, 9).map((item, index) => {
                         return <ProductCard key={index}
                             slug={item.slug}
+                            singleProductData={item}
                             maxWidthAccordingToComp={'32%'} 
                             justWidth={'100%'} 
                             tagIcon={item.productTag ? item.productTag : item.heart}

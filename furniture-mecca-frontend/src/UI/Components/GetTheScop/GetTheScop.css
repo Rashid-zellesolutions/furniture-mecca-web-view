@@ -26,16 +26,16 @@
 }
 
 .get-the-scop-form h3{
-    font-size: 30px;
-    line-height: 36px;
+    font-size: 28px;
+    line-height: 42px;
     font-weight: 600;
     color: var(--text-color);
 }
 
 .get-the-scop-form .get-the-scop-offers{
-    font-size: 17px;
-    font-weight: 500;
-    line-height: 25px;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
     padding-top: 5px;
     color: var(--text-color);
 }
@@ -58,7 +58,7 @@
     outline: none;
     color: var(--text-color);
     font-size: 16px;
-    font-weight: 300;
+    font-weight: 500;
     line-height: 24px;
     border-radius: 4px;
 }
@@ -72,8 +72,8 @@
     height: 40px;
     border: 2px solid var(--button-color);
     outline: none;
-    font-size: 15px;
-    line-height: 15px;
+    font-size: 18px;
+    line-height: 27px;
     font-weight: 600;
     cursor: pointer;
     border-radius: 4px;
@@ -123,9 +123,9 @@
 
 .get-the-scop-form p{
     color: var(--text-color);
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 24px;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 22px;
     width: 100%;
     text-align: center;
 }
@@ -147,17 +147,17 @@
 
 .get-the-scop-banner h3{
     font-size: 30px;
-    line-height: 36px;
+    line-height: 45px;
     font-weight: 600;
     color: var(--text-color);
     width: 100%;
 }
 
 .get-the-scop-banner p{
-    font-size: 17px;
+    font-size: 15px;
     color: var(--text-color);
     font-weight: 500;
-    line-height: 25px;
+    line-height: 22px;
 }
 
 .banner-container{
@@ -179,21 +179,17 @@
 
 .get-the-scop-banner button{
     background-color: var(--button-color);
-    /* bottom: 12%; */
     z-index: 2;
-    /* position: absolute; */
     font-size: 16px;
-    line-height: 16px;
+    line-height: 24px;
+    font-weight: 400;
     text-transform: capitalize;
     color: var(--text-white);
-    /* padding: 12px 24px; */
     width: 190px;
     height: 46px;
     border-radius: 8px;
     border: 3px solid white;
     transition: all 0.3s ease-in-out;
-    font-weight: 500;
-    /* animation: float 1.5s ease-in-out infinite; */
 }
 
 @media only screen and (max-width: 1300px){

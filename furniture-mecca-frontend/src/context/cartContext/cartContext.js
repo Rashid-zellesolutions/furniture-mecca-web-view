@@ -20,7 +20,7 @@ export const CartProvider = ({children}) => {
     // save cart to local storage when eer it changes
     useEffect(() => {
         localStorage.setItem('cart', JSON.stringify(cart));
-        console.log("cart storage", cart)
+        // console.log("cart storage", cart)
     }, [cart])
 
     // Add Items To Cart

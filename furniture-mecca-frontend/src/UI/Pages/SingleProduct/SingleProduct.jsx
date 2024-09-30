@@ -21,19 +21,10 @@ import InstaTwoImageGallery from '../../Components/InstaTwoImageGallery/InstaTwo
 import { useProducts } from '../../../context/productsContext/productContext'
 
 const SingleProduct = () => {
-  // const location = useLocation();
-  // const productCard = location.state || {};
-  // console.log("Card Data", productCard);
-  // const dynamicData = productCard.productCard || productCard.products
-  // console.log("Dynamic Card Data ", dynamicData)
 
-  // const {products} = useProducts()
-  const {slug} = useParams();
-  console.log('product id', slug)
-  console.log('type of id',typeof slug)
-  const products = useProducts();
-  console.log("products on single page", products)
-  // const product = products.find((item) => item.slug === slug)
+  const location = useLocation();
+  const product = location.state || {}
+  console.log("Product from product page to single page", product)
 
   
   const handleClickTop = () => {
@@ -44,15 +35,15 @@ const SingleProduct = () => {
   }
   useEffect(() => {
     handleClickTop()
-  }, [products]);
+  }, [product]);
   
-  if(!products){
+  if(!product){
     return <div>Product Not Found</div>
   }
 
   return (
     <div>
-        <SingleProductStickySection productData={products} />
+        <SingleProductStickySection productData={product} />
         <SimillerProducts />
         <FrequentlyBought />
         <RatingAndReview />

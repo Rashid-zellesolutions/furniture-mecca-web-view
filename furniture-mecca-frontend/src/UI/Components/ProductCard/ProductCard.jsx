@@ -10,7 +10,7 @@ import eyeWhite from '../../../Assets/icons/eye-white.png';
 import namer from 'color-namer';
 
 const ProductCard = ({tagIcon, tagClass, mainImage, productCardContainerClass, mouseEnter, mouseLeave, ProductTitle, stars, reviewCount, lowPriceAddvertisement,
-    priceTag, financingAdd, slug, stock, handleQuickView, learnMore, colorVariation, handleAddToCart, handleCartSectionOpen, mainIndex, deliveryTime, handleVariantColor, selectedColorIndices, maxWidthAccordingToComp, borderLeft, justWidth, handleCardClick
+    priceTag, financingAdd, singleProductData, slug, stock, handleQuickView, learnMore, colorVariation, handleAddToCart, handleCartSectionOpen, mainIndex, deliveryTime, handleVariantColor, selectedColorIndices, maxWidthAccordingToComp, borderLeft, justWidth, handleCardClick
 }) => {
     
     const [cartClicked, setCartClicked] = useState(true);
@@ -66,18 +66,21 @@ const ProductCard = ({tagIcon, tagClass, mainImage, productCardContainerClass, m
                                 <img src={cardHovered ? cartIcon : cartBlack} alt='cart' />
                                 Add to cart
                             </button>
-                            <Link to={`/single-product/${slug}`} className='overlay-button' onMouseEnter={handleQuickViewHover} onMouseLeave={handlQuickViewLeave}>
+                            <button onClick={(e) => {
+                                    e.preventDefault();
+                                    handleCardClick(singleProductData);
+                                }
+                                } className='overlay-button' onMouseEnter={handleQuickViewHover} onMouseLeave={handlQuickViewLeave}>
                                 {/* <img src={cardHovered ? eyeWhite : eyeIcon} alt="eye icon" /> */}
                                 <img src={quickViewHovered ? eyeWhite : eyeBlack} alt='cart' />
                                 View Product
-                            </Link>
+                            </button>
                         </div>
                 </div>
 
                 <p className='product-title' onClick={handleCardClick}> <Link> {ProductTitle} </Link> </p>
                 <div className='product-rating-stars-div'>
                     {stars.map((stars, starIndex) => {
-                        // return <i> {<stars.icon />}</i>
                         return <img src={stars.icon} alt='star' />
                     })}
                     <p>{reviewCount}</p>

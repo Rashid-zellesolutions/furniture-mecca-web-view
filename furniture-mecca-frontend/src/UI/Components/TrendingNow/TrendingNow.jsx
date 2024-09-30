@@ -38,7 +38,7 @@ const TrendingNow = () => {
             </div>
             <div className='trending-items-cards'>
                 {sliderItems.map((items, index) => (
-                    <div className='tranding-item-category'>
+                    <div key={index} className='tranding-item-category'>
                         <img src={items} alt='img' />
                     </div>
                 ))}

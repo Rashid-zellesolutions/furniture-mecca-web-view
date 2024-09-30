@@ -1,7 +1,7 @@
 .products-slider-main-container{
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 25px;
     width: 100%;
     padding: var(--global-padding);
     overflow: hidden;
@@ -12,7 +12,7 @@
     font-size: 25px;
     line-height: 37px;
     font-weight: 600;
-    margin-bottom: 9px;
+    /* margin-bottom: 9px; */
 }
 
 /* @media only screen and (max-width: 1200px){

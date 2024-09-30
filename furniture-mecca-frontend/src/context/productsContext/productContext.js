@@ -30,7 +30,7 @@ export const ProductProvider = ({children}) => {
         ], productAllImages: [
             dakotaSet, dakotaSet, dakotaSet 
         ], lowPriceAddvertisement: 'Every day Low Prices', 
-        reviewCount: '(200)', priceTag: 1198, totalPrice: 0 , financingAdd: '12 most special financing', learnMore: 'Learn more', colorVariation: [
+        reviewCount: '200', priceTag: 1198, totalPrice: 0 , financingAdd: '12 most special financing', learnMore: 'Learn more', colorVariation: [
             {color: 'brown', hexa: '#FF0000'},
             {color: 'black', hexa: '#B78953'},
         ], deliveryTime: 'Get it in 3 to 4 days', stock: 'In Stock'
@@ -43,7 +43,7 @@ export const ProductProvider = ({children}) => {
             ], productAllImages: [
                 goldDiningSet, goldDiningSet, goldDiningSet 
             ],  lowPriceAddvertisement: 'Bobs Every day Low Prices',
-            reviewCount: '(197)', priceTag: 1998, totalPrice: 0 , financingAdd: '12 most special financing', learnMore: 'Learn more', colorVariation: [
+            reviewCount: '197', priceTag: 1998, totalPrice: 0 , financingAdd: '12 most special financing', learnMore: 'Learn more', colorVariation: [
                 {color: 'brown', hexa: '#FF0000'},
                 {color: 'black', hexa: '#B78953'},
             ], deliveryTime: 'Get it in 3 to 4 days', stock: 'Out Of Stock'
@@ -57,11 +57,11 @@ export const ProductProvider = ({children}) => {
                 ], productAllImages: [
                     webImage, webImage, webImage 
                 ],  lowPriceAddvertisement: 'Bobs Every day Low Prices',
-                reviewCount: '(218)', priceTag: 998, totalPrice: 0 , financingAdd: '12 most special financing', learnMore: 'Learn more', colorVariation: [
+                reviewCount: '218', priceTag: 998, totalPrice: 0 , financingAdd: '12 most special financing', learnMore: 'Learn more', colorVariation: [
                     {color: 'brown', hexa: '#FF0000'},
                     {color: 'black', hexa: '#B78953'},
                 ], deliveryTime: 'Get it in 3 to 4 days', stock: 'In Stock'
-            },
+        },
         {id: 4, heart: heartImg, mainImage: everDeen, hoverImage: webImage , productTitle: `Trevor Brown 90'' Manual Reclining Sofa & 79'' Console Loveseat`, ratingStars: [
                     {icon: star, title: 'filled'},
                     {icon: star, title: 'filled'},
@@ -69,12 +69,12 @@ export const ProductProvider = ({children}) => {
                 ], productAllImages: [
                     everDeen, everDeen, everDeen 
                 ],  lowPriceAddvertisement: 'Bobs Every day Low Prices',
-                reviewCount: '(150)', priceTag: 4598, totalPrice: 0 , financingAdd: '12 most special financing', learnMore: 'Learn more', colorVariation: [
+                reviewCount: '150', priceTag: 4598, totalPrice: 0 , financingAdd: '12 most special financing', learnMore: 'Learn more', colorVariation: [
                     {color: 'brown', hexa: '#FF0000'},
                     {color: 'black', hexa: '#B78953'},
                 ], deliveryTime: 'Get it in 3 to 4 days', stock: 'In Stock'
         },
-        {id: 5, heart: heartImg, mainImage: blackDiningSet, hoverImage: whiteDiningSet , productTitle: `Trevor Brown 90'' Manual Reclining Sofa & 79'' Console Loveseat`, ratingStars: [
+        {id: 5, heart: heartImg, mainImage: blackDiningSet, hoverImage: whiteDiningSet , productTitle: `Trever Brown 90'' Manual Reclining Sofa & 79'' Console Loveseat`, ratingStars: [
                     {icon: star, title: 'filled'},
                     {icon: star, title: 'filled'},
                     {icon: star, title: 'filled'},
@@ -82,7 +82,7 @@ export const ProductProvider = ({children}) => {
                 ], productAllImages: [
                     blackDiningSet, blackDiningSet, blackDiningSet 
                 ],  lowPriceAddvertisement: 'Bobs Every day Low Prices',
-                reviewCount: '(180)', priceTag: 1398, totalPrice: 0 , financingAdd: '12 most special financing', learnMore: 'Learn more', colorVariation: [
+                reviewCount: '180', priceTag: 1398, totalPrice: 0 , financingAdd: '12 most special financing', learnMore: 'Learn more', colorVariation: [
                     {color: 'brown', hexa: '#FF0000'},
                     {color: 'black', hexa: '#B78953'},
                 ], deliveryTime: 'Get it in 3 to 4 days', stock: 'In Stock'
@@ -95,7 +95,7 @@ export const ProductProvider = ({children}) => {
         ], productAllImages: [
             whiteDiningSet, whiteDiningSet, whiteDiningSet 
         ],  lowPriceAddvertisement: 'Bobs Every day Low Prices',
-        reviewCount: '(180)', priceTag: 1398, totalPrice: 0 , financingAdd: '12 most special financing', learnMore: 'Learn more', colorVariation: [
+        reviewCount: '180', priceTag: 1398, totalPrice: 0 , financingAdd: '12 most special financing', learnMore: 'Learn more', colorVariation: [
             {color: 'brown', hexa: '#FF0000'},
             {color: 'black', hexa: '#B78953'},
         ], deliveryTime: 'Get it in 3 to 4 days', stock: 'In Stock'
@@ -108,7 +108,7 @@ export const ProductProvider = ({children}) => {
                 ], productAllImages: [
                     brownDiningSet, brownDiningSet, brownDiningSet 
                 ],  lowPriceAddvertisement: 'Bobs Every day Low Prices',
-                reviewCount: '(180)', priceTag: 1398, totalPrice: 0 , financingAdd: '12 most special financing', learnMore: 'Learn more', colorVariation: [
+                reviewCount: '180', priceTag: 1398, totalPrice: 0 , financingAdd: '12 most special financing', learnMore: 'Learn more', colorVariation: [
                     {color: 'brown', hexa: '#FF0000'},
                     {color: 'black', hexa: '#B78953'},
                 ], deliveryTime: 'Get it in 3 to 4 days', stock: 'In Stock'
@@ -121,7 +121,7 @@ export const ProductProvider = ({children}) => {
             ], productAllImages: [
                 dakotaSet, dakotaSet, dakotaSet 
             ],  lowPriceAddvertisement: 'Bobs Every day Low Prices',
-            reviewCount: '(180)', priceTag: 1398, totalPrice: 0 , financingAdd: '12 most special financing', learnMore: 'Learn more', colorVariation: [
+            reviewCount: '180', priceTag: 1398, totalPrice: 0 , financingAdd: '12 most special financing', learnMore: 'Learn more', colorVariation: [
                 {color: 'brown', hexa: '#FF0000'},
                 {color: 'black', hexa: '#B78953'},
             ], deliveryTime: 'Get it in 3 to 4 days', stock: 'In Stock'
@@ -134,7 +134,7 @@ export const ProductProvider = ({children}) => {
             ], productAllImages: [
                 goldDiningSet, goldDiningSet, goldDiningSet 
             ],  lowPriceAddvertisement: 'Bobs Every day Low Prices',
-            reviewCount: '(180)', priceTag: 1398, totalPrice: 0 , financingAdd: '12 most special financing', learnMore: 'Learn more', colorVariation: [
+            reviewCount: '180', priceTag: 1398, totalPrice: 0 , financingAdd: '12 most special financing', learnMore: 'Learn more', colorVariation: [
                 {color: 'brown', hexa: '#FF0000'},
                 {color: 'black', hexa: '#B78953'},
             ], deliveryTime: 'Get it in 3 to 4 days', stock: 'In Stock'
@@ -147,7 +147,7 @@ export const ProductProvider = ({children}) => {
             ], productAllImages: [
                 everDeen, everDeen, everDeen 
             ],  lowPriceAddvertisement: 'Bobs Every day Low Prices',
-            reviewCount: '(180)', priceTag: 1398, totalPrice: 0 , financingAdd: '12 most special financing', learnMore: 'Learn more', colorVariation: [
+            reviewCount: '180', priceTag: 1398, totalPrice: 0 , financingAdd: '12 most special financing', learnMore: 'Learn more', colorVariation: [
                 {color: 'brown', hexa: '#FF0000'},
             {color: 'black', hexa: '#B78953'},
             ], deliveryTime: 'Get it in 3 to 4 days', stock: 'In Stock'
@@ -160,7 +160,7 @@ export const ProductProvider = ({children}) => {
                 ], productAllImages: [
                     whiteDiningSet, whiteDiningSet, whiteDiningSet 
                 ],  lowPriceAddvertisement: 'Bobs Every day Low Prices',
-                reviewCount: '(180)', priceTag: 1398, totalPrice: 0 , financingAdd: '12 most special financing', learnMore: 'Learn more', colorVariation: [
+                reviewCount: '180', priceTag: 1398, totalPrice: 0 , financingAdd: '12 most special financing', learnMore: 'Learn more', colorVariation: [
                     {color: 'brown', hexa: '#FF0000'},
                     {color: 'black', hexa: '#B78953'},
                 ], deliveryTime: 'Get it in 3 to 4 days', stock: 'In Stock'
@@ -173,7 +173,7 @@ export const ProductProvider = ({children}) => {
             ], productAllImages: [
                 zoraDiningSet, zoraDiningSet, zoraDiningSet 
             ],  lowPriceAddvertisement: 'Bobs Every day Low Prices',
-            reviewCount: '(180)', priceTag: 1398, totalPrice: 0 , financingAdd: '12 most special financing', learnMore: 'Learn more', colorVariation: [
+            reviewCount: '180', priceTag: 1398, totalPrice: 0 , financingAdd: '12 most special financing', learnMore: 'Learn more', colorVariation: [
                 {color: 'brown', hexa: '#FF0000'},
                 {color: 'black', hexa: '#B78953'},
             ], deliveryTime: 'Get it in 3 to 4 days', stock: 'In Stock'
@@ -186,7 +186,7 @@ export const ProductProvider = ({children}) => {
             ], productAllImages: [
                 knightDaleSet, knightDaleSet, knightDaleSet 
             ],  lowPriceAddvertisement: 'Bobs Every day Low Prices',
-            reviewCount: '(180)', priceTag: 1398, totalPrice: 0 , financingAdd: '12 most special financing', learnMore: 'Learn more', colorVariation: [
+            reviewCount: '180', priceTag: 1398, totalPrice: 0 , financingAdd: '12 most special financing', learnMore: 'Learn more', colorVariation: [
                 {color: 'brown', hexa: '#FF0000'},
                 {color: 'black', hexa: '#B78953'},
             ], deliveryTime: 'Get it in 3 to 4 days', stock: 'In Stock'

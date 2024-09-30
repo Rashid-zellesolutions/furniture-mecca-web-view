@@ -100,7 +100,7 @@ const products = [
   // Add more products here
 ];
 
-const DealOfTheDayCard = ({name, star, review, price, newPrice, imgIcons, descount,  handleHoverEnter, handleHoveLeave}) => {
+const DealOfTheDayCard = ({index, name, star, review, price, newPrice, imgIcons, productmage, descount, handleDealCardClick, dealDayData,  handleHoverEnter, handleHoveLeave}) => {
   const cardIcons = [cartIcon, heartIcon, combinedArrows];
   const [isHovered, setIsHovered] = useState(null);
 
@@ -117,25 +117,26 @@ const DealOfTheDayCard = ({name, star, review, price, newPrice, imgIcons, descou
     };
     
   return (
-    <div className='deal-of-the-day-product-card'>
+    <div index={index} className='deal-of-the-day-product-card' onClick={() => handleDealCardClick(dealDayData)}>
       <div className='deal-of-the-day-product-rating-and-name'>
         <h3 className='deal-of-the-day-product-name'>{truncateTitle(name, maxLength)}</h3>
         <div className='deal-of-the-day-price'>
-          <del>{price}</del>
-          <p>{newPrice}</p>
+          <del>${price}</del>
+          <p>$ 1,599.00</p>
         </div>
         <div className='deal-of-the-day-rating-and-reviews'>
           <div className='deal-of-the-day-card-stars'>
             {star.map((items, innIndex) => (
-              <p className='deal-of-the-day-stars'>{items.icon}</p>
+              // <p className='deal-of-the-day-stars'>{items.icon}</p>
+              <img key={innIndex} src={items.icon} alt='star' />
             ))}
             </div>
           <p>({review})</p>
         </div>
       </div>
       <div className='deal-of-the-day-product-image'>
-        <div className='deal-of-the-day-product-discount'><p>{descount}</p></div>
-        <img src={testImage} alt='img' />
+        <div className='deal-of-the-day-product-discount'><p>-12%</p></div>
+        <img src={productmage} alt='img' />
         <div className='deal-of-the-day-card-icons-div'>
           {imgIcons.map((items, index) => (
             <button key={index} className={`deal-of-the-day-icon ${isHovered === index ? 'change-bg' : ''}`} onMouseEnter={() => handleIconMouseEnter(index)} onMouseLeave={handleIconMouseLeave}>

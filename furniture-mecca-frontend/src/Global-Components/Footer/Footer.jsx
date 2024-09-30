@@ -210,7 +210,7 @@ const Footer = ({notLandingPage}) => {
                     return <div key={index} className='footer-nav-links'>
                     <h3 className='footer-nav-link-heading'>{items.heading}</h3>
                     {items.navItems.map((item, innerIndex) => {
-                        return <FooterNav link={item.link} linkName={item.name} />
+                        return <FooterNav key={innerIndex} link={item.link} linkName={item.name} />
                     })}
                 </div>
                 })}
@@ -220,7 +220,7 @@ const Footer = ({notLandingPage}) => {
                     <div className='left-section-contact'>
                         <div className='left-section-social-icons-div'>
                             {socialIcons.map((items, index) => (
-                                <a href={items.link}>
+                                <a key={index} href={items.link}>
                                     <img src={items.icon} alt='icon' />
                                 </a>
                             ))}
@@ -254,7 +254,7 @@ const Footer = ({notLandingPage}) => {
                             </div>
                             <div className='near-store-details-section'>
                                 {nearStoreDetails.map((item, index) => (
-                                    <span>
+                                    <span key={index}>
                                         <img src={item.icon} alt='icon' />
                                         <p>{item.details}</p>
                                     </span>

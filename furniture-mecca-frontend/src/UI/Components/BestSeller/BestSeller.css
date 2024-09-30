@@ -1,8 +1,15 @@
 .category-besst-seller-main-container{
     display: flex;
+    flex-direction: column;
     width: 100%;
     gap: 20px;
     padding: var(--global-padding);
+}
+
+.category-best-seller-and-banner-container{
+    display: flex;
+    width: 100%;
+    gap: 20px;
 }
 
 .category-best-seller-cards-section{
@@ -160,4 +167,25 @@
     width: auto;
     height: 100%;
     object-fit: cover;
+}
+
+.category-pagination-dots{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.category-dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+    background-color: #ddd;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.category-dot.category-dot-active-active {
+    background-color: #333;
 }

@@ -10,7 +10,7 @@ const FrequentlyBought = () => {
     const {products} = useProducts()
     const navigate = useNavigate()
     const handleProductClicked = (item) => {
-      navigate(`/single-product/${item.id}`)
+      navigate(`/single-product/${item.slug}`, {state: {products: item}})
     }
     
     const [hoveredIndex, setHoveredIndex] = useState(null);
@@ -80,6 +80,7 @@ const FrequentlyBought = () => {
                             borderLeft={index % 4 === 3}
                             handleCardClick={() => handleProductClicked(item)}
                             stock={item.stock}
+                            singleProductData={item}
                         />
                     ))}
         </div>

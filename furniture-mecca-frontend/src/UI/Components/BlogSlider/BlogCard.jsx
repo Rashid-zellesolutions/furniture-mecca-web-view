@@ -18,14 +18,6 @@ const BlogCard = ({img, category, title, createdBy, comments}) => {
 
   return (
     <>
-        {/* <div className='blog-card'>
-            <div className='blog-card-image'>
-                <img src={img} alt='img' />
-            </div>
-            <div>
-                <p>{category}</p>
-            </div>
-        </div> */}
         <div className='blog-card'>
             <div className='blog-card-image'>
                 <div className='blog-date-tag'>
@@ -38,13 +30,13 @@ const BlogCard = ({img, category, title, createdBy, comments}) => {
                 <p>{category}</p>
                 <h3>{title}</h3>
                 <div className='blog-created-by-and-comments'>
-                    <p className='blog-star-rating'>
-                        {stars.map((item) => (
+                    <div className='blog-star-rating'>
+                        {stars.map((item, index) => (
                             // <img src={item} alt='star' />
-                            <p>{item.star}</p>
+                            <p key={index}>{item.star}</p>
                         ))}
                         (200)
-                    </p>
+                    </div>
                     <p>{comments}</p>
                 </div>
             </div>

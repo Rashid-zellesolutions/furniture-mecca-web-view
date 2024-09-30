@@ -1,7 +1,7 @@
 .card {
     width: 100%;
     box-sizing: border-box; 
-    padding: 10px; 
+    padding: 0 10px 0 15px; 
 }
 
 .card-header{
@@ -23,7 +23,8 @@
     font-weight: 700;
     color: var(--text-white);
     left: 10px;
-    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.8); /* Example shadow */
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.8);
+
 }
 
 .title-and-price{
@@ -69,10 +70,7 @@
     width: 200px;
     height: 40px;
     gap: 15px;
-    color: var(--text-white) !important; 
-    font-size: 15px;
-    line-height: 17px;
-    font-weight: 400;
+    color: var(--text-white) !important;
     text-decoration: none;
     justify-content: center;
     height: 40px;
@@ -80,6 +78,9 @@
 
 .card-buttons a p{
     color: #fff !important;
+    font-size: 15px !important;
+    line-height: 17px !important;
+    font-weight: 400 !important;
 }
 
 .card-buttons a:hover{

@@ -29,7 +29,7 @@ const InstaGallery = () => {
     <div className='insta-container' onMouseMove={handleMouseMove}>
         <div className='images'>
             {instaGalleryImages.map((image, index) => {
-                return <img src={image} alt={`image ${index + 1}`} />
+                return <img key={index} src={image} alt={`image ${index + 1}`} />
             })}
         </div>
         <div className={`icon ${animateMouse ? 'animate' : ''}`}>

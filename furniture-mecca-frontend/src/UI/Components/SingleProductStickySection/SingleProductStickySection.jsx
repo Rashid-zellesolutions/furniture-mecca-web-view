@@ -38,6 +38,9 @@ import imgFive from '../../../Assets/Furniture Mecca/Landing Page/instagram imag
 
 
 const SingleProductStickySection = (productData) => {
+  console.log("product Data", productData.productData.products)
+  const product = productData.productData.products;
+  console.log("ppp data", product.id)
 
   // Alice Slider
   const images = [imgOne, imgOne, imgOne, imgOne, imgOne];
@@ -123,6 +126,8 @@ const SingleProductStickySection = (productData) => {
     {name: 'Gray', img: grayImage},
   ]
 
+  const [variationName, setVariationName] = useState()
+
   const [count, setCount] = useState(1);
 
     const handleIncrease = () => {
@@ -154,7 +159,7 @@ const SingleProductStickySection = (productData) => {
             activeIndex={activeIndex}
             disableDotsControls
             disableButtonsControls
-            items={images.map((img, index) => (
+            items={product.productAllImages.map((img, index) => (
                 <img key={index} src={img} className="single-product-slider-img" alt={`Slide ${index}`} />
             ))
             }
@@ -164,7 +169,7 @@ const SingleProductStickySection = (productData) => {
             }}
         />
         <div className="single-product-slider-thumbnails">
-            {images.map((img, index) => (
+            {product.productAllImages.map((img, index) => (
                 <div
                     key={index}
                     className={`single-product-slider-thumbnail ${activeIndex === index ? '' : 'single-product-slider-thumbnail-inactive'}`}
@@ -181,22 +186,21 @@ const SingleProductStickySection = (productData) => {
       </div>
       <div className='right-section'>
         <div className='single-product-detail-container'>
-            {/* <h3 className='single-product-heading'>{productData.productCard.productTitle}</h3> */}
             <div className='single-page-product-name-anddetails'>
-              <h3 className='single-product-heading'>Trevor Brown 90'' Manual Reclining Sofa & 79'' Console Loveseat</h3>
+              <h3 className='single-product-heading'>{product.productTitle}</h3>
               <div className='single-product-rating'>
                   <span className='stars-icon'>
-                      {ratingStars.map((item, index) => {
+                      {product.ratingStars.map((item, index) => {
                           return <img key={index} src={item.icon} alt={item.name} className='star-img' />
                       })}
                   </span>
                   <p>4.1</p>
-                  <Link>200 Reviews</Link>
+                  <Link>{product.reviewCount} Reviews</Link>
               </div>
               {/* <h3 className='single-product-price'>${productData.productCard.priceTag}</h3> */}
               <div className='single-product-prices'>
                 <del className='single-product-old-price'>$199.00</del>
-                <h3 className='single-product-new-price'>$1,599.00</h3>
+                <h3 className='single-product-new-price'>${product.priceTag}</h3>
               </div>
               {/* <p className='single-product-installment-price-price'>$9/month for 6 months - Total {productData.productCard.priceTag} </p> */}
               
@@ -206,13 +210,13 @@ const SingleProductStickySection = (productData) => {
               </span>
               <div className='single-product-frame-color'>
                   <span className='color-frame-heading'>
-                      <p>Select Frame Color: </p><Link>Black</Link>
+                      <p>Select Frame Color: </p><Link>{variationName}</Link>
                   </span>
                   <div className='variant-images-div'>
-                      {variantImages.map((item, index) => {
-                          return <div key={index} className='single-product-color-variant'>
-                              <img src={item.img} alt={item.name} />
-                              <p>{item.name}</p>
+                      {product.colorVariation.map((item, index) => {
+                          return <div key={index} className='single-product-color-variant' onClick={() => setVariationName(item.color)}>
+                              <img src={silverImage} alt='img' />
+                              <p>{item.color}</p>
                           </div>
                       })}
                   </div>

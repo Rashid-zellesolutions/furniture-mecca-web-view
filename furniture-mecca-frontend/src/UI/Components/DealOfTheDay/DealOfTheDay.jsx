@@ -19,6 +19,7 @@ import heartWhite from '../../../Assets/icons/heart-white.png'
 import combinedArrows from '../../../Assets/icons/multi-arrow-charcol.png'
 import multiArrowWhite from '../../../Assets/icons/multi-arrow-white.png'
 import { IoStar } from "react-icons/io5";
+import { useNavigate } from 'react-router-dom';
 
 const SamplePrevArrow = (props) => {
   const { className, style, onClick } = props;
@@ -38,155 +39,163 @@ const SamplePrevArrow = (props) => {
     )
   }
 
-const products = [
-  { id: 1, name: "Stevie Charcoal 87'' Sofa & Chair", price: '$199.00', newPrice: '$ 1,599.00', imageUrl: testImage, rating: '200', stars: [
-    {icon: <IoStar size={14} />},
-    {icon: <IoStar size={14} />},
-    {icon: <IoStar size={14} />},
-    {icon: <IoStar size={14} />},
-    {icon: <IoStar size={14} />},
-  ], imgIcons: [
-    {defIcon: cartIcon, hoveredIcon: cartWhite},
-    {defIcon: heartIcon, hoveredIcon: heartWhite},
-    {defIcon: combinedArrows, hoveredIcon: multiArrowWhite},
-  ], disc: '-12%',
-  },
-  { id: 2, name: "Stevie Charcoal 87'' Sofa & Chair", price: '$199.00', newPrice: '$ 1,599.00', imageUrl: testImage, rating: '200', stock: 8, sold: 30, stars: [
-    {icon: <IoStar size={14} />},
-    {icon: <IoStar size={14} />},
-    {icon: <IoStar size={14} />},
-    {icon: <IoStar size={14} />},
-    {icon: <IoStar size={14} />},
-  ], imgIcons: [
-    {defIcon: cartIcon, hoveredIcon: cartWhite},
-    {defIcon: heartIcon, hoveredIcon: heartWhite},
-    {defIcon: combinedArrows, hoveredIcon: multiArrowWhite},
-  ], disc: '-12%', 
-  },
-  { id: 3, name: "Stevie Charcoal 87'' Sofa & Chair", price: '$199.00', newPrice: '$ 1,599.00', imageUrl: testImage, rating: '200', stock: 15, sold: 80, stars: [
-    {icon: <IoStar size={14} />},
-    {icon: <IoStar size={14} />},
-    {icon: <IoStar size={14} />},
-    {icon: <IoStar size={14} />},
-    {icon: <IoStar size={14} />},
-  ], imgIcons: [
-    {defIcon: cartIcon, hoveredIcon: cartWhite},
-    {defIcon: heartIcon, hoveredIcon: heartWhite},
-    {defIcon: combinedArrows, hoveredIcon: multiArrowWhite},
-  ], disc: '-12%', 
-  },
-  { id: 4, name: "Stevie Charcoal 87'' Sofa & Chair", price: '$199.00', newPrice: '$ 1,599.00', imageUrl: testImage, rating: '200', stock: 5, sold: 20, stars: [
-    {icon: <IoStar size={14} />},
-    {icon: <IoStar size={14} />},
-    {icon: <IoStar size={14} />},
-    {icon: <IoStar size={14} />},
-    {icon: <IoStar size={14} />},
-  ], imgIcons: [
-    {defIcon: cartIcon, hoveredIcon: cartWhite},
-    {defIcon: heartIcon, hoveredIcon: heartWhite},
-    {defIcon: combinedArrows, hoveredIcon: multiArrowWhite},
-  ], disc: '-12%', 
-  },
-  { id: 5, name: "Stevie Charcoal 87'' Sofa & Chair", price: '$199.00', newPrice: '$ 1,599.00', imageUrl: testImage, rating: '200', stock: 10, sold: 50, stars: [
-    {icon: <IoStar size={14} />},
-    {icon: <IoStar size={14} />},
-    {icon: <IoStar size={14} />},
-    {icon: <IoStar size={14} />},
-    {icon: <IoStar size={14} />},
-  ], imgIcons: [
-    {defIcon: cartIcon, hoveredIcon: cartWhite},
-    {defIcon: heartIcon, hoveredIcon: heartWhite},
-    {defIcon: combinedArrows, hoveredIcon: multiArrowWhite},
-  ], disc: '-12%', 
-  },
-  { id: 6, name: "Stevie Charcoal 87'' Sofa & Chair", price: '$199.00', newPrice: '$ 1,599.00', imageUrl: testImage, rating: '200', stock: 8, sold: 30, stars: [
-    {icon: <IoStar size={14} />},
-    {icon: <IoStar size={14} />},
-    {icon: <IoStar size={14} />},
-    {icon: <IoStar size={14} />},
-    {icon: <IoStar size={14} />},
-  ], imgIcons: [
-    {defIcon: cartIcon, hoveredIcon: cartWhite},
-    {defIcon: heartIcon, hoveredIcon: heartWhite},
-    {defIcon: combinedArrows, hoveredIcon: multiArrowWhite},
-  ], disc: '-12%', 
-  },
-  { id: 7, name: "Stevie Charcoal 87'' Sofa & Chair", price: '$199.00', newPrice: '$ 1,599.00', imageUrl: testImage, rating: '200', stock: 15, sold: 80, stars: [
-    {icon: <IoStar size={14} />},
-    {icon: <IoStar size={14} />},
-    {icon: <IoStar size={14} />},
-    {icon: <IoStar size={14} />},
-    {icon: <IoStar size={14} />},
-  ], imgIcons: [
-    {defIcon: cartIcon, hoveredIcon: cartWhite},
-    {defIcon: heartIcon, hoveredIcon: heartWhite},
-    {defIcon: combinedArrows, hoveredIcon: multiArrowWhite},
-  ], disc: '-12%', 
-  },
-  { id: 8, name: "Stevie Charcoal 87'' Sofa & Chair", price: '$199.00', newPrice: '$ 1,599.00', imageUrl: testImage, rating: '200', stock: 5, sold: 20, stars: [
-    {icon: <IoStar size={14} />},
-    {icon: <IoStar size={14} />},
-    {icon: <IoStar size={14} />},
-    {icon: <IoStar size={14} />},
-    {icon: <IoStar size={14} />},
-  ], imgIcons: [
-    {defIcon: cartIcon, hoveredIcon: cartWhite},
-    {defIcon: heartIcon, hoveredIcon: heartWhite},
-    {defIcon: combinedArrows, hoveredIcon: multiArrowWhite},
-  ], disc: '-12%', 
-  },
-  { id: 9, name: "Stevie Charcoal 87'' Sofa & Chair", price: '$199.00', newPrice: '$ 1,599.00', imageUrl: testImage, rating: '200', stock: 10, sold: 50, stars: [
-    {icon: <IoStar size={14} />},
-    {icon: <IoStar size={14} />},
-    {icon: <IoStar size={14} />},
-    {icon: <IoStar size={14} />},
-    {icon: <IoStar size={14} />},
-  ], imgIcons: [
-    {defIcon: cartIcon, hoveredIcon: cartWhite},
-    {defIcon: heartIcon, hoveredIcon: heartWhite},
-    {defIcon: combinedArrows, hoveredIcon: multiArrowWhite},
-  ], disc: '-12%', 
-  },
-  { id: 10, name: "Stevie Charcoal 87'' Sofa & Chair", price: '$199.00', newPrice: '$ 1,599.00', imageUrl: testImage, rating: '200', stock: 8, sold: 30, stars: [
-    {icon: <IoStar size={14} />},
-    {icon: <IoStar size={14} />},
-    {icon: <IoStar size={14} />},
-    {icon: <IoStar size={14} />},
-    {icon: <IoStar size={14} />},
-  ], imgIcons: [
-    {defIcon: cartIcon, hoveredIcon: cartWhite},
-    {defIcon: heartIcon, hoveredIcon: heartWhite},
-    {defIcon: combinedArrows, hoveredIcon: multiArrowWhite},
-  ], disc: '-12%', 
-  },
-  { id: 11, name: "Stevie Charcoal 87'' Sofa & Chair", price: '$199.00', newPrice: '$ 1,599.00', imageUrl: testImage, rating: '200', stock: 15, sold: 80, stars: [
-    {icon: <IoStar size={14} />},
-    {icon: <IoStar size={14} />},
-    {icon: <IoStar size={14} />},
-    {icon: <IoStar size={14} />},
-    {icon: <IoStar size={14} />},
-  ], imgIcons: [
-    {defIcon: cartIcon, hoveredIcon: cartWhite},
-    {defIcon: heartIcon, hoveredIcon: heartWhite},
-    {defIcon: combinedArrows, hoveredIcon: multiArrowWhite},
-  ], disc: '-12%', 
-  },
-  { id: 12, name: "Stevie Charcoal 87'' Sofa & Chair", price: '$199.00', newPrice: '$ 1,599.00', imageUrl: testImage, rating: '200', stock: 5, sold: 20, stars: [
-    {icon: <IoStar size={14} />},
-    {icon: <IoStar size={14} />},
-    {icon: <IoStar size={14} />},
-    {icon: <IoStar size={14} />},
-    {icon: <IoStar size={14} />},
-  ], imgIcons: [
-    {defIcon: cartIcon, hoveredIcon: cartWhite},
-    {defIcon: heartIcon, hoveredIcon: heartWhite},
-    {defIcon: combinedArrows, hoveredIcon: multiArrowWhite},
-  ], disc: '-12%', 
-  },
-  // Add more products here
-];
+// const products = [
+//   { id: 1, name: "Stevie Charcoal 87'' Sofa & Chair", price: '$199.00', newPrice: '$ 1,599.00', imageUrl: testImage, rating: '200', stars: [
+//     {icon: <IoStar size={14} />},
+//     {icon: <IoStar size={14} />},
+//     {icon: <IoStar size={14} />},
+//     {icon: <IoStar size={14} />},
+//     {icon: <IoStar size={14} />},
+//   ], imgIcons: [
+//     {defIcon: cartIcon, hoveredIcon: cartWhite},
+//     {defIcon: heartIcon, hoveredIcon: heartWhite},
+//     {defIcon: combinedArrows, hoveredIcon: multiArrowWhite},
+//   ], disc: '-12%',
+//   },
+//   { id: 2, name: "Stevie Charcoal 87'' Sofa & Chair", price: '$199.00', newPrice: '$ 1,599.00', imageUrl: testImage, rating: '200', stock: 8, sold: 30, stars: [
+//     {icon: <IoStar size={14} />},
+//     {icon: <IoStar size={14} />},
+//     {icon: <IoStar size={14} />},
+//     {icon: <IoStar size={14} />},
+//     {icon: <IoStar size={14} />},
+//   ], imgIcons: [
+//     {defIcon: cartIcon, hoveredIcon: cartWhite},
+//     {defIcon: heartIcon, hoveredIcon: heartWhite},
+//     {defIcon: combinedArrows, hoveredIcon: multiArrowWhite},
+//   ], disc: '-12%', 
+//   },
+//   { id: 3, name: "Stevie Charcoal 87'' Sofa & Chair", price: '$199.00', newPrice: '$ 1,599.00', imageUrl: testImage, rating: '200', stock: 15, sold: 80, stars: [
+//     {icon: <IoStar size={14} />},
+//     {icon: <IoStar size={14} />},
+//     {icon: <IoStar size={14} />},
+//     {icon: <IoStar size={14} />},
+//     {icon: <IoStar size={14} />},
+//   ], imgIcons: [
+//     {defIcon: cartIcon, hoveredIcon: cartWhite},
+//     {defIcon: heartIcon, hoveredIcon: heartWhite},
+//     {defIcon: combinedArrows, hoveredIcon: multiArrowWhite},
+//   ], disc: '-12%', 
+//   },
+//   { id: 4, name: "Stevie Charcoal 87'' Sofa & Chair", price: '$199.00', newPrice: '$ 1,599.00', imageUrl: testImage, rating: '200', stock: 5, sold: 20, stars: [
+//     {icon: <IoStar size={14} />},
+//     {icon: <IoStar size={14} />},
+//     {icon: <IoStar size={14} />},
+//     {icon: <IoStar size={14} />},
+//     {icon: <IoStar size={14} />},
+//   ], imgIcons: [
+//     {defIcon: cartIcon, hoveredIcon: cartWhite},
+//     {defIcon: heartIcon, hoveredIcon: heartWhite},
+//     {defIcon: combinedArrows, hoveredIcon: multiArrowWhite},
+//   ], disc: '-12%', 
+//   },
+//   { id: 5, name: "Stevie Charcoal 87'' Sofa & Chair", price: '$199.00', newPrice: '$ 1,599.00', imageUrl: testImage, rating: '200', stock: 10, sold: 50, stars: [
+//     {icon: <IoStar size={14} />},
+//     {icon: <IoStar size={14} />},
+//     {icon: <IoStar size={14} />},
+//     {icon: <IoStar size={14} />},
+//     {icon: <IoStar size={14} />},
+//   ], imgIcons: [
+//     {defIcon: cartIcon, hoveredIcon: cartWhite},
+//     {defIcon: heartIcon, hoveredIcon: heartWhite},
+//     {defIcon: combinedArrows, hoveredIcon: multiArrowWhite},
+//   ], disc: '-12%', 
+//   },
+//   { id: 6, name: "Stevie Charcoal 87'' Sofa & Chair", price: '$199.00', newPrice: '$ 1,599.00', imageUrl: testImage, rating: '200', stock: 8, sold: 30, stars: [
+//     {icon: <IoStar size={14} />},
+//     {icon: <IoStar size={14} />},
+//     {icon: <IoStar size={14} />},
+//     {icon: <IoStar size={14} />},
+//     {icon: <IoStar size={14} />},
+//   ], imgIcons: [
+//     {defIcon: cartIcon, hoveredIcon: cartWhite},
+//     {defIcon: heartIcon, hoveredIcon: heartWhite},
+//     {defIcon: combinedArrows, hoveredIcon: multiArrowWhite},
+//   ], disc: '-12%', 
+//   },
+//   { id: 7, name: "Stevie Charcoal 87'' Sofa & Chair", price: '$199.00', newPrice: '$ 1,599.00', imageUrl: testImage, rating: '200', stock: 15, sold: 80, stars: [
+//     {icon: <IoStar size={14} />},
+//     {icon: <IoStar size={14} />},
+//     {icon: <IoStar size={14} />},
+//     {icon: <IoStar size={14} />},
+//     {icon: <IoStar size={14} />},
+//   ], imgIcons: [
+//     {defIcon: cartIcon, hoveredIcon: cartWhite},
+//     {defIcon: heartIcon, hoveredIcon: heartWhite},
+//     {defIcon: combinedArrows, hoveredIcon: multiArrowWhite},
+//   ], disc: '-12%', 
+//   },
+//   { id: 8, name: "Stevie Charcoal 87'' Sofa & Chair", price: '$199.00', newPrice: '$ 1,599.00', imageUrl: testImage, rating: '200', stock: 5, sold: 20, stars: [
+//     {icon: <IoStar size={14} />},
+//     {icon: <IoStar size={14} />},
+//     {icon: <IoStar size={14} />},
+//     {icon: <IoStar size={14} />},
+//     {icon: <IoStar size={14} />},
+//   ], imgIcons: [
+//     {defIcon: cartIcon, hoveredIcon: cartWhite},
+//     {defIcon: heartIcon, hoveredIcon: heartWhite},
+//     {defIcon: combinedArrows, hoveredIcon: multiArrowWhite},
+//   ], disc: '-12%', 
+//   },
+//   { id: 9, name: "Stevie Charcoal 87'' Sofa & Chair", price: '$199.00', newPrice: '$ 1,599.00', imageUrl: testImage, rating: '200', stock: 10, sold: 50, stars: [
+//     {icon: <IoStar size={14} />},
+//     {icon: <IoStar size={14} />},
+//     {icon: <IoStar size={14} />},
+//     {icon: <IoStar size={14} />},
+//     {icon: <IoStar size={14} />},
+//   ], imgIcons: [
+//     {defIcon: cartIcon, hoveredIcon: cartWhite},
+//     {defIcon: heartIcon, hoveredIcon: heartWhite},
+//     {defIcon: combinedArrows, hoveredIcon: multiArrowWhite},
+//   ], disc: '-12%', 
+//   },
+//   { id: 10, name: "Stevie Charcoal 87'' Sofa & Chair", price: '$199.00', newPrice: '$ 1,599.00', imageUrl: testImage, rating: '200', stock: 8, sold: 30, stars: [
+//     {icon: <IoStar size={14} />},
+//     {icon: <IoStar size={14} />},
+//     {icon: <IoStar size={14} />},
+//     {icon: <IoStar size={14} />},
+//     {icon: <IoStar size={14} />},
+//   ], imgIcons: [
+//     {defIcon: cartIcon, hoveredIcon: cartWhite},
+//     {defIcon: heartIcon, hoveredIcon: heartWhite},
+//     {defIcon: combinedArrows, hoveredIcon: multiArrowWhite},
+//   ], disc: '-12%', 
+//   },
+//   { id: 11, name: "Stevie Charcoal 87'' Sofa & Chair", price: '$199.00', newPrice: '$ 1,599.00', imageUrl: testImage, rating: '200', stock: 15, sold: 80, stars: [
+//     {icon: <IoStar size={14} />},
+//     {icon: <IoStar size={14} />},
+//     {icon: <IoStar size={14} />},
+//     {icon: <IoStar size={14} />},
+//     {icon: <IoStar size={14} />},
+//   ], imgIcons: [
+//     {defIcon: cartIcon, hoveredIcon: cartWhite},
+//     {defIcon: heartIcon, hoveredIcon: heartWhite},
+//     {defIcon: combinedArrows, hoveredIcon: multiArrowWhite},
+//   ], disc: '-12%', 
+//   },
+//   { id: 12, name: "Stevie Charcoal 87'' Sofa & Chair", price: '$199.00', newPrice: '$ 1,599.00', imageUrl: testImage, rating: '200', stock: 5, sold: 20, stars: [
+//     {icon: <IoStar size={14} />},
+//     {icon: <IoStar size={14} />},
+//     {icon: <IoStar size={14} />},
+//     {icon: <IoStar size={14} />},
+//     {icon: <IoStar size={14} />},
+//   ], imgIcons: [
+//     {defIcon: cartIcon, hoveredIcon: cartWhite},
+//     {defIcon: heartIcon, hoveredIcon: heartWhite},
+//     {defIcon: combinedArrows, hoveredIcon: multiArrowWhite},
+//   ], disc: '-12%', 
+//   },
+//   // Add more products here
+// ];
+
+ 
 
 const DealOfTheDay = () => {
+  const navigate = useNavigate();
+  const imgIcons = [
+    {defIcon: cartIcon, hoveredIcon: cartWhite},
+    {defIcon: heartIcon, hoveredIcon: heartWhite},
+    {defIcon: combinedArrows, hoveredIcon: multiArrowWhite},
+  ]
 
   var settings = {
     dots: false,
@@ -236,7 +245,7 @@ const DealOfTheDay = () => {
 
     // Deal of the day timer
     const calculateTimeLeft = () => {
-    const targetDate = new Date("2024-09-28T21:00:00").getTime();
+    const targetDate = new Date("2024-10-04T21:00:00").getTime();
     const now = new Date().getTime();
     const difference = targetDate - now;
     const padZero = (num) => String(num).padStart(2, '0');
@@ -275,6 +284,10 @@ const DealOfTheDay = () => {
   // Destructure timeLeft
   const { days, hours, minutes, seconds } = timeLeft;
 
+  const {products} = useProducts()
+  const handleDealCardClick = (items) => {
+    navigate(`/single-product/${items.slug}`, {state: {products: items}})
+  }
   
 
 
@@ -290,14 +303,18 @@ const DealOfTheDay = () => {
           <div className='slider-main-container'>
             <Slider {...settings}>
               {products.map((items, index) => (
-                      <DealOfTheDayCard 
-                        name={items.name} 
-                        star={items.stars}
-                        review={items.rating} 
-                        price={items.price}
+                      <DealOfTheDayCard
+                        key={index} 
+                        productmage={items.mainImage}
+                        dealDayData={items}
+                        name={items.productTitle} 
+                        star={items.ratingStars}
+                        review={items.reviewCount} 
+                        price={items.priceTag}
                         newPrice={items.newPrice}
-                        imgIcons={items.imgIcons}
+                        imgIcons={imgIcons}
                         descount={items.disc}
+                        handleDealCardClick={() => handleDealCardClick(items)}
                       />
               ))}
             </Slider>

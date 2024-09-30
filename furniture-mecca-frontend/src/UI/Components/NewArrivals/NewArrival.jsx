@@ -6,23 +6,44 @@ import './NewArrival.css';
 import goldenDiningRoomSet from '../../../Assets/images/Dining-Room-Set-in-Gold-02 1.png';
 import blackDiningRoomSet from '../../../Assets/images/Dining-room-set-black.png';
 import whiteDiningRoomSet from '../../../Assets/images/dining-room-set-white.png';
+import leftArrow from '../../../Assets//icons/arrow-left-charcol.png'
+import rightArrow from '../../../Assets//icons/right-arrow.png'
 import cartRed from '../../../Assets/icons/cart.png';
 import { FaEye } from "react-icons/fa";
 import cart from '../../../Assets/icons/cart-white.png';
 import { Link } from 'react-router-dom';
 import NewArrivalCard from './NewArrivalCard/NewArrivalCard';
+// import DealOfTheDayCard from './DealOfTheDayCard/DealOfTheDayCard';
+
+
+const SamplePrevArrow = (props) => {
+  const { className, style, onClick } = props;
+  return(
+    <div onClick={onClick} className={`category-arrow category-arrow-left ${className}`} >
+      <img src={leftArrow} alt='arrow' />
+    </div>
+  )
+  }
+
+  function SampleNextArrow(props) {
+    const { className, style, onClick } = props;
+    return(
+      <div onClick={onClick} className={`category-arrow category-arrow-right ${className}`} >
+        <img src={rightArrow} alt='arrow'/>
+      </div>
+    )
+  }
 
 const NewArrival = () => {
   let settings = {
-    dots: true,
+    dots: false,
     infinite: false,
-    arrows: false,
     speed: 500,
     slidesToShow: 3,
-    slidesToScroll: 1,
+    slidesToScroll: 3,
     initialSlide: 0,
-    nextArrow: false,
-    prevArrow: false,
+    nextArrow: <SampleNextArrow to="next"/>,
+    prevArrow: <SamplePrevArrow to="prev" />,
     responsive: [
       {
         breakpoint: 1024,

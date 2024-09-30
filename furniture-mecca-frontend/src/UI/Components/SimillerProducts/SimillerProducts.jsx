@@ -6,6 +6,7 @@ import ProductCard from '../ProductCard/ProductCard'
 import arrowLeftRed from '../../../Assets/icons/arrow-left-red.png';
 import arrowRightRed from '../../../Assets/icons/arrow-right-red.png';
 import { useProducts } from '../../../context/productsContext/productContext'
+import { useNavigate } from 'react-router-dom'
 
 const SimillerProducts = () => {
 
@@ -69,6 +70,10 @@ const SimillerProducts = () => {
     const handleTouchMove = (e) => {
         e.preventDefault();
     };
+    const navigate = useNavigate();
+    const handleCardClick = (item) => {
+        navigate(`/single-product/${item.slug}`, {state: {products: item}})
+    }
 
     
     
@@ -110,6 +115,8 @@ const SimillerProducts = () => {
                         handleVariantColor={() => handleVariantImageClick(index, colorIndex)}
                         borderLeft={index % 4 === 3}
                         stock={item.stock}
+                        handleCardClick={() => handleCardClick(item)}
+                        singleProductData={item}
                     />
                 ))}
             </div>

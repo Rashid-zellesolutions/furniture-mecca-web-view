@@ -13,6 +13,7 @@ import heartIcon from '../../../Assets/icons/like.png'
 import arrowLeft from '../../../Assets/icons/arrow-left.png'
 import arrowRight from '../../../Assets/icons/arrow-right.png'
 import testImage from '../../../Assets/Furniture Mecca/category page/best sellers/Lisbon-bed-dresser-600x400 1.png'
+import { useProducts } from '../../../context/productsContext/productContext';
 
 const BestSeller = () => {
     const bestSellerNav = ['Living Room', 'Bedroom', 'Dining Room']
@@ -22,24 +23,28 @@ const BestSeller = () => {
         setActiveItem(index)
     };
 
-    const productCardData = useSelector((state) => state.productCard.data)
+    // const productCardData = useSelector((state) => state.productCard.data)
+    const {products} = useProducts();
 
     const navigate = useNavigate()
     
     const handleProductClick = (item) => {
-        navigate(`/single-product/${item.id}`, { state: { productCard: item } });
-        console.log("Clicked on ", item.id);
+        navigate(`/single-product/${item.slug}`, { state: { products: item } });
+        console.log("Clicked on ", item.slug);
     }
 
     const itemPerPage = 6
-    const maxIndex = Math.ceil(productCardData.length / itemPerPage) -1;
+    const maxIndex = Math.ceil(products.length / itemPerPage) -1;
     const [currentIndex, setCurrentIndex] = useState(1)
-    const handleIndex = (index) => {
-        setCurrentIndex((prevIndex) => (prevIndex < maxIndex ? prevIndex + 1 : 0))
+    const handlePageChange = (index) => {
+        // setCurrentIndex((prevIndex) => (prevIndex < maxIndex ? prevIndex + 1 : 0))
+        setCurrentIndex(index)
     }
 
   return (
+    <>
     <div className='category-besst-seller-main-container'>
+        <div className='category-best-seller-and-banner-container'>
         <div className='category-best-seller-cards-section'>
             <div className='category-best-seller-menu'>
                 <h3>Best Seller</h3>
@@ -49,25 +54,51 @@ const BestSeller = () => {
                     ))}
                 </div>
             </div>
-            <div className='category-products-main-container'>
-                {productCardData.slice(currentIndex * itemPerPage, (currentIndex + 1) * itemPerPage).map((item, index) => (
+            <div className='products-slider-container'>
+                <div className='best-seller-slider' style={{ transform: `translateX(-${(currentIndex / maxIndex) * 0}%)` }}>
+                {products.slice(currentIndex, currentIndex + itemPerPage).map((item, index) => (
                 <BestSellerProductCard
                     key={index}
+                    productData={item}
                     productMainImage={item.mainImage}
                     starIcon={item.ratingStars}
-                    reviews={item.reviews}
+                    reviews={item.reviewCount}
                     productName={item.productTitle}
-                    oldPrice={item.defaultPrice}
+                    oldPrice={item.priceTag}
                     newPrice={item.priceTag} 
+                    handleCardClicked={() => handleProductClick(item)}
                 />
                 ))}
+                </div>
             </div>
+            {/* <div className='pagination-dots'>
+                {Array.from({ length: maxIndex }, (_, index) => (
+                    <span 
+                        key={index} 
+                        className={`dot ${currentIndex === index ? 'active' : ''}`} 
+                        onClick={() => handlePageChange(index)}
+                    ></span>
+                ))}
+            </div> */}
         </div>
         <div className='category-best-seller-banners-section'>
             <img src={bannerOne} alt='banner one' />
             <img src={bannerTwo} alt='banner one' />
         </div>
+        
     </div>
+    <div className='category-pagination-dots'>
+    {Array.from({ length: maxIndex }, (_, index) => (
+        <span 
+            key={index} 
+            className={`category-dot ${currentIndex === index ? 'category-dot-active-active' : ''}`} 
+            onClick={() => handlePageChange(index)}
+        ></span>
+    ))}
+</div>
+    </div>
+    
+</>
   )
 }
 

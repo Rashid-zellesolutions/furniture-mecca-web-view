@@ -18,7 +18,7 @@ const FurnitureForBudget = () => {
         </div>
         <div className='furniture-for-budget-card'>
             {budgetCardData.map((items, index) => (
-                <div className='budget-furniturre-card'>
+                <div key={index} className='budget-furniturre-card'>
                     <div className='budget-furniture-card-img'>
                         <img src={items.img} alt='img' />
                     </div>

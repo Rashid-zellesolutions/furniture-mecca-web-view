@@ -54,7 +54,7 @@ const LanguagePopUp = ({changeLanguage, setChangeLanguage, handleCLoseLanguageMo
                       </div>
                       <div className='defrent-languages'>
                         {languagesData.map((item, index) => (
-                            <div className={currentLenIndex === index ? 'single-selected-language' : 'single-language' } onClick={() => handleActiveIndex(index)} >
+                            <div key={index} className={currentLenIndex === index ? 'single-selected-language' : 'single-language' } onClick={() => handleActiveIndex(index)} >
                               <img src={item.icon} alt='icon' />
                               <h3>{item.lan}</h3>
                             </div>

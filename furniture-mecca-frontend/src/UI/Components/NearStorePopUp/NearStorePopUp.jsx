@@ -202,7 +202,7 @@ const NearStorePopUp = ({isOpen, setIsOpen, handleCloseNearBy}) => {
                         <p>{items.openHours}</p>
                         <div className='store-hours'>
                         {items.hours && items.hours.map((hoursItem, index) => {
-                            return <p> <span>{hoursItem.day}</span> <span>{hoursItem.time}</span> </p>
+                            return <p key={index}> <span>{hoursItem.day}</span> <span>{hoursItem.time}</span> </p>
                         })}
                         </div>
                         <a href={items.virtualTourLink}>{items.virtualTour}</a>
