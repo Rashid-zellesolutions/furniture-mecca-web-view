@@ -1,9 +1,9 @@
 .deal-of-the-day-product-card{
   display: flex;
   flex-direction: column;
-  width: 95%;
-  padding: 10px 0;
-  gap: 10px;
+  width: 93%;
+  /* padding: 10px 0; */
+  gap: 15px;
 }
 
 .deal-of-the-day-product-rating-and-name{
@@ -28,9 +28,15 @@
   gap: 0;
 }
 
+.deal-of-the-day-card-stars img{
+  width: auto;
+  height: 14px;
+  object-fit: contain;
+}
+
 .deal-of-the-day-rating-and-reviews p{
   font-size: 12px;
-  font-weight: 500;
+  font-weight: 300;
   line-height: 18px;
   color: #595959;
 }
@@ -44,8 +50,8 @@
   font-weight: 500;
   line-height: 18px;
   color: #595959;
-  margin-bottom: 15px;
-  height: 40px;
+  margin-bottom: 0px;
+  height: 38px;
 }
 
 .deal-of-the-day-price{
@@ -60,14 +66,14 @@
 .deal-of-the-day-price del{
   font-size: 15px;
   font-weight: 600;
-  line-height: 27px;
-  color: var(text-color);
+  line-height: 22px;
+  color: var(--text-color);
 }
 
 .deal-of-the-day-price p{
   font-size: 18px;
   font-weight: 600;
-  line-height: 23px;
+  line-height: 27px;
   color: #C61B1A;
 }
 
@@ -138,7 +144,7 @@
   flex-direction: column;
   gap: 5px;
   padding-right: 10px;
-  width: 44px;
+  width: auto;
   /* height: max-content; */
   overflow: hidden;
   transition: right 0.5s ease;
@@ -152,8 +158,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: auto;
-  width: 34px;
+  height: 35px;
+  width: 35px;
+  /* padding: 2px 0 4px 2px; */
   background-color: #fff;
   border: 1px solid var(--border-color);
   cursor: pointer;
@@ -165,8 +172,8 @@
 }
 
 .deal-of-the-day-icon img{
-  height: 24px;
-  width: 24px;
+  height: auto;
+  width: 22px;
   object-fit: contain;
 }
 

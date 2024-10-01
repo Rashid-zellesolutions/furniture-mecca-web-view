@@ -190,9 +190,10 @@
     gap: 0px;
 }
 
-.rating-star{
-    width: 14px;
+.product-rating-stars-div img{
+    width: auto;
     height: 14px;
+    object-fit: contain;
 }
 
 .product-rating-stars-div p{

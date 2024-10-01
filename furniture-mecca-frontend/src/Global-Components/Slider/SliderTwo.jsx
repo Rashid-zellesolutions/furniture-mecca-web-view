@@ -7,15 +7,16 @@ import imageTwo from '../../Assets/Furniture Mecca/Landing Page/Slider/Main Bann
 
 const SliderTwo = () => {
     var settings = {
-        dots: true,
-        infinite: false,
+        dots: false,
+        infinite: true,
+        autoplay: true,
         arrows: false,
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1,
         initialSlide: 0,
-        nextArrow: false,
-        prevArrow: false,
+        adaptiveHeight: true,
+        
       };
 
     const sliderImages = [{img: imageOne}, {img: imageTwo}]

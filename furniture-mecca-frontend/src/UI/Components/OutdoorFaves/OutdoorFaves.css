@@ -22,7 +22,7 @@
 
 .out-door-fav-details h3{
     font-size: 25px;
-    line-height: 37px;
+    line-height: var(--heading-line-height);
     font-weight: 600;
     color: var(--text-color);
 }
@@ -71,7 +71,7 @@
 
 .related-category-div h3{
     font-size: 25px;
-    line-height: 37px;
+    line-height: var(--heading-line-height);
     font-weight: 600;
     color: var(--text-color);
 }

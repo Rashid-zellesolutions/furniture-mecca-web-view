@@ -47,7 +47,7 @@
 
 .best-seller-slider-menu-bar h3{
     font-size: 25px;
-    line-height: 37px;
+    line-height: var(--heading-line-height);
     font-weight: 600;
     color: var(--text-color);
 }

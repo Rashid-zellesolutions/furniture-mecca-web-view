@@ -301,7 +301,7 @@
 .filters-section{
     display: flex;
     flex-direction: column;
-    width: 23%;
+    width: 30%;
     height: max-content;
     gap: 30px;
     padding-right: 15px;
@@ -576,6 +576,12 @@ label {
     padding: 0 10px 10px 10px;
     align-items: center;
     /* border-bottom: 2px solid var(--border-color); */
+}
+
+.products-heading p{
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
 }
 
 /* relevence Container */

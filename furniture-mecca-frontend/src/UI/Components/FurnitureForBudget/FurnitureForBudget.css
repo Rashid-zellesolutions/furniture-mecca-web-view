@@ -18,7 +18,7 @@
 .furniture-for-budget-heading-section h3{
     font-size: 25px;
     font-weight: 600;
-    line-height: 37px;
+    line-height: var(--heading-line-height);
     color: var(--text-color);
 }
 

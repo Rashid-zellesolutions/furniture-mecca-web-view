@@ -9,7 +9,7 @@ import tuxedoChair from '../../../Assets/Furniture Mecca/Landing Page/feature pr
 import vikingImage from '../../../Assets/Furniture Mecca/Landing Page/feature products/ma-tax-free_multiple-collection-image3_desktop_xxwngg 2.png'
 
 import GetTheScop from '../../Components/GetTheScop/GetTheScop';
-import Slider from '../../../Global-Components/Slider/Slider';
+import Sliderr from '../../../Global-Components/Slider/Slider';
 import BlogSlider from '../../Components/BlogSlider/BlogSlider';
 import NearStorePopUp from '../../Components/NearStorePopUp/NearStorePopUp';
 
@@ -37,6 +37,7 @@ import DealOfTheDay from '../../Components/DealOfTheDay/DealOfTheDay';
 import TrendingNow from '../../Components/TrendingNow/TrendingNow';
 import FurnitureForBudget from '../../Components/FurnitureForBudget/FurnitureForBudget';
 import { useLocation } from 'react-router-dom';
+import SliderTwo from '../../../Global-Components/Slider/SliderTwo';
 
 
 const Home = () => {
@@ -98,7 +99,7 @@ const Home = () => {
   return (
     <div className='home-page-main-container'>
       <NearStorePopUp />
-      <Slider />
+      <Sliderr />
       <ShipBanner bannerImg={shipBanner} paddindTrue={false} />
       <Category title={'Shop by Category'} categoryData={categoryCardData} />
       <TrendingNow />

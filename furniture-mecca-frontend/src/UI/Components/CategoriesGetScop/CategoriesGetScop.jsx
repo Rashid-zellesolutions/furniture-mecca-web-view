@@ -1,6 +1,10 @@
 import React from 'react';
 import './CategoriesGetScop.css';
 import imgOne from '../../../Assets/Furniture Mecca/Landing Page/get the scope/Rectangle 917.png'
+import imgTwo from '../../../Assets/Furniture Mecca/category page/get the scope/Rectangle 921.png'
+import imgThree from '../../../Assets/Furniture Mecca/category page/get the scope/Rectangle 925.png'
+import img from '../../../Assets/Furniture Mecca/category page/get the scope/Rectangle 926.png'
+
 
 const CategoriesGetScop = ({isTrue}) => {
 

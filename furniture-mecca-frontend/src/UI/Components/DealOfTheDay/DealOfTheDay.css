@@ -43,7 +43,7 @@
 .deal-of-the-day-border-heading p{
     font-size: 25px;
     font-weight: 600;
-    line-height: 37px;
+    line-height: var(--heading-line-height);
     color: #595959;
     margin-top: 5px;
 }
@@ -52,7 +52,7 @@
     width: 100%;
     border: 2px solid #C61B1A;
     border-radius: 8px;
-    padding: 30px 15px 0px 38px;
+    padding: 42px 15px 32px 38px;
     position: relative;
     overflow: hidden;
 }
@@ -87,7 +87,7 @@ position: absolute;
 }
 
 .slick-arrow.slick-prev{left: -15px;}
-.slick-arrow.slick-next{right: -5px;}
+.slick-arrow.slick-next{right: 5px;}
 
 .slick-prev::before,.slick-next::before{
    display:none;    

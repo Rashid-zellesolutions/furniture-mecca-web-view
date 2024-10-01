@@ -11,7 +11,7 @@
 .rating-and-review-main-container h3{
     color: var(--text-color);
     font-size: 25px;
-    line-height: 37px;
+    line-height: var(--heading-line-height);
     font-weight: 600;
 }
 

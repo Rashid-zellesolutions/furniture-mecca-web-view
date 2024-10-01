@@ -10,7 +10,7 @@
 .feature-product-heading{
     color: var(--text-color);
     font-size: 25px;
-    line-height: 37px;
+    line-height: var(--heading-line-height);
     font-weight: 600;
     /* margin-bottom: 9px; */
 }

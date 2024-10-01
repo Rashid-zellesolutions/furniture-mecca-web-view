@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import './SingleProduct.css'
 import CustomerServicePanel from '../../Components/CustomerServicePanel/CustomerServicePanel'
 import CategoriesGetScop from '../../Components/CategoriesGetScop/CategoriesGetScop'
@@ -19,12 +19,20 @@ import Shopvia from '../../Components/ShopViaBanner/Shopvia'
 import { useDispatch } from 'react-redux'
 import InstaTwoImageGallery from '../../Components/InstaTwoImageGallery/InstaTwoImageGallery'
 import { useProducts } from '../../../context/productsContext/productContext'
+import { useCart } from '../../../context/cartContext/cartContext'
 
 const SingleProduct = () => {
 
+  const {cart, addToCart, cartSectionOpen, setCartSectionOpen, increamentQuantity, decreamentQuantity, removeFromCart, calculateTotalPrice} = useCart();
+  const [cartSection, setCartSection] = useState(false);
   const location = useLocation();
   const product = location.state || {}
-  console.log("Product from product page to single page", product)
+  
+  const handleAddToCartProduct = (product) => {
+    // setCartSection(true);
+    // addToCart(product)
+    console.log("product data", product)
+  }
 
   
   const handleClickTop = () => {
@@ -43,20 +51,13 @@ const SingleProduct = () => {
 
   return (
     <div>
-        <SingleProductStickySection productData={product} />
+        <SingleProductStickySection productData={product} cartSectionOpen={() => handleAddToCartProduct(product)} />
         <SimillerProducts />
         <FrequentlyBought />
         <RatingAndReview />
         <CustomerPhotos />
         <ProductComments />
-        {/* <ShippingReturn /> */}
-        {/* <MoreToExplore /> */}
         <OutdoorFaves />
-        {/* <ShipBanner bannerImg={attentionBanner} paddindTrue={true} /> */}
-        
-        {/* <InstaTwoImageGallery /> */}
-        {/* <CategoriesGetScop /> */}
-        {/* <CustomerServicePanel /> */}
     </div>
   )
 }

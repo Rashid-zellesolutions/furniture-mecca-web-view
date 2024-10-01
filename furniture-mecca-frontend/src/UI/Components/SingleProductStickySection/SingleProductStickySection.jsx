@@ -34,11 +34,14 @@ import imgTwo from '../../../Assets/Furniture Mecca/Landing Page/instagram image
 import imgThree from '../../../Assets/Furniture Mecca/Landing Page/instagram images/Rectangle 876.png';
 import imgFour from '../../../Assets/Furniture Mecca/Landing Page/instagram images/Rectangle 877.png';
 import imgFive from '../../../Assets/Furniture Mecca/Landing Page/instagram images/Rectangle 878.png';
+import { useCart } from '../../../context/cartContext/cartContext';
+import CartSidePannel from '../Cart-side-section/CartSidePannel';
 
 
 
 const SingleProductStickySection = (productData) => {
-  console.log("product Data", productData.productData.products)
+  console.log("console all data of product",productData);
+  console.log("product Data", productData.productData)
   const product = productData.productData.products;
   console.log("ppp data", product.id)
 
@@ -127,6 +130,9 @@ const SingleProductStickySection = (productData) => {
   ]
 
   const [variationName, setVariationName] = useState()
+  const handleColorVariation = (index) => {
+    setVariationName(index);
+  }
 
   const [count, setCount] = useState(1);
 
@@ -146,6 +152,17 @@ const SingleProductStickySection = (productData) => {
             setIsLoading(false);
         }, 1000);
     };
+
+    const {cart, addToCart, cartSectionOpen, setCartSectionOpen, increamentQuantity, decreamentQuantity, removeFromCart, calculateTotalPrice} = useCart();
+    const [cartSection, setCartSection] = useState(false);
+    const handleAddToCartProduct = (product) => {
+      setCartSection(true);
+      addToCart(product)
+      console.log("product data", product)
+    }
+    const handleCartClose = () => {
+      setCartSection(false)
+    }
 
   return (
     <div className='sticky-main-container'>
@@ -210,11 +227,11 @@ const SingleProductStickySection = (productData) => {
               </span>
               <div className='single-product-frame-color'>
                   <span className='color-frame-heading'>
-                      <p>Select Frame Color: </p><Link>{variationName}</Link>
+                      {/* <p>Select Frame Color: </p><Link>{variationName}</Link> */}
                   </span>
                   <div className='variant-images-div'>
                       {product.colorVariation.map((item, index) => {
-                          return <div key={index} className='single-product-color-variant' onClick={() => setVariationName(item.color)}>
+                          return <div key={index} className={`single-product-color-variant ${variationName === index ? 'selected-color-variation' : ''}`} onClick={() => handleColorVariation(index)}>
                               <img src={silverImage} alt='img' />
                               <p>{item.color}</p>
                           </div>
@@ -232,7 +249,13 @@ const SingleProductStickySection = (productData) => {
                           </button>
                       </div>
                       <img src={redHeart} alt='red-heart-icon' className='red-heart-icon' />
-                      <button  className={`add-to-cart-btn ${isLoading ? 'loading' : ''}`} onClick={handleClick}>
+                      <button  
+                        className={`add-to-cart-btn ${isLoading ? 'loading' : ''}`} 
+                        onClick={() => {
+                          handleClick();
+                          handleAddToCartProduct(product)
+                        } 
+                        }>
                         {isLoading ? 'Loading...' : 'Add To Cart'}
                     </button>
                   </div>
@@ -243,6 +266,14 @@ const SingleProductStickySection = (productData) => {
                 <SingleProductFAQ />
         </div>
       </div>
+      <CartSidePannel 
+        cartData={cart}
+        addToCartClicked={cartSection}
+        handleCartSectionClose={handleCartClose} 
+        removeFromCart={removeFromCart}
+        decreamentQuantity={decreamentQuantity}
+        increamentQuantity={increamentQuantity}
+      />
     </div>
   );
 };

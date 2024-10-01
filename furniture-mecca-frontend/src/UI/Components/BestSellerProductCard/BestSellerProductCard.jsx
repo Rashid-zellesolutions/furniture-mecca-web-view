@@ -14,28 +14,38 @@ const BestSellerProductCard = ({ productMainImage, productData, starIcon, review
 
 
   return (
-    <div className='category-product-card' onClick={() => handleCardClicked(productData)}>
+    <div 
+        className='category-product-card' 
+        onClick={() => handleCardClicked(productData)}
+    >
         <div className='category-product-image'>
             <img src={productMainImage} alt='product image' />
         </div>
-        <div className='category-product-rating-section'>
-            <div className='category-product-rating-stars'>
-                {starIcon.map((item, index) => (
-                    // <p>{<item.starIcon />}</p>
-                    <img key={index} src={item.icon} alt='img' />
-                ))}
+        <div className='category-containt-section'>
+            <div className='category-product-rating-and-name'>
+                <div className='category-product-rating-section'>
+                    <div className='category-product-rating-stars'>
+                        {starIcon.map((item, index) => (
+                            <img 
+                                key={index} 
+                                src={item.icon} 
+                                alt='img' 
+                            />
+                        ))}
+                    </div>
+                    <p>({reviews})</p>
+                </div>
+                <div className='category-product-name'>
+                    <h3>{truncateTitle(productName, maxLength)}</h3>
+                </div>
             </div>
-            <p>({reviews})</p>
-        </div>
-        <div className='category-product-name'>
-            <h3>{truncateTitle(productName, maxLength)}</h3>
-        </div>
-        <div className='category-product-price-and-heart'>
-            <div className='category-product-price'>
-                <del>${oldPrice}</del>
-                <p>${newPrice}</p>
+            <div className='category-product-price-and-heart'>
+                <div className='category-product-price'>
+                    <del>${oldPrice}</del>
+                    <p>${newPrice}</p>
+                </div>
+                <img src={heartIcon} alt='heart' />
             </div>
-            <img src={heartIcon} alt='heart' />
         </div>
     </div>
   )

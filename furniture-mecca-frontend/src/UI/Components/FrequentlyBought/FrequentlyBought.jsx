@@ -52,7 +52,7 @@ const FrequentlyBought = () => {
     const colorIndex = useSelector((state) => state.colorIndex.colorIndex)
   return (
     <div className='frequently-bought-main'>
-        <h3>Frequently Bought Together</h3>
+        <h3>You may also like this...</h3>
         <div className='frequently-bought-card'>
         {products.slice(0, 5).map((item, index) => (
                         <ProductCard

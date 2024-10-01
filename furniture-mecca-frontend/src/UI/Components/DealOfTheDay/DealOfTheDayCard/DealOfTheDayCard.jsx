@@ -102,7 +102,7 @@ const products = [
 
 const DealOfTheDayCard = ({index, name, star, review, price, newPrice, imgIcons, productmage, descount, handleDealCardClick, dealDayData,  handleHoverEnter, handleHoveLeave}) => {
   const cardIcons = [cartIcon, heartIcon, combinedArrows];
-  const [isHovered, setIsHovered] = useState(null);
+  const [isHovered, setIsHovered] = useState(0);
 
   const handleIconMouseEnter = (index) => {setIsHovered(index)}
   const handleIconMouseLeave = () => {setIsHovered(null)}
@@ -117,18 +117,33 @@ const DealOfTheDayCard = ({index, name, star, review, price, newPrice, imgIcons,
     };
     
   return (
-    <div index={index} className='deal-of-the-day-product-card' onClick={() => handleDealCardClick(dealDayData)}>
-      <div className='deal-of-the-day-product-rating-and-name'>
-        <h3 className='deal-of-the-day-product-name'>{truncateTitle(name, maxLength)}</h3>
-        <div className='deal-of-the-day-price'>
+    <div 
+      index={index} 
+      className='deal-of-the-day-product-card' 
+      onClick={() => handleDealCardClick(dealDayData)}
+    >
+      <div 
+          className='deal-of-the-day-product-rating-and-name'
+        >
+        <h3 className='deal-of-the-day-product-name'>
+          {truncateTitle(name, maxLength)}
+        </h3>
+        <div 
+          className='deal-of-the-day-price'>
           <del>${price}</del>
           <p>$ 1,599.00</p>
         </div>
-        <div className='deal-of-the-day-rating-and-reviews'>
-          <div className='deal-of-the-day-card-stars'>
+        <div 
+            className='deal-of-the-day-rating-and-reviews'>
+          <div 
+              className='deal-of-the-day-card-stars'>
             {star.map((items, innIndex) => (
               // <p className='deal-of-the-day-stars'>{items.icon}</p>
-              <img key={innIndex} src={items.icon} alt='star' />
+              <img 
+                  key={innIndex} 
+                  src={items.icon} 
+                  alt='star' 
+                />
             ))}
             </div>
           <p>({review})</p>
@@ -139,8 +154,15 @@ const DealOfTheDayCard = ({index, name, star, review, price, newPrice, imgIcons,
         <img src={productmage} alt='img' />
         <div className='deal-of-the-day-card-icons-div'>
           {imgIcons.map((items, index) => (
-            <button key={index} className={`deal-of-the-day-icon ${isHovered === index ? 'change-bg' : ''}`} onMouseEnter={() => handleIconMouseEnter(index)} onMouseLeave={handleIconMouseLeave}>
-              <img src={isHovered === index ? items.hoveredIcon : items.defIcon} alt='icon'  />
+            <button 
+                key={index}  
+                className={`deal-of-the-day-icon ${isHovered === index ? 'change-bg' : ''}`} 
+                onMouseEnter={() => handleIconMouseEnter(index)} 
+                onMouseLeave={handleIconMouseLeave}
+              >
+              <img 
+                  src={isHovered === index ? items.hoveredIcon : items.defIcon} 
+                  alt='icon'  />
             </button>
           ))}
         </div> 

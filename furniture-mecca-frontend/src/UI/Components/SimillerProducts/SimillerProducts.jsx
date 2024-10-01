@@ -79,7 +79,7 @@ const SimillerProducts = () => {
     
   return (
     <div className='similler-products-main-container'>
-        <h3>Try These Instead</h3>
+        <h3>Shop from this collection</h3>
         <div className='similler-products-wrapper' onMouseDown={handleMouseDown}
             onTouchMove={handleTouchMove}>
             <button

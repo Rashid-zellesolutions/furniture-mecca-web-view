@@ -1,4 +1,7 @@
 import React, { useEffect, useState } from 'react';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from 'react-slick';
 import './Slider.css';
 import imageOne from '../../Assets/Furniture Mecca/Landing Page/Slider/Main Banner 1.jpg';
 import imageTwo from '../../Assets/Furniture Mecca/Landing Page/Slider/Main Banner 2.jpg';
@@ -15,10 +18,15 @@ import sliderImageTwo from '../../Assets/Furniture Mecca/Landing Page/Slider/Pro
 import sliderImageThree from '../../Assets/Furniture Mecca/Landing Page/Slider/sofa4.png';
 import sliderImageFour from '../../Assets/Furniture Mecca/Landing Page/Slider/sofa2.png';
 
-const Slider = () => {
+const Sliderr = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [mobileCurrentIndex, setMobileCurrentIndex] = useState(0);
     const [isHovered, setIsHovered] = useState(false);
+    // const [touchStart, setTouchStart] = useState(null);
+    // const [touchEnd, setTouchEnd] = useState(null)
+    const [isDraging, setIsDraging] = useState(false);
+    const [startX, setStartX] = useState(0);
+    const [currentX, setCurrentX] = useState(0);
 
     const handleMouseEnter = () => {
         setIsHovered(true);
@@ -55,6 +63,36 @@ const Slider = () => {
         return () => clearInterval(interval);
     }, []);
 
+    const handleMouseDown = (e) => {
+        setStartX(e.clientX);
+        setIsDraging(true)
+        console.log("mouse down startX Value", startX)
+        console.log("mouse down Draging Value", isDraging)
+    }
+    const handleMouseMove = (e) => {
+        if(!isDraging) return;
+        setCurrentX(e.clientX);
+        console.log("mouse up drag Value", isDraging)
+        console.log("mouse up startX Value", startX)
+    }
+    const handleMouseUp = () => {
+        if(!isDraging) return;
+        const diff = startX - currentX;
+        console.log("diff value", diff)
+
+        if(Math.abs(diff) > 200){
+            if(diff > 0){
+                nextSlide();
+            }else {
+                prevSlide()
+            }
+        }
+        setIsDraging(false);
+        setStartX(0);
+        setCurrentX(0);
+
+    }
+
     // mobile slider
     const handleMobileMouseEnter = () => {}
     const handlemobileMouseLeave = () => {}
@@ -72,21 +110,87 @@ const Slider = () => {
         return () => clearInterval(interval);
     }, []);
 
+    // let settings = {
+    //     dots: true,
+    //     infinite: false,
+    //     speed: 500,
+    //     slidesToShow: 1,
+    //     slidesToScroll: 1,
+    //     initialSlide: 0,
+    //     nextArrow: false,
+    //     prevArrow: false,
+    //     responsive: [
+    //       {
+    //         breakpoint: 1024,
+    //         settings: {
+    //           slidesToShow: 3,
+    //           slidesToScroll: 3,
+    //           infinite: true,
+    //           dots: true
+    //         }
+    //       },
+    //       {
+    //         breakpoint: 600,
+    //         settings: {
+    //           slidesToShow: 2,
+    //           slidesToScroll: 2,
+    //           initialSlide: 2
+    //         }
+    //       },
+    //       {
+    //         breakpoint: 480,
+    //         settings: {
+    //           slidesToShow: 1,
+    //           slidesToScroll: 1
+    //         }
+    //       }
+    //     ]
+    //   };
+
     return (
         <>
-        <div className='slider'>
-            <div className='arrow left-arrow' onClick={prevSlide} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-                <img src={isHovered ? arrowLeftRed : ArrowLeft} alt="arrow left" />
+        <div 
+            className='slider'
+            onMouseDown={handleMouseDown}
+            onMouseMove={handleMouseMove}
+            onMouseUp={handleMouseUp}
+            onMouseLeave={handleMouseUp}
+            style={{ cursor: isDraging ? 'grabbing' : 'grab' }}
+        >
+            <div 
+                className='arrow left-arrow' 
+                onClick={prevSlide} 
+                onMouseEnter={handleMouseEnter} 
+                onMouseLeave={handleMouseLeave}
+            >
+                <img 
+                    src={isHovered ? arrowLeftRed : ArrowLeft} 
+                    alt="arrow left" 
+                />
             </div>
-            <div className='slides-container' style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
+            <div className='slides-container' 
+                style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+            >
                 {infiniteSlides.map((slide, index) => (
-                    <div className='slide' key={index}>
-                        <img src={slide.img} alt={`slide ${index + 1}`} />
+                    <div 
+                        className='slide' 
+                        key={index}>
+                        <img 
+                            src={slide.img} 
+                            alt={`slide ${index + 1}`} 
+                        />
                     </div>
                 ))}
             </div>
-            <div className='arrow right-arrow' onClick={nextSlide} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-                <img src={isHovered ? arrowRightRed : ArrowRight} alt="arrow right" />
+            <div 
+                className='arrow right-arrow' 
+                onClick={nextSlide} 
+                onMouseEnter={handleMouseEnter} 
+                onMouseLeave={handleMouseLeave}>
+                <img 
+                    src={isHovered ? arrowRightRed : ArrowRight} 
+                    alt="arrow right" 
+                />
             </div>
         </div>
         <div className='mobile-view-slider'>
@@ -108,4 +212,4 @@ const Slider = () => {
     );
 };
 
-export default Slider;
+export default Sliderr;
