@@ -25,14 +25,10 @@ const SingleProduct = () => {
 
   const {cart, addToCart, cartSectionOpen, setCartSectionOpen, increamentQuantity, decreamentQuantity, removeFromCart, calculateTotalPrice} = useCart();
   const [cartSection, setCartSection] = useState(false);
+  const {slug} = useParams()
   const location = useLocation();
-  const product = location.state || {}
-  
-  const handleAddToCartProduct = (product) => {
-    // setCartSection(true);
-    // addToCart(product)
-    console.log("product data", product)
-  }
+  const product = location.state.products || {}
+  console.log("main product data", product)
 
   
   const handleClickTop = () => {
@@ -51,11 +47,11 @@ const SingleProduct = () => {
 
   return (
     <div>
-        <SingleProductStickySection productData={product} cartSectionOpen={() => handleAddToCartProduct(product)} />
+        <SingleProductStickySection productData={product} />
         <SimillerProducts />
         <FrequentlyBought />
         <RatingAndReview />
-        <CustomerPhotos />
+        {/* <CustomerPhotos /> */}
         <ProductComments />
         <OutdoorFaves />
     </div>

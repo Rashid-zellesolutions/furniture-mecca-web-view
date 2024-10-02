@@ -6,7 +6,7 @@ import ProductCommentsSection from '../ProductCommentsSection/ProductCommentsSec
 const ProductComments = () => {
   return (
     <div className='customer-comments-main-container'>
-        <SearchReviews />
+        {/* <SearchReviews /> */}
         <ProductCommentsSection />
     </div>
   )

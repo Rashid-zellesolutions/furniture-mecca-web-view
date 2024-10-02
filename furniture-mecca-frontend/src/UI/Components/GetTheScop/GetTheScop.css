@@ -186,9 +186,9 @@
     text-transform: capitalize;
     color: var(--text-white);
     width: 190px;
-    height: 46px;
-    border-radius: 8px;
-    border: 3px solid white;
+    height: 50px;
+    border-radius: 10px;
+    border: 1px solid white;
     transition: all 0.3s ease-in-out;
 }
 
@@ -207,14 +207,14 @@
 
 .get-the-scop-banner button:hover{
     background-color: white;
-    border: 3px solid var(--button-color);
+    border: 1px solid var(--button-color);
     transition: all 0.3s ease-in-out;
 }
 
 .get-the-scop-banner button:hover a{
     color: var(--button-color);
     transition: all 0.3s ease-in-out;
-    font-weight: 600;
+    font-weight: 400;
 }
 
 .mobile-view-scop-main-container{

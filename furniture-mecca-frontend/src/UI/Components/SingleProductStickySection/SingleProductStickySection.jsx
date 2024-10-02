@@ -40,10 +40,8 @@ import CartSidePannel from '../Cart-side-section/CartSidePannel';
 
 
 const SingleProductStickySection = (productData) => {
-  console.log("console all data of product",productData);
-  console.log("product Data", productData.productData)
-  const product = productData.productData.products;
-  console.log("ppp data", product.id)
+  const product = productData.productData;
+  // console.log("product data of top", product)
 
   // Alice Slider
   const images = [imgOne, imgOne, imgOne, imgOne, imgOne];
@@ -153,13 +151,18 @@ const SingleProductStickySection = (productData) => {
         }, 1000);
     };
 
-    const {cart, addToCart, cartSectionOpen, setCartSectionOpen, increamentQuantity, decreamentQuantity, removeFromCart, calculateTotalPrice} = useCart();
+    const {cart, addToCart, increamentQuantity, decreamentQuantity, removeFromCart, calculateTotalPrice} = useCart();
     const [cartSection, setCartSection] = useState(false);
+
+    // console.log("log cart before", cart)
+    // console.log("log product before", product)
     const handleAddToCartProduct = (product) => {
       setCartSection(true);
       addToCart(product)
-      console.log("product data", product)
+      // console.log("product data", product)
     }
+    // console.log("log cart after", cart)
+    // console.log("log product after", product)
     const handleCartClose = () => {
       setCartSection(false)
     }
@@ -176,7 +179,7 @@ const SingleProductStickySection = (productData) => {
             activeIndex={activeIndex}
             disableDotsControls
             disableButtonsControls
-            items={product.productAllImages.map((img, index) => (
+            items={product.productAllImages && product.productAllImages.map((img, index) => (
                 <img key={index} src={img} className="single-product-slider-img" alt={`Slide ${index}`} />
             ))
             }
@@ -186,7 +189,7 @@ const SingleProductStickySection = (productData) => {
             }}
         />
         <div className="single-product-slider-thumbnails">
-            {product.productAllImages.map((img, index) => (
+            {product.productAllImages && product.productAllImages.map((img, index) => (
                 <div
                     key={index}
                     className={`single-product-slider-thumbnail ${activeIndex === index ? '' : 'single-product-slider-thumbnail-inactive'}`}
@@ -207,7 +210,7 @@ const SingleProductStickySection = (productData) => {
               <h3 className='single-product-heading'>{product.productTitle}</h3>
               <div className='single-product-rating'>
                   <span className='stars-icon'>
-                      {product.ratingStars.map((item, index) => {
+                      {product.ratingStars && product.ratingStars.map((item, index) => {
                           return <img key={index} src={item.icon} alt={item.name} className='star-img' />
                       })}
                   </span>
@@ -230,7 +233,7 @@ const SingleProductStickySection = (productData) => {
                       {/* <p>Select Frame Color: </p><Link>{variationName}</Link> */}
                   </span>
                   <div className='variant-images-div'>
-                      {product.colorVariation.map((item, index) => {
+                      {product.colorVariation && product.colorVariation.map((item, index) => {
                           return <div key={index} className={`single-product-color-variant ${variationName === index ? 'selected-color-variation' : ''}`} onClick={() => handleColorVariation(index)}>
                               <img src={silverImage} alt='img' />
                               <p>{item.color}</p>

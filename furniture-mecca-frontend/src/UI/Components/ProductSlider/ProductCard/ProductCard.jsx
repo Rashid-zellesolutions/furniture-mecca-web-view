@@ -1,5 +1,6 @@
 import React from 'react'
 import  './ProductCard.css'
+import arrowLeft from '../../../../Assets/icons/arrow-left-black.png';
 
 const ProductCard = ({img, heading, para, btnTxt, productImageHeading, productImagePrice, productImageAbout, productLink}) => {
   return (
@@ -15,7 +16,10 @@ const ProductCard = ({img, heading, para, btnTxt, productImageHeading, productIm
         <div className='product-details'>
             <h3>{heading}</h3>
             <p>{para}</p>
-            <button> <a href={productLink}>{btnTxt}</a></button>
+            <button> 
+                <a href={productLink}>{btnTxt}</a>
+                <img src={arrowLeft} alt='arrow left' />
+              </button>
         </div>
     </div>
   )

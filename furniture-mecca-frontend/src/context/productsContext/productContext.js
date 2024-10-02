@@ -21,7 +21,7 @@ const ProductContext = createContext()
 
 export const ProductProvider = ({children}) => {
     const [products, setProducts] = useState([
-        {id: 1, slug: `trevor-brown-90-manual-reclining-sofa-&-79-console-loveseat`, heart: heartImg, mainImage: dakotaSet, hoverImage: goldDiningSet , productTitle: `Trevor Brown 90" Manual Reclining Sofa & 79" Console Loveseat`, ratingStars: [
+        {id: 1, slug: `trevor-brown-90-manual-reclining-sofa-&-79-console-loveseat-1`, heart: heartImg, mainImage: dakotaSet, hoverImage: goldDiningSet , productTitle: `Trevor Brown 90" Manual Reclining Sofa & 79" Console Loveseat 01`, ratingStars: [
             {icon: star, title: 'filled'},
             {icon: star, title: 'filled'},
             {icon: star, title: 'filled'},
@@ -35,7 +35,7 @@ export const ProductProvider = ({children}) => {
             {color: 'black', hexa: '#B78953'},
         ], deliveryTime: 'Get it in 3 to 4 days', stock: 'In Stock'
         },
-        {id: 2, slug: `avenger-black-89''-power-reclining-sofa-&-78''-reclining-console-loveseat-with-usb`, heart: heartImg, mainImage: goldDiningSet, hoverImage: dakotaSet , productTitle: `Avenger Black 89'' Power Reclining Sofa & 78'' Reclining Console Loveseat with USB`, ratingStars: [
+        {id: 2, slug: `avenger-black-89''-power-reclining-sofa-&-78''-reclining-console-loveseat-with-usb-2`, heart: heartImg, mainImage: goldDiningSet, hoverImage: dakotaSet , productTitle: `Avenger Black 89'' Power Reclining Sofa & 78'' Reclining Console Loveseat with USB 02`, ratingStars: [
                 {icon: star, title: 'filled'},
                 {icon: star, title: 'filled'},
                 {icon: star, title: 'filled'},
@@ -48,7 +48,7 @@ export const ProductProvider = ({children}) => {
                 {color: 'black', hexa: '#B78953'},
             ], deliveryTime: 'Get it in 3 to 4 days', stock: 'Out Of Stock'
         },
-        {id: 3, heart: heartImg, mainImage: webImage, productTitle: `Trevor Brown 90'' Manual Reclining Sofa & 79'' Console Loveseat`, ratingStars: [
+        {id: 3, slug: `trevor-brown 90''-manual-reclining-sofa-&-79''-console-loveseat-03`, heart: heartImg, mainImage: webImage, productTitle: `Trevor Brown 90'' Manual Reclining Sofa & 79'' Console Loveseat 03`, ratingStars: [
                     {icon: star, title: 'filled'},
                     {icon: star, title: 'filled'},
                     {icon: star, title: 'filled'},
@@ -62,7 +62,7 @@ export const ProductProvider = ({children}) => {
                     {color: 'black', hexa: '#B78953'},
                 ], deliveryTime: 'Get it in 3 to 4 days', stock: 'In Stock'
         },
-        {id: 4, heart: heartImg, mainImage: everDeen, hoverImage: webImage , productTitle: `Trevor Brown 90'' Manual Reclining Sofa & 79'' Console Loveseat`, ratingStars: [
+        {id: 4, slug: `trevor-brown 90''-manual-reclining-sofa-&-79''-console-loveseat-04`, heart: heartImg, mainImage: everDeen, hoverImage: webImage , productTitle: `Trevor Brown 90'' Manual Reclining Sofa & 79'' Console Loveseat 4`, ratingStars: [
                     {icon: star, title: 'filled'},
                     {icon: star, title: 'filled'},
                     {icon: star, title: 'filled'},
@@ -74,7 +74,7 @@ export const ProductProvider = ({children}) => {
                     {color: 'black', hexa: '#B78953'},
                 ], deliveryTime: 'Get it in 3 to 4 days', stock: 'In Stock'
         },
-        {id: 5, heart: heartImg, mainImage: blackDiningSet, hoverImage: whiteDiningSet , productTitle: `Trever Brown 90'' Manual Reclining Sofa & 79'' Console Loveseat`, ratingStars: [
+        {id: 5, slug: `trevor-brown 90''-manual-reclining-sofa-&-79''-console-loveseat-05`, heart: heartImg, mainImage: blackDiningSet, hoverImage: whiteDiningSet , productTitle: `Trever Brown 90'' Manual Reclining Sofa & 79'' Console Loveseat 5`, ratingStars: [
                     {icon: star, title: 'filled'},
                     {icon: star, title: 'filled'},
                     {icon: star, title: 'filled'},
@@ -87,7 +87,7 @@ export const ProductProvider = ({children}) => {
                     {color: 'black', hexa: '#B78953'},
                 ], deliveryTime: 'Get it in 3 to 4 days', stock: 'In Stock'
         },
-        {id: 6, heart: heartImg, mainImage: whiteDiningSet, hoverImage: blackDiningSet , productTitle: `Trevor Brown 90'' Manual Reclining Sofa & 79'' Console Loveseat`, ratingStars: [
+        {id: 6, slug: `trevor-brown 90''-manual-reclining-sofa-&-79''-console-loveseat-06`, heart: heartImg, mainImage: whiteDiningSet, hoverImage: blackDiningSet , productTitle: `Trevor Brown 90'' Manual Reclining Sofa & 79'' Console Loveseat 6`, ratingStars: [
             {icon: star, title: 'filled'},
             {icon: star, title: 'filled'},
             {icon: star, title: 'filled'},
@@ -100,7 +100,7 @@ export const ProductProvider = ({children}) => {
             {color: 'black', hexa: '#B78953'},
         ], deliveryTime: 'Get it in 3 to 4 days', stock: 'In Stock'
         },
-        {id: 7, heart: heartImg, mainImage: brownDiningSet, hoverImage: knightDaleSet , productTitle: `Trevor Brown 90'' Manual Reclining Sofa & 79'' Console Loveseat`, ratingStars: [
+        {id: 7, slug: `trevor-brown 90''-manual-reclining-sofa-&-79''-console-loveseat-07`, heart: heartImg, mainImage: brownDiningSet, hoverImage: knightDaleSet , productTitle: `Trevor Brown 90'' Manual Reclining Sofa & 79'' Console Loveseat 7`, ratingStars: [
                     {icon: star, title: 'filled'},
                     {icon: star, title: 'filled'},
                     {icon: star, title: 'filled'},
@@ -113,7 +113,7 @@ export const ProductProvider = ({children}) => {
                     {color: 'black', hexa: '#B78953'},
                 ], deliveryTime: 'Get it in 3 to 4 days', stock: 'In Stock'
         },
-        {id: 8, heart: heartImg, mainImage: dakotaSet, hoverImage: goldDiningSet , productTitle: `Trevor Brown 90'' Manual Reclining Sofa & 79'' Console Loveseat`, ratingStars: [
+        {id: 8, slug: `trevor-brown 90''-manual-reclining-sofa-&-79''-console-loveseat-08`, heart: heartImg, mainImage: dakotaSet, hoverImage: goldDiningSet , productTitle: `Trevor Brown 90'' Manual Reclining Sofa & 79'' Console Loveseat 8`, ratingStars: [
                 {icon: star, title: 'filled'},
                 {icon: star, title: 'filled'},
                 {icon: star, title: 'filled'},
@@ -126,7 +126,7 @@ export const ProductProvider = ({children}) => {
                 {color: 'black', hexa: '#B78953'},
             ], deliveryTime: 'Get it in 3 to 4 days', stock: 'In Stock'
         },
-        {id: 9, heart: heartImg, mainImage: goldDiningSet, hoverImage: dakotaSet , productTitle: `Trevor Brown 90'' Manual Reclining Sofa & 79'' Console Loveseat`, ratingStars: [
+        {id: 9, slug: `trevor-brown 90''-manual-reclining-sofa-&-79''-console-loveseat-09`, heart: heartImg, mainImage: goldDiningSet, hoverImage: dakotaSet , productTitle: `Trevor Brown 90'' Manual Reclining Sofa & 79'' Console Loveseat 9`, ratingStars: [
                 {icon: star, title: 'filled'},
                 {icon: star, title: 'filled'},
                 {icon: star, title: 'filled'},
@@ -139,7 +139,7 @@ export const ProductProvider = ({children}) => {
                 {color: 'black', hexa: '#B78953'},
             ], deliveryTime: 'Get it in 3 to 4 days', stock: 'In Stock'
         },
-        {id: 10, heart: heartImg, mainImage: everDeen, hoverImage: webImage , productTitle: `Trevor Brown 90'' Manual Reclining Sofa & 79'' Console Loveseat`, ratingStars: [
+        {id: 10, slug: `trevor-brown 90''-manual-reclining-sofa-&-79''-console-loveseat-10`, heart: heartImg, mainImage: everDeen, hoverImage: webImage , productTitle: `Trevor Brown 90'' Manual Reclining Sofa & 79'' Console Loveseat 10`, ratingStars: [
                 {icon: star, title: 'filled'},
                 {icon: star, title: 'filled'},
                 {icon: star, title: 'filled'},
@@ -152,7 +152,7 @@ export const ProductProvider = ({children}) => {
             {color: 'black', hexa: '#B78953'},
             ], deliveryTime: 'Get it in 3 to 4 days', stock: 'In Stock'
         },
-        {id: 11, heart: heartImg, mainImage: whiteDiningSet, hoverImage: blackDiningSet , productTitle: `Trevor Brown 90'' Manual Reclining Sofa & 79'' Console Loveseat`, ratingStars: [
+        {id: 11, slug: `trevor-brown 90''-manual-reclining-sofa-&-79''-console-loveseat-11`, heart: heartImg, mainImage: whiteDiningSet, hoverImage: blackDiningSet , productTitle: `Trevor Brown 90'' Manual Reclining Sofa & 79'' Console Loveseat 11`, ratingStars: [
                     {icon: star, title: 'filled'},
                     {icon: star, title: 'filled'},
                     {icon: star, title: 'filled'},
@@ -165,7 +165,7 @@ export const ProductProvider = ({children}) => {
                     {color: 'black', hexa: '#B78953'},
                 ], deliveryTime: 'Get it in 3 to 4 days', stock: 'In Stock'
         },
-        {id: 12, heart: heartImg, mainImage: zoraDiningSet, hoverImage: knightDaleSet , productTitle: `Trevor Brown 90'' Manual Reclining Sofa & 79'' Console Loveseat`, ratingStars: [
+        {id: 12, slug: `trevor-brown 90''-manual-reclining-sofa-&-79''-console-loveseat-12`, heart: heartImg, mainImage: zoraDiningSet, hoverImage: knightDaleSet , productTitle: `Trevor Brown 90'' Manual Reclining Sofa & 79'' Console Loveseat 12`, ratingStars: [
                 {icon: star, title: 'filled'},
                 {icon: star, title: 'filled'},
                 {icon: star, title: 'filled'},
@@ -178,7 +178,7 @@ export const ProductProvider = ({children}) => {
                 {color: 'black', hexa: '#B78953'},
             ], deliveryTime: 'Get it in 3 to 4 days', stock: 'In Stock'
         },
-        {id: 13, heart: heartImg, mainImage: knightDaleSet, hoverImage: zoraDiningSet , productTitle: `Trevor Brown 90'' Manual Reclining Sofa & 79'' Console Loveseat`, ratingStars: [
+        {id: 13, slug: `trevor-brown 90''-manual-reclining-sofa-&-79''-console-loveseat-13`, heart: heartImg, mainImage: knightDaleSet, hoverImage: zoraDiningSet , productTitle: `Trevor Brown 90'' Manual Reclining Sofa & 79'' Console Loveseat 13`, ratingStars: [
                 {icon: star, title: 'filled'},
                 {icon: star, title: 'filled'},
                 {icon: star, title: 'filled'},
